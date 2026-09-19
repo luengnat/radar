@@ -7,6 +7,7 @@ import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+PUBLIC_REPO_BASE = "https://github.com/luengnat/radar/blob/main/"
 
 
 def copy_file(root: Path, out: Path, relative: str) -> None:
@@ -14,6 +15,19 @@ def copy_file(root: Path, out: Path, relative: str) -> None:
     target = out / relative
     target.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(source, target)
+
+
+def copy_public_markdown(root: Path, out: Path, relative: str) -> None:
+    """Copy a public markdown page and keep excluded source links usable."""
+    source = root / relative
+    target = out / relative
+    target.parent.mkdir(parents=True, exist_ok=True)
+    text = source.read_text(encoding="utf-8")
+    # Raw source PDFs/HTML remain out of the lightweight Pages artifact, but
+    # the public repo contains them. Point nested source links at GitHub rather
+    # than leaving broken relative links on the Pages domain.
+    text = text.replace("](data/sources_", f"]({PUBLIC_REPO_BASE}data/sources_")
+    target.write_text(text, encoding="utf-8")
 
 
 def build(root: Path, out: Path) -> None:
@@ -33,7 +47,10 @@ def build(root: Path, out: Path) -> None:
         "tmd_budget_explanation_additional_review_2026-09-17.md",
         "data/political_context_2026-09-19.json",
     ]:
-        copy_file(root, out, relative)
+        if relative.endswith(".md"):
+            copy_public_markdown(root, out, relative)
+        else:
+            copy_file(root, out, relative)
     # research-staging file with known-refuted claims and a do-not-publish
     # review status must not ship in the public bundle
     deny = {"radar_procurement_sweep_2026-09-15.json"}

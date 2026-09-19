@@ -3,6 +3,7 @@ const POLITICAL_DATA_URL = "data/political_context_2026-09-19.json";
 const MAP_DATA_URL = "data/tha_adm0_simplified.geojson";
 const COVERAGE_DATA_URL = "data/radar_coverage_summary.json";
 const COVERAGE_STATIONS_URL = "data/radar_stations_map.json";
+const PUBLIC_REPO_BASE = "https://github.com/luengnat/radar/blob/main/";
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const unwrap = (node) => node && typeof node === "object" && "value" in node ? node.value : node;
@@ -308,6 +309,7 @@ function sourceHref(sourceId, locator = "") {
   if (source.url) return source.url;
   if (source.urls?.length) return source.urls[0];
   const file = source.file || source.files?.[0];
+  if (file && file.split("/").length > 2) return `${PUBLIC_REPO_BASE}${file}`;
   return file || "README.md";
 }
 
