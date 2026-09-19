@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "Fresh e-GP getProcureResult extraction for FY 2569 TMD S-band radar tenders",
+    "retrieved_date": "2026-09-17",
+    "portal_display_date": "17 กันยายน 2569",
+    "endpoint_template": "https://process5.gprocurement.go.th/egp-atpj27-service/pb/a-egp-allt-project/announcement/getProcureResult?projectId={project_id}",
+    "evidence_rule": "Project ID and station are kept together; no station-price remapping is performed after extraction.",
+    "technical_reason_note": "The public getProcureResult response exposes submitted price, resultFlag, and agreed price. It does not expose the written reason for a qualification/technical failure. Those reports remain an information gap."
+  },
+  "results": [
+    {
+      "project_id": "68099138543",
+      "station": "Chumphon",
+      "project_name_contains": "สถานีอุตุนิยมวิทยาชุมพร",
+      "announce_date": "2025-12-29T17:00:00.000+00:00",
+      "bidders": [
+        {"supplier": "บริษัท จีโนแมทช์ จำกัด", "reg_no": "0105543029577", "price_proposal_baht": 410987000, "result_flag": "P", "price_agree_baht": 410987000},
+        {"supplier": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด", "reg_no": "0105551041947", "price_proposal_baht": 412142600, "result_flag": "P", "price_agree_baht": null},
+        {"supplier": "บริษัท เอเซียเมท จำกัด", "reg_no": "0105530060373", "price_proposal_baht": 391620000, "result_flag": "N", "price_agree_baht": null}
+      ]
+    },
+    {
+      "project_id": "68099138641",
+      "station": "Bueng Kan",
+      "project_name_contains": "สถานีอุตุนิยมวิทยาบึงกาฬ",
+      "announce_date": "2025-12-23T17:00:00.000+00:00",
+      "bidders": [
+        {"supplier": "บริษัท จีโนแมทช์ จำกัด", "reg_no": "0105543029577", "price_proposal_baht": 415160000, "result_flag": "P", "price_agree_baht": 415160000},
+        {"supplier": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด", "reg_no": "0105551041947", "price_proposal_baht": 419440000, "result_flag": "P", "price_agree_baht": null},
+        {"supplier": "ห้างหุ้นส่วนจำกัด ไซแอนติฟิค รีเสิร์ช", "reg_no": "0103534016083", "price_proposal_baht": 375570000, "result_flag": "N", "price_agree_baht": null}
+      ]
+    },
+    {
+      "project_id": "68099138724",
+      "station": "Phitsanulok",
+      "project_name_contains": "สถานีอุตุนิยมวิทยาพิษณุโลก",
+      "announce_date": "2025-12-29T17:00:00.000+00:00",
+      "bidders": [
+        {"supplier": "บริษัท จีโนแมทช์ จำกัด", "reg_no": "0105543029577", "price_proposal_baht": 410987000, "result_flag": "P", "price_agree_baht": null},
+        {"supplier": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด", "reg_no": "0105551041947", "price_proposal_baht": 408954000, "result_flag": "P", "price_agree_baht": 408954000},
+        {"supplier": "บริษัท เอเซียเมท จำกัด", "reg_no": "0105530060373", "price_proposal_baht": 389480000, "result_flag": "N", "price_agree_baht": null}
+      ]
+    },
+    {
+      "project_id": "68099247067",
+      "station": "Krabi",
+      "project_name_contains": "สถานีอุตุนิยมวิทยากระบี่",
+      "announce_date": "2025-12-23T17:00:00.000+00:00",
+      "bidders": [
+        {"supplier": "บริษัท จีโนแมทช์ จำกัด", "reg_no": "0105543029577", "price_proposal_baht": 412699000, "result_flag": "P", "price_agree_baht": 412699000},
+        {"supplier": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด", "reg_no": "0105551041947", "price_proposal_baht": 414625000, "result_flag": "P", "price_agree_baht": null},
+        {"supplier": "ห้างหุ้นส่วนจำกัด ไซแอนติฟิค รีเสิร์ช", "reg_no": "0103534016083", "price_proposal_baht": 375570000, "result_flag": "N", "price_agree_baht": null}
+      ]
+    }
+  ]
+}

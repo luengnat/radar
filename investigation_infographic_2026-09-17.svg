@@ -1,0 +1,212 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2200" viewBox="0 0 1600 2200" role="img" aria-labelledby="title desc">
+  <title id="title">Thai S-band weather radar procurement investigation — evidence snapshot</title>
+  <desc id="desc">Infographic summarizing four Thai radar awards, bidder prices, international benchmarks, and unresolved evidence gaps.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07131f"/>
+      <stop offset="0.55" stop-color="#0b1d2d"/>
+      <stop offset="1" stop-color="#071018"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3ce6db"/>
+      <stop offset="1" stop-color="#78f7d0"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff9b55"/>
+      <stop offset="1" stop-color="#ffd166"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000" flood-opacity="0.30"/>
+    </filter>
+    <pattern id="grid" width="52" height="52" patternUnits="userSpaceOnUse">
+      <path d="M52 0H0V52" fill="none" stroke="#b5e6ee" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+    <style>
+      .thai { font-family: 'Noto Sans Thai','Leelawadee UI','Tahoma',sans-serif; }
+      .display { font-family: 'Noto Sans Thai','Leelawadee UI','Tahoma',sans-serif; font-weight: 800; letter-spacing: -0.5px; }
+      .mono { font-family: 'SFMono-Regular','Menlo',monospace; }
+      .muted { fill: #98b7c2; }
+      .white { fill: #f4fbfc; }
+      .cyan { fill: #5cf0dc; }
+      .orange { fill: #ffb166; }
+      .red { fill: #ff7e72; }
+      .line { stroke: #315366; stroke-width: 2; }
+      .tiny { font-size: 18px; }
+      .small { font-size: 23px; }
+      .body { font-size: 27px; }
+      .label { font-size: 20px; letter-spacing: 2px; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="2200" fill="url(#bg)"/>
+  <rect width="1600" height="2200" fill="url(#grid)"/>
+
+  <!-- header -->
+  <g transform="translate(96 84)">
+    <circle cx="52" cy="48" r="42" fill="none" stroke="#5cf0dc" stroke-width="3" opacity="0.9"/>
+    <circle cx="52" cy="48" r="18" fill="none" stroke="#5cf0dc" stroke-width="3"/>
+    <path d="M52 48L89 18M52 48L24 83" stroke="#ffb166" stroke-width="4" stroke-linecap="round"/>
+    <path d="M52 7V89M11 48H93" stroke="#5cf0dc" stroke-opacity="0.25"/>
+    <text x="130" y="42" class="display white" font-size="42">เรดาร์อากาศ S-band ปี 2569</text>
+    <text x="132" y="80" class="thai muted" font-size="25">หลักฐานราคา • ผู้ยื่นข้อเสนอ • benchmark ต่างประเทศ</text>
+    <text x="1405" y="28" class="mono muted" font-size="17" text-anchor="end">EVIDENCE SNAPSHOT / 17 SEP 2026</text>
+    <text x="1405" y="57" class="thai muted" font-size="18" text-anchor="end">สรุปจากเอกสารและข้อมูลที่ตรวจแล้ว</text>
+  </g>
+
+  <!-- headline -->
+  <g transform="translate(96 190)">
+    <text class="thai orange" font-size="25">คำตอบสั้นที่สุด</text>
+    <text y="58" class="display white" font-size="56">ราคาสูงผิดสังเกต — แต่ยังต้องเปิด BOQ</text>
+    <text y="105" class="thai muted" font-size="26">ต่างประเทศมีราคาประกาศราว 72–136 ล้านบาท/ระบบ ขณะที่ไทยชนะที่ 409–415 ล้านบาท</text>
+    <rect x="0" y="135" width="1408" height="2" fill="#315366"/>
+  </g>
+
+  <!-- key numbers -->
+  <g transform="translate(96 370)" filter="url(#shadow)">
+    <rect width="330" height="190" rx="18" fill="#10293a" stroke="#315366"/>
+    <text x="26" y="40" class="thai muted label">TOTAL AWARDS</text>
+    <text x="26" y="112" class="display cyan" font-size="54">฿1,647.8M</text>
+    <text x="26" y="153" class="thai muted small">4 สถานี / 4 สัญญา</text>
+  </g>
+  <g transform="translate(456 370)" filter="url(#shadow)">
+    <rect width="330" height="190" rx="18" fill="#10293a" stroke="#315366"/>
+    <text x="26" y="40" class="thai muted label">AWARD RANGE</text>
+    <text x="26" y="112" class="display orange" font-size="54">฿409–415M</text>
+    <text x="26" y="153" class="thai muted small">ต่อสถานี</text>
+  </g>
+  <g transform="translate(816 370)" filter="url(#shadow)">
+    <rect width="330" height="190" rx="18" fill="#10293a" stroke="#315366"/>
+    <text x="26" y="40" class="thai muted label">SAVING VS BUDGET</text>
+    <text x="26" y="112" class="display cyan" font-size="54">฿52.2M</text>
+    <text x="26" y="153" class="thai muted small">3.07% จากงบ 1.7B</text>
+  </g>
+  <g transform="translate(1176 370)" filter="url(#shadow)">
+    <rect width="328" height="190" rx="18" fill="#10293a" stroke="#315366"/>
+    <text x="26" y="40" class="thai muted label">REFERENCE PRICE</text>
+    <text x="26" y="112" class="display red" font-size="50">฿446.167M</text>
+    <text x="26" y="153" class="thai muted small">เท่ากันทั้ง 4 สถานี</text>
+  </g>
+
+  <!-- Thai awards chart -->
+  <g transform="translate(96 630)">
+    <text class="display white" font-size="34">1 / เงินที่จ่ายจริงในไทย</text>
+    <text y="39" class="thai muted body">ทุกสถานีใช้งบ 425M — ราคาชนะต่ำกว่างบเพียง 2.3–3.8%</text>
+    <rect x="0" y="74" width="820" height="430" rx="20" fill="#0d2434" stroke="#315366"/>
+    <text x="32" y="116" class="mono muted tiny">THB MILLION / STATION</text>
+    <!-- axis -->
+    <line x1="205" y1="145" x2="770" y2="145" stroke="#315366"/>
+    <line x1="205" y1="230" x2="770" y2="230" stroke="#315366" stroke-opacity="0.6"/>
+    <line x1="205" y1="315" x2="770" y2="315" stroke="#315366" stroke-opacity="0.6"/>
+    <line x1="205" y1="400" x2="770" y2="400" stroke="#315366" stroke-opacity="0.6"/>
+    <text x="205" y="453" class="mono muted tiny">0</text>
+    <text x="335" y="453" class="mono muted tiny">100</text>
+    <text x="465" y="453" class="mono muted tiny">200</text>
+    <text x="595" y="453" class="mono muted tiny">300</text>
+    <text x="725" y="453" class="mono muted tiny">400</text>
+    <!-- bars -->
+    <text x="32" y="182" class="thai white small">ชุมพร</text>
+    <rect x="205" y="155" width="534" height="35" rx="8" fill="url(#orange)"/>
+    <text x="752" y="181" class="mono orange small">410.987</text>
+    <text x="32" y="267" class="thai white small">บึงกาฬ</text>
+    <rect x="205" y="240" width="540" height="35" rx="8" fill="url(#orange)"/>
+    <text x="758" y="266" class="mono orange small">415.160</text>
+    <text x="32" y="352" class="thai white small">พิษณุโลก</text>
+    <rect x="205" y="325" width="532" height="35" rx="8" fill="url(#orange)"/>
+    <text x="750" y="351" class="mono orange small">408.954</text>
+    <text x="32" y="437" class="thai white small">กระบี่</text>
+    <rect x="205" y="410" width="536" height="35" rx="8" fill="url(#orange)"/>
+    <text x="754" y="436" class="mono orange small">412.699</text>
+    <!-- budget line -->
+    <line x1="757" y1="132" x2="757" y2="445" stroke="#5cf0dc" stroke-width="3" stroke-dasharray="7 7"/>
+    <text x="752" y="126" text-anchor="end" class="mono cyan tiny">BUDGET 425</text>
+  </g>
+
+  <!-- bidder logic -->
+  <g transform="translate(956 630)">
+    <text class="display white" font-size="34">2 / จุดเปลี่ยนของเรื่อง</text>
+    <text y="39" class="thai muted body">ทุกงานมีผู้ยื่น 3 ราย — แต่ราคาต่ำสุดไม่ผ่าน</text>
+    <rect x="0" y="74" width="548" height="430" rx="20" fill="#0d2434" stroke="#315366"/>
+    <g transform="translate(28 110)">
+      <circle cx="30" cy="30" r="30" fill="#183e4b" stroke="#5cf0dc" stroke-width="2"/>
+      <text x="30" y="39" text-anchor="middle" class="display cyan" font-size="28">3</text>
+      <text x="80" y="28" class="thai white body">ผู้ยื่นทุกสถานี</text>
+      <text x="80" y="62" class="thai muted small">Genomatch / Marwin / รายที่สาม</text>
+    </g>
+    <line x1="56" y1="190" x2="492" y2="190" stroke="#315366"/>
+    <g transform="translate(28 225)">
+      <circle cx="30" cy="30" r="30" fill="#183e4b" stroke="#ffb166" stroke-width="2"/>
+      <text x="30" y="39" text-anchor="middle" class="display orange" font-size="28">2</text>
+      <text x="80" y="28" class="thai white body">ผ่านเทคนิค</text>
+      <text x="80" y="62" class="thai muted small">เหลือผู้มีสิทธิ์ 2 ราย</text>
+    </g>
+    <line x1="56" y1="305" x2="492" y2="305" stroke="#315366"/>
+    <g transform="translate(28 340)">
+      <circle cx="30" cy="30" r="30" fill="#4a2831" stroke="#ff7e72" stroke-width="2"/>
+      <text x="30" y="39" text-anchor="middle" class="display red" font-size="28">1</text>
+      <text x="80" y="28" class="thai white body">ราคาต่ำสุดถูกตัด</text>
+      <text x="80" y="62" class="thai muted small">เหตุผลทางเทคนิคยังไม่เปิดเผย</text>
+    </g>
+    <rect x="28" y="384" width="492" height="68" rx="12" fill="#261c23" stroke="#ff7e72"/>
+    <text x="52" y="426" class="thai red small">ช่องว่างหลัก: technical-evaluation report</text>
+  </g>
+
+  <!-- bidder matrix -->
+  <g transform="translate(96 1168)">
+    <text class="display white" font-size="34">3 / ผู้ชนะเทียบกับราคาที่ถูกตัด</text>
+    <text y="39" class="thai muted body">หน่วย: ล้านบาท • N = ไม่ผ่านการพิจารณา</text>
+    <rect x="0" y="74" width="1408" height="316" rx="20" fill="#0d2434" stroke="#315366"/>
+    <text x="28" y="119" class="thai muted small">สถานี</text>
+    <text x="250" y="119" class="thai muted small">ผู้ชนะ</text>
+    <text x="565" y="119" class="thai muted small">ผู้ผ่านอีกราย</text>
+    <text x="890" y="119" class="thai muted small">ราคาต่ำสุดที่ไม่ผ่าน</text>
+    <text x="1230" y="119" class="thai muted small">ส่วนต่าง</text>
+    <line x1="28" y1="140" x2="1380" y2="140" stroke="#315366"/>
+    <g class="thai white small">
+      <text x="28" y="184">ชุมพร</text><text x="250" y="184" class="cyan">410.987</text><text x="565" y="184">412.143</text><text x="890" y="184" class="red">391.620</text><text x="1230" y="184" class="orange">+4.71%</text>
+      <text x="28" y="234">บึงกาฬ</text><text x="250" y="234" class="cyan">415.160</text><text x="565" y="234">419.440</text><text x="890" y="234" class="red">375.570</text><text x="1230" y="234" class="orange">+9.54%</text>
+      <text x="28" y="284">พิษณุโลก</text><text x="250" y="284" class="cyan">408.954</text><text x="565" y="284">410.987</text><text x="890" y="284" class="red">389.480</text><text x="1230" y="284" class="orange">+4.76%</text>
+      <text x="28" y="334">กระบี่</text><text x="250" y="334" class="cyan">412.699</text><text x="565" y="334">414.625</text><text x="890" y="334" class="red">375.570</text><text x="1230" y="334" class="orange">+9.00%</text>
+    </g>
+  </g>
+
+  <!-- international -->
+  <g transform="translate(96 1625)">
+    <text class="display white" font-size="34">4 / ต่างประเทศ: ราคาเปิดเผยอยู่คนละชั้น</text>
+    <text y="39" class="thai muted body">ตัวเลข nominal • ต้องปรับ scope, ปี, ภาษี และงานไซต์ก่อนเทียบสุดท้าย</text>
+    <rect x="0" y="74" width="930" height="390" rx="20" fill="#0d2434" stroke="#315366"/>
+    <text x="30" y="116" class="mono muted tiny">THB MILLION / SYSTEM</text>
+    <line x1="250" y1="146" x2="875" y2="146" stroke="#315366"/>
+    <text x="250" y="433" class="mono muted tiny">0</text><text x="405" y="433" class="mono muted tiny">50</text><text x="560" y="433" class="mono muted tiny">100</text><text x="715" y="433" class="mono muted tiny">150</text><text x="850" y="433" class="mono muted tiny">200</text>
+    <text x="30" y="183" class="thai white small">จีน</text><rect x="250" y="158" width="224" height="32" rx="8" fill="url(#cyan)"/><text x="488" y="183" class="mono cyan small">72.2</text>
+    <text x="30" y="243" class="thai white small">ฟิลิปปินส์</text><rect x="250" y="218" width="313" height="32" rx="8" fill="url(#cyan)"/><text x="577" y="243" class="mono cyan small">100.9</text>
+    <text x="30" y="303" class="thai white small">แอฟริกาใต้</text><rect x="250" y="278" width="346" height="32" rx="8" fill="url(#cyan)"/><text x="610" y="303" class="mono cyan small">111.7–135.7</text>
+    <text x="30" y="363" class="thai white small">แคนาดา</text><rect x="250" y="338" width="405" height="32" rx="8" fill="url(#cyan)"/><text x="669" y="363" class="mono cyan small">130.7</text>
+    <!-- thai marker -->
+    <line x1="756" y1="145" x2="756" y2="398" stroke="#ff7e72" stroke-width="4" stroke-dasharray="9 8"/>
+    <text x="880" y="122" text-anchor="end" class="mono red tiny">THAI 409–415</text>
+    <text x="880" y="146" text-anchor="end" class="thai red tiny">นอกแกน 0–200M</text>
+  </g>
+  <g transform="translate(1050 1625)">
+    <rect width="454" height="390" rx="20" fill="#0d2434" stroke="#315366"/>
+    <text x="28" y="48" class="thai orange body">อ่านอย่างไร</text>
+    <text x="28" y="92" class="thai white small">• จีน: ราคาชนะจริง</text>
+    <text x="28" y="132" class="thai white small">• ฟิลิปปินส์: ราคาชนะจริง</text>
+    <text x="28" y="172" class="thai white small">• แอฟริกาใต้: bid ที่รับ</text>
+    <text x="28" y="212" class="thai white small">• แคนาดา: สัญญา 33 ระบบ</text>
+    <line x1="28" y1="240" x2="426" y2="240" stroke="#315366"/>
+    <text x="28" y="280" class="thai muted small">สเปกที่ยังไม่เท่ากัน:</text>
+    <text x="28" y="316" class="thai muted tiny">กำลังส่ง • ระยะ • อาคาร • warranty</text>
+    <text x="28" y="348" class="thai muted tiny">volume discount • ภาษี • งานไซต์</text>
+  </g>
+
+  <!-- conclusion -->
+  <g transform="translate(96 2070)">
+    <rect width="1408" height="82" rx="16" fill="#1b2e34" stroke="#5cf0dc"/>
+    <circle cx="42" cy="41" r="17" fill="#5cf0dc"/>
+    <text x="42" y="49" text-anchor="middle" class="display" font-size="24" fill="#07131f">!</text>
+    <text x="78" y="36" class="thai white body">ข้อสรุป: ราคาคือ high-risk outlier — ยังไม่ใช่หลักฐาน overpricing จนกว่าจะเห็น BOQ และรายงานตัดสิทธิ์</text>
+    <text x="78" y="65" class="thai muted small">เอกสารชี้ขาด: OEM quotation • model number • BOQ • technical-evaluation report • contract/payment records</text>
+  </g>
+
+  <text x="96" y="2188" class="thai muted tiny">แหล่งข้อมูลและคำอธิบายเต็ม: /Users/nat/dev/radar/price_reasonableness_2026-09-17.md • evidence-ledger.md • international_radar_price_benchmarks_2026-09-17.json</text>
+</svg>

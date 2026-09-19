@@ -1,0 +1,60 @@
+{
+ "metadata": {
+  "grid_step_deg": 0.04,
+  "land_cells": 27092,
+  "approx_land_area_km2": 520055,
+  "method": "geometric circle coverage over geoBoundaries THA ADM0 land cells; no beam-height/terrain masking",
+  "source_stations": "37 existing stations (25 TMD + 10 RRD + 2 BMA X-band) from the THAITH radar page, weather.tmd.go.th feed roster, RRD roster, TMD official list (R-3.pdf) and TOR district centroids + new/planned stations"
+ },
+ "existing_coverage_pct": {
+  "0": 0.0,
+  "1": 0.0,
+  "2": 2.0,
+  "3plus": 98.0
+ },
+ "new_stations_marginal": {
+  "หาดใหญ่ (RRD, ใหม่)": {
+   "newly_covered_cells": 0,
+   "newly_covered_km2": 0,
+   "newly_covered_pct_of_thailand": 0.0,
+   "cells_gaining_extra_overlap": 2306
+  },
+  "กระบี่ (TMD, ก่อสร้าง)": {
+   "newly_covered_cells": 0,
+   "newly_covered_km2": 0,
+   "newly_covered_pct_of_thailand": 0.0,
+   "cells_gaining_extra_overlap": 2762
+  },
+  "ชุมพร (TMD, ก่อสร้าง)": {
+   "newly_covered_cells": 0,
+   "newly_covered_km2": 0,
+   "newly_covered_pct_of_thailand": 0.0,
+   "cells_gaining_extra_overlap": 1894
+  },
+  "พิษณุโลก (TMD, ก่อสร้าง)": {
+   "newly_covered_cells": 0,
+   "newly_covered_km2": 0,
+   "newly_covered_pct_of_thailand": 0.0,
+   "cells_gaining_extra_overlap": 8650
+  },
+  "บึงกาฬ (TMD, ก่อสร้าง)": {
+   "newly_covered_cells": 0,
+   "newly_covered_km2": 0,
+   "newly_covered_pct_of_thailand": 0.0,
+   "cells_gaining_extra_overlap": 3187
+  },
+  "อุดรธานี (RRD, ของบ 2570)": {
+   "newly_covered_cells": 0,
+   "newly_covered_km2": 0,
+   "newly_covered_pct_of_thailand": 0.0,
+   "cells_gaining_extra_overlap": 6336
+  },
+  "พิมาย (RRD, ของบ 2570)": {
+   "newly_covered_cells": 0,
+   "newly_covered_km2": 0,
+   "newly_covered_pct_of_thailand": 0.0,
+   "cells_gaining_extra_overlap": 8405
+  }
+ },
+ "udon_site_coverage_before": 3
+}

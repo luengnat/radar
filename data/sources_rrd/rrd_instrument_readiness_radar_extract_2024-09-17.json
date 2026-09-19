@@ -1,0 +1,25 @@
+{
+  "source_url": "https://opendata.royalrain.go.th/v1/instrument_readiness/2024-09-17",
+  "queried_at": "2026-09-17",
+  "api_status": "200",
+  "api_update_date": "2026-09-17 11:00:04",
+  "query_date": "2024-09-17",
+  "scope": "radar records extracted from the 36-record response",
+  "radar_record_count": 12,
+  "usable_count": 9,
+  "unusable_count": 3,
+  "records": [
+    {"station":"สถานีเรดาร์ ","location":"อมก๋อย","status":"ใช้งานได้","raw_data":"มี","operating_hours":"24 ชม.","network":"ใช้งานได้","service_data":"มี","remark":""},
+    {"station":"สถานีเรดาร์ ","location":"ตาคลี","status":"ใช้งานไม่ได้","raw_data":"ไม่มี","operating_hours":"24 ชม.","network":"ใช้งานได้","service_data":"ไม่มี","remark":"ระบบจานสายอากาศขัดข้อง"},
+    {"station":"สถานีเรดาร์ ","location":"พิมาย","status":"ใช้งานได้","raw_data":"มี","operating_hours":"24 ชม.","network":"ใช้งานได้","service_data":"มี","remark":""},
+    {"station":"สถานีเรดาร์ ","location":"สัตหีบ","status":"ใช้งานได้","raw_data":"มี","operating_hours":"24 ชม.","network":"ใช้งานได้","service_data":"มี","remark":""},
+    {"station":"สถานีเรดาร์ ","location":"พนม","status":"ใช้งานได้","raw_data":"มี","operating_hours":"24 ชม.","network":"ใช้งานได้","service_data":"มี","remark":""},
+    {"station":"สถานีเรดาร์ ","location":"ร้องกวาง","status":"ใช้งานได้","raw_data":"มี","operating_hours":"24 ชม.","network":"ใช้งานได้","service_data":"มี","remark":""},
+    {"station":"เรดาร์เคลื่อนที่ 1","location":"ปะทิว","status":"ใช้งานได้","raw_data":"มี","operating_hours":"24 ชม.","network":"ใช้งานได้","service_data":"มี","remark":""},
+    {"station":"เรดาร์เคลื่อนที่ 2","location":"อินทร์บุรี","status":"ใช้งานได้","raw_data":"มี","operating_hours":"24 ชม.","network":"ใช้งานได้","service_data":"มี","remark":""},
+    {"station":"เรดาร์เคลื่อนที่ 3","location":"บ้านผือ","status":"ใช้งานได้","raw_data":"มี","operating_hours":"24 ชม.","network":"ใช้งานได้","service_data":"มี","remark":""},
+    {"station":"เรดาร์เคลื่อนที่ 4","location":"ราษีไศล","status":"ใช้งานไม่ได้","raw_data":"ไม่มี","operating_hours":"24 ชม.","network":"ใช้งานได้","service_data":"ไม่มี","remark":"Radiate ขัดข้อง"},
+    {"station":"เรดาร์เคลื่อนที่ 5","location":"สิงหนคร","status":"ใช้งานได้","raw_data":"มี","operating_hours":"24 ชม.","network":"ใช้งานได้","service_data":"มี","remark":""},
+    {"station":"ตรวจอากาศเคลื่อนที่ 7","location":"ปราณบุรี","status":"ใช้งานไม่ได้","raw_data":"ไม่มี","operating_hours":"ไม่มี","network":"ใช้งานไม่ได้","service_data":"ไม่มี","remark":"ไม่มีเครื่องมือวัด"}
+  ]
+}

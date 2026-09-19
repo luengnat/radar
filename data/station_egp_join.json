@@ -1,0 +1,313 @@
+{
+ "ชุมพร": [
+  {
+   "project_id": "68099138543",
+   "title": "ประกวดราคาซื้อครุภัณฑ์วิทยาศาสตร์ รายการเครื่องเรดาร์ตรวจอากาศแบบ S Band ชนิด Dual Polarization พร้อมอุปกรณ์เชื่อมโยงและ",
+   "verified_result": {
+    "bidders": [
+     [
+      "บริษัท จีโนแมทช์ จำกัด",
+      410987000,
+      "P"
+     ],
+     [
+      "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+      412142600,
+      "P"
+     ],
+     [
+      "บริษัท เอเซียเมท จำกัด",
+      391620000,
+      "N"
+     ]
+    ],
+    "announce_date": "2025-12-29T17:00:00.000+00:00"
+   }
+  }
+ ],
+ "พิษณุโลก": [
+  {
+   "project_id": "68099138724",
+   "title": "ประกวดราคาซื้อครุภัณฑ์วิทยาศาสตร์ รายการเครื่องเรดาร์ตรวจอากาศแบบ S Band ชนิด Dual Polarization พร้อมอุปกรณ์เชื่อมโยงและ",
+   "verified_result": {
+    "bidders": [
+     [
+      "บริษัท จีโนแมทช์ จำกัด",
+      410987000,
+      "P"
+     ],
+     [
+      "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+      408954000,
+      "P"
+     ],
+     [
+      "บริษัท เอเซียเมท จำกัด",
+      389480000,
+      "N"
+     ]
+    ],
+    "announce_date": "2025-12-29T17:00:00.000+00:00"
+   }
+  }
+ ],
+ "บึงกาฬ": [
+  {
+   "project_id": "68099138641",
+   "title": "ประกวดราคาซื้อครุภัณฑ์วิทยาศาสตร์ รายการเครื่องเรดาร์ตรวจอากาศแบบ S Band ชนิด Dual Polarization พร้อมอุปกรณ์เชื่อมโยงและ",
+   "verified_result": {
+    "bidders": [
+     [
+      "บริษัท จีโนแมทช์ จำกัด",
+      415160000,
+      "P"
+     ],
+     [
+      "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+      419440000,
+      "P"
+     ],
+     [
+      "ห้างหุ้นส่วนจำกัด ไซแอนติฟิค รีเสิร์ช",
+      375570000,
+      "N"
+     ]
+    ],
+    "announce_date": "2025-12-23T17:00:00.000+00:00"
+   }
+  }
+ ],
+ "กระบี่": [
+  {
+   "project_id": "68099247067",
+   "title": "ประกวดราคาซื้อครุภัณฑ์วิทยาศาสตร์ รายการเครื่องเรดาร์ตรวจอากาศแบบ S Band ชนิด Dual Polarization พร้อมอุปกรณ์เชื่อมโยงและ",
+   "verified_result": {
+    "bidders": [
+     [
+      "บริษัท จีโนแมทช์ จำกัด",
+      412699000,
+      "P"
+     ],
+     [
+      "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+      414625000,
+      "P"
+     ],
+     [
+      "ห้างหุ้นส่วนจำกัด ไซแอนติฟิค รีเสิร์ช",
+      375570000,
+      "N"
+     ]
+    ],
+    "announce_date": "2025-12-23T17:00:00.000+00:00"
+   }
+  }
+ ],
+ "ตาก (ดอยมูเซอ)": [
+  {
+   "project_id": "63017151753",
+   "title": "ประกวดราคาซื้อครุภัณฑ์วิทยาศาสตร์ รายการเครื่องเรดาร์ตรวจอากาศแบบ C Band ชนิด Dual Polarization พร้อมอุปกรณ์เชื่อมโยงและหอเรดาร์ ที่สถานีอุตุนิยมวิทยาตาก (ดอยมูเซอ) ตำบลแม่ท้อ อำเภอเมืองตาก จังหวัดตาก 1 เครื่อง (e-bidding)",
+   "announce_date_be": "22/07/2563",
+   "verified_result": {
+    "winner": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+    "winner_basis": "ผู้เสนอราคาต่ำสุด (lowest bidder)",
+    "value_baht": 147553000.0,
+    "bidder_list": null,
+    "note": "W2 winner notice lists no rival bidders; bidder count remains open"
+   },
+   "notice_url": "http://process3.gprocurement.go.th/egp2procmainWeb/jsp/procsearch.sch?servlet=gojsp&proc_id=ShowHTMLFile&processFlows=Procure&projectId=63017151753&templateType=W2&temp_Announ=A&temp_itemNo=0&seqNo=2",
+   "archive": "data/sources_egp/tak_63017151753_w2_winner_notice_2563.html",
+   "tier": "verified anchor (live TMD W0 index title + archived W2 winner notice)"
+  }
+ ],
+ "ระนอง": [
+  {
+   "project_id": "63017153824",
+   "title": "ประกวดราคาซื้อครุภัณฑ์วิทยาศาสตร์ รายการเครื่องเรดาร์ตรวจอากาศแบบ C Band ชนิด Dual Polarization พร้อมอุปกรณ์เชื่อมโยงและหอเรดาร์ที่สถานีอุตุนิยมวิทยาระนอง ตำบลบางริ้น อำเภอเมืองระนอง จังหวัดระนอง 1 เครื่อง (e-bidding)",
+   "announce_date_be": "22/07/2563",
+   "verified_result": {
+    "winner": "บริษัท จีโนแมทช์ จำกัด",
+    "winner_basis": "ผู้เสนอราคาต่ำสุด (lowest bidder)",
+    "value_baht": 146985900.0,
+    "e_bidding_ref": "EB.21/2563 ลงวันที่ 7 กุมภาพันธ์ 2563",
+    "bidder_list": null,
+    "note": "W2 winner notice lists no rival bidders; bidder count remains open. Value identical to Trang (63017163547) to the satang"
+   },
+   "notice_url": "http://process3.gprocurement.go.th/egp2procmainWeb/jsp/procsearch.sch?servlet=gojsp&proc_id=ShowHTMLFile&processFlows=Procure&projectId=63017153824&templateType=W2&temp_Announ=A&temp_itemNo=0&seqNo=2",
+   "archive": "data/sources_egp/ranong_63017153824_w2_winner_notice_2563.html",
+   "tier": "verified anchor (live TMD W0 index title + archived W2 winner notice)"
+  }
+ ],
+ "ตรัง": [
+  {
+   "project_id": "63017163547",
+   "title": "ประกวดราคาซื้อครุภัณฑ์วิทยาศาสตร์ รายการเครื่องเรดาร์ตรวจอากาศแบบ C Band ชนิด Dual Polarization พร้อมอุปกรณ์เชื่อมโยงและหอเรดาร์ที่สถานีอุตุนิยมวิทยาตรัง ตำบลโคกหล่อ อำเภอเมืองตรัง จังหวัดตรัง 1 เครื่อง (e-bidding)",
+   "announce_date_be": "22/07/2563",
+   "procurement_method": "e-bidding",
+   "verified_result": {
+    "winner": "บริษัท จีโนแมทช์ จำกัด",
+    "winner_basis": "ผู้เสนอราคาต่ำสุด (lowest bidder)",
+    "value_baht": 146985900.0,
+    "e_bidding_ref": "EB.20/2563 ลงวันที่ 7 กุมภาพันธ์ 2563",
+    "bidder_list": null,
+    "note": "W2 winner notice lists no rival bidders; bidder count remains open. Value identical to Ranong (63017153824) to the satang"
+   },
+   "notice_url": "http://process3.gprocurement.go.th/egp2procmainWeb/jsp/procsearch.sch?servlet=gojsp&proc_id=ShowHTMLFile&processFlows=Procure&projectId=63017163547&templateType=W2&temp_Announ=A&temp_itemNo=0&seqNo=2",
+   "archive": "data/sources_egp/trang_63017163547_w2_winner_notice_2563.html",
+   "tier": "verified anchor (live TMD W0 index title + archived W2 winner notice)"
+  }
+ ],
+ "สทิงพระ": [
+  {
+   "project_id": null,
+   "template_id": "dff167f0-6117-48e3-85aa-642cef0729f8",
+   "title": "ประกวดราคาซื้อครุภัณฑ์วิทยาศาสตร์ รายการเครื่องเรดาร์ตรวจอากาศแบบ C Band ชนิด Dual Polarization พร้อมอุปกรณ์เชื่อมโยงและหอเรดาร์ที่สถานีเรดาร์ตรวจอากาศสทิงพระ ตำบลบ่อดาน อำเภอสทิงพระ จังหวัดสงขลา 1 เครื่อง (e-bidding EB.5/2567)",
+   "announce_date_be": "02/07/2567",
+   "verified_result": {
+    "winner": "ห้างหุ้นส่วนจำกัด ไซแอนติฟิค รีเสิร์ช",
+    "winner_basis": "ผู้เสนอราคาต่ำสุด (lowest bidder)",
+    "value_baht": 139100000.0,
+    "budget_baht": 150000000,
+    "under_budget_baht": 10900000,
+    "under_budget_pct": 7.27,
+    "e_bidding_ref": "EB.5/2567 ลงวันที่ 12 มีนาคม 2567",
+    "bidder_list": null,
+    "note": "Notice conditions contract signing on the FY2567 Budget Act and cross-year commitment approval; contract สข.133/2567 followed on 17 July 2567 (TMD-09). Supersedes the earlier M65080017382 index-lead ID, which does not resolve to this notice"
+   },
+   "notice_url": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=dff167f0-6117-48e3-85aa-642cef0729f8",
+   "archive": "data/sources_egp/sathingphra_cband_winner_notice_2567.pdf",
+   "tier": "verified anchor (archived portal winner notice; W0 index row carries no numeric project ID)"
+  }
+ ],
+ "เชียงราย": [
+  {
+   "project_id": "58096222967",
+   "title": "ประกวดราคาซื้อครุภัณฑ์วิทยาศาสตร์รายการเครื่องเรดาร์ตรวจอากาศแบบ Doppler พร้อมอุปกรณ์และหอเรดาร์ 2 เครื่อง ที่จังหวัดเชียงราย และสุราษฎร์ธานี (e-bidding EB.1/2559)",
+   "announce_date_be": "10/02/2559",
+   "verified_result": {
+    "winner": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+    "winner_basis": "ผู้เสนอราคาต่ำสุด (lowest bidder)",
+    "value_baht": 302568000.0,
+    "value_note": "รวม 2 เครื่อง (เชียงราย + สุราษฎร์ธานี); ตรงกับสัญญา สข.75/2559 (TMD-11)",
+    "bidder_list": null,
+    "note": "W2 winner notice names no rival bidders; the TMD FY2559 procurement summary lists all three prices (TMD-11)"
+   },
+   "notice_url": "http://process3.gprocurement.go.th/egp2procmainWeb/jsp/procsearch.sch?servlet=gojsp&proc_id=ShowHTMLFile&processFlows=Procure&projectId=58096222967&templateType=W2&temp_Announ=A&temp_itemNo=0&seqNo=2",
+   "archive": "data/sources_egp/chiangrai_surat_58096222967_w2_winner_notice_2559.html",
+   "tier": "verified anchor (archived W2 winner notice)"
+  }
+ ],
+ "สุราษฎร์ธานี": [
+  {
+   "project_id": "58096222967",
+   "title": "ประกวดราคาซื้อครุภัณฑ์วิทยาศาสตร์ รายการเครื่องเรดาร์ตรวจอากาศแบบ Doppler พร้อมอุปกรณ์และหอเรดาร์ 2 เครื่อง ที่จังหวัดเชียงราย และสุราษฎร์ธานี (e-bidding EB.1/2559)",
+   "announce_date_be": "10/02/2559",
+   "verified_result": {
+    "winner": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+    "winner_basis": "ผู้เสนอราคาต่ำสุด (lowest bidder)",
+    "value_baht": 302568000.0,
+    "value_note": "รวม 2 เครื่อง (เชียงราย + สุราษฎร์ธานี); ตรงกับสัญญา สข.75/2559 (TMD-11)",
+    "bidder_list": null,
+    "note": "Same project as the เชียงราย anchor — one award covering both stations"
+   },
+   "notice_url": "http://process3.gprocurement.go.th/egp2procmainWeb/jsp/procsearch.sch?servlet=gojsp&proc_id=ShowHTMLFile&processFlows=Procure&projectId=58096222967&templateType=W2&temp_Announ=A&temp_itemNo=0&seqNo=2",
+   "archive": "data/sources_egp/chiangrai_surat_58096222967_w2_winner_notice_2559.html",
+   "tier": "verified anchor (archived W2 winner notice; one award with เชียงราย)"
+  }
+ ],
+ "สุรินทร์": [
+  {
+   "project_id": null,
+   "template_id": "f8c106b5-4901-49bc-aab9-fb4ab248338d",
+   "title": "ประกวดราคาซื้อครุภัณฑ์วิทยาศาสตร์ รายการเครื่องเรดาร์ตรวจอากาศแบบ C Band ชนิด Dual Polarization พร้อมอุปกรณ์เชื่อมโยงและหอเรดาร์ ที่สถานีอุตุนิยมวิทยาสุรินทร์ 1 เครื่อง (e-bidding EB.15/2567)",
+   "announce_date_be": "22/08/2567",
+   "verified_result": {
+    "winner": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+    "winner_basis": "ผู้เสนอราคาต่ำสุด (lowest bidder)",
+    "value_baht": 138565000.0,
+    "budget_baht": 150000000,
+    "under_budget_pct": 7.62,
+    "bidder_list": null,
+    "note": "W2/PDF notice names no rival bidders"
+   },
+   "notice_url": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=f8c106b5-4901-49bc-aab9-fb4ab248338d",
+   "archive": "data/sources_egp/surin_cband_winner_2567.pdf",
+   "tier": "verified anchor (archived portal winner notice)"
+  }
+ ],
+ "นราธิวาส": [
+  {
+   "project_id": "67049316538",
+   "template_id": null,
+   "title": "ประกวดราคาซื้อครุภัณฑ์วิทยาศาสตร์ รายการเครื่องเรดาร์ตรวจอากาศแบบ C Band ชนิด Dual Polarization พร้อมอุปกรณ์เชื่อมโยงและหอเรดาร์ ที่สถานีอุตุนิยมวิทยานราธิวาส 1 เครื่อง (e-bidding EB.16/2567)",
+   "announce_date_be": "22/08/2567",
+   "verified_result": {
+    "winner": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+    "winner_basis": "ผู้เสนอราคาต่ำสุด (lowest bidder)",
+    "value_baht": 141775000.0,
+    "budget_baht": 150000000,
+    "under_budget_pct": 5.48,
+    "bidder_list": null
+   },
+   "notice_url": "https://tmd.go.th/media/procurement/egp/นราธวาส_240823.pdf",
+   "archive": "data/sources_egp/narathiwat_67049316538_winner_2567.pdf",
+   "tier": "verified anchor (archived portal winner notice)"
+  }
+ ],
+ "ระยอง": [
+  {
+   "project_id": null,
+   "template_id": "610db47d-f7b4-4153-b0e5-db7d61ad5797",
+   "title": "ประกวดราคาซื้อครุภัณฑ์วิทยาศาสตร์ รายการปรับปรุงซ่อมแซมเครื่องเรดาร์ตรวจอากาศแบบ C Band ชนิด Dual Polarization ที่สถานีอุตุนิยมวิทยาระยอง 1 เครื่อง (e-bidding EB.29/2567)",
+   "announce_date_be": "30/07/2567",
+   "verified_result": {
+    "winner": "บริษัท จีโนแมทช์ จำกัด",
+    "winner_basis": "ผู้เสนอราคาต่ำสุด (lowest bidder)",
+    "value_baht": 47193600.0,
+    "budget_note": "สูงกว่างบประมาณ 2,193,600 บาท (4.87% ABOVE the stated budget line)",
+    "bidder_list": null
+   },
+   "notice_url": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=610db47d-f7b4-4153-b0e5-db7d61ad5797",
+   "archive": "data/sources_egp/rayong_cband_upgrade_winner_2567.pdf",
+   "tier": "verified anchor (archived portal winner notice)"
+  }
+ ],
+ "นครนายก": [
+  {
+   "project_id": null,
+   "template_id": "c86d49f7-a206-4edd-ba43-74829708a443",
+   "title": "ประกวดราคาซื้อครุภัณฑ์วิทยาศาสตร์ รายการปรับปรุงซ่อมแซมเครื่องเรดาร์ตรวจอากาศแบบ C Band ชนิด Dual Polarization ที่สถานีเรดาร์ตรวจอากาศเขาเขียว 1 เครื่อง (e-bidding EB.18/2567)",
+   "announce_date_be": "24/07/2567",
+   "verified_result": {
+    "winner": "ห้างหุ้นส่วนจำกัด ไซแอนติฟิค รีเสิร์ช",
+    "winner_basis": "ผู้เสนอราคาต่ำสุด (lowest bidder)",
+    "value_baht": 57988500.0,
+    "budget_baht": 60000000,
+    "under_budget_pct": 3.35,
+    "bidder_list": null
+   },
+   "notice_url": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=c86d49f7-a206-4edd-ba43-74829708a443",
+   "archive": "data/sources_egp/khaokiew_cband_upgrade_winner_2567.pdf",
+   "tier": "verified anchor (archived portal winner notice)"
+  }
+ ],
+ "สุวรรณภูมิ": [
+  {
+   "project_id": null,
+   "template_id": "e2bc55e4-8dad-47a0-838e-8621f8c7d3b0",
+   "title": "ประกวดราคาซื้อครุภัณฑ์วิทยาศาสตร์ รายการปรับปรุงซ่อมแซมเครื่องเรดาร์ตรวจอากาศ แบบ S Band ที่ท่าอากาศยานสุวรรณภูมิ 1 เครื่อง (e-bidding EB.17/2567)",
+   "announce_date_be": "23/07/2567",
+   "verified_result": {
+    "winner": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+    "winner_basis": "ผู้เสนอราคาต่ำสุด (lowest bidder)",
+    "value_baht": 62589500.0,
+    "budget_baht": 65000000,
+    "under_budget_pct": 3.71,
+    "bidder_list": null
+   },
+   "notice_url": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=e2bc55e4-8dad-47a0-838e-8621f8c7d3b0",
+   "archive": "data/sources_egp/suvarnabhumi_sband_upgrade_winner_2567.pdf",
+   "tier": "verified anchor (archived portal winner notice)"
+  }
+ ]
+}

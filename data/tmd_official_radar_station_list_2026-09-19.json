@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "title": "TMD official weather-radar station/type list",
+    "retrieved_date": "2026-09-19",
+    "source_url": "https://ubonmet.tmd.go.th/files/KM-base/R-3.pdf",
+    "evidence_status": "Verified official TMD knowledge document",
+    "note": "The table identifies stations and radar type, but is not an as-built asset register and may not reflect every FY2569 replacement or construction project. Portable Radar Mini Max is retained as a fleet asset/type, not a physical station."
+  },
+  "stations": [
+    {"name": "สมุทรสงคราม", "code": "SKM", "official_type": "Dual Polarization", "physical_station": true},
+    {"name": "สุวรรณภูมิ", "code": "SVP", "official_type": "S-Band", "physical_station": true},
+    {"name": "เขาเขียว", "canonical_name": "นครนายก", "code": "KKW", "official_type": "C-Band", "physical_station": true},
+    {"name": "เชียงราย", "code": "CRI", "official_type": "Dual Polarization", "physical_station": true},
+    {"name": "ลำพูน", "code": "LMP", "official_type": "C-Band", "physical_station": true},
+    {"name": "แม่ฮ่องสอน", "code": "MHS", "official_type": "X-Band", "physical_station": true},
+    {"name": "พิษณุโลก", "code": "PHS", "official_type": "Dual Polarization", "physical_station": true},
+    {"name": "วิเชียรบุรี", "code": "PHB", "official_type": "C-Band", "physical_station": true},
+    {"name": "สกลนคร", "code": "SNK", "official_type": "Dual Polarization", "physical_station": true},
+    {"name": "ขอนแก่น", "code": "KKN", "official_type": "Dual Polarization", "physical_station": true},
+    {"name": "อุบลราชธานี", "code": "URT", "official_type": "Dual Polarization", "physical_station": true},
+    {"name": "ชัยนาท", "code": "CHN", "official_type": "Dual Polarization", "physical_station": true},
+    {"name": "ระยอง", "code": "RYG", "official_type": "C-Band", "physical_station": true},
+    {"name": "หัวหิน", "code": "HHN", "official_type": "S-Band", "physical_station": true},
+    {"name": "ชุมพร", "code": "CMP", "official_type": "C-Band", "physical_station": true},
+    {"name": "สุรินทร์", "code": "SRN", "official_type": "C-Band", "physical_station": true},
+    {"name": "สุราษฎร์ธานี", "code": "STN", "official_type": "S-Band", "physical_station": true},
+    {"name": "สมุย", "code": "SMI", "official_type": "C-Band", "physical_station": true},
+    {"name": "ภูเก็ต", "code": "PKT", "official_type": "C-Band", "physical_station": true},
+    {"name": "กระบี่", "code": "KRB", "official_type": "C-Band", "physical_station": true},
+    {"name": "สทิงพระ", "code": "STP", "official_type": "C-Band", "physical_station": true},
+    {"name": "หาดใหญ่", "code": "HYI", "official_type": "C-Band", "physical_station": true},
+    {"name": "นราธิวาส", "code": "NRT", "official_type": "Dual Polarization", "physical_station": true},
+    {"name": "ตรัง", "code": "TRG", "official_type": "X-Band", "physical_station": true},
+    {"name": "ระนอง", "code": "RNG", "official_type": "X-Band", "physical_station": true},
+    {"name": "Portable Radar Mini Max", "code": null, "official_type": "C-Band", "physical_station": false},
+    {"name": "ท่าวังผา จ.น่าน", "canonical_name": "น่าน", "code": "NAN", "official_type": "Dual Polarization", "physical_station": true}
+  ]
+}

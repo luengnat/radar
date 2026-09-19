@@ -1,0 +1,48 @@
+{
+  "source": {
+    "path": "data/sources_tmd/tmd_budget_explanation_subcommittee_additional_fy2570.pdf",
+    "review_date": "2026-09-17",
+    "note": "Amounts and dates transcribed from scanned quotation pages by visual inspection. These are budget-formulation quotations, not awards."
+  },
+  "projects": [
+    {
+      "project": "Aviation Hub aviation-weather instrumentation and integration",
+      "agency": "Thai Meteorological Department",
+      "proposed_budget_baht": 480000000,
+      "quotation_pages": [18, 19, 20],
+      "quotations": [
+        {"supplier": "AsiaMet Co., Ltd.", "quote_date_buddhist": "27 April 2569", "amount_baht": 480000000, "delivery_days": 720, "warranty_years": 1},
+        {"supplier": "Excel Consultants Co., Ltd.", "quote_date_buddhist": "29 April 2569", "amount_baht": 522000000, "delivery_days": 720, "warranty_years": 1},
+        {"supplier": "Marwin Technologies Co., Ltd.", "quote_date_buddhist": "30 April 2569", "amount_baht": 508176000, "delivery_days": 750, "warranty_years": 1}
+      ],
+      "lowest_quote_equals_budget": true,
+      "scope_note": "Eight-airport aviation-weather instrumentation and central integration system; not a single radar."
+    },
+    {
+      "project": "Ang Thong fixed C-band dual-polarization radar replacing Chainat",
+      "agency": "Thai Meteorological Department",
+      "proposed_budget_baht": 210000000,
+      "quotation_pages": [56, 57, 58],
+      "quotations": [
+        {"supplier": "Scientific Research Limited Partnership", "quote_date_buddhist": "24 November 2568", "amount_baht": 210000000, "delivery_days": 540, "warranty_years": 1},
+        {"supplier": "Genomatch Co., Ltd.", "quote_date_buddhist": "20 November 2568", "amount_baht": 231200000, "delivery_days": 600, "warranty_years": 1},
+        {"supplier": "Marwin Technologies Co., Ltd.", "quote_date_buddhist": "21 November 2568", "amount_baht": 254650000, "delivery_days": 650, "warranty_years": 1, "oem_claim": "EEC, United States"}
+      ],
+      "lowest_quote_equals_budget": true,
+      "scope_note": "One C-band dual-polarization radar with communications/tower or building scope as described in the quotation wording."
+    },
+    {
+      "project": "Two mobile dual-polarization X-band radar vehicles",
+      "agency": "Thai Meteorological Department",
+      "proposed_budget_baht": 160000000,
+      "quotation_pages": [75, 76, 77],
+      "quotations": [
+        {"supplier": "Scientific Research Limited Partnership", "quote_date_buddhist": "24 November 2568", "amount_baht": 160000000, "quantity": 2, "unit_amount_baht": 80000000, "delivery_days": 540, "warranty_years": 1},
+        {"supplier": "Marwin Technologies Co., Ltd.", "quote_date_buddhist": "21 November 2568", "amount_baht": 169600000, "quantity": 2, "unit_amount_baht": 84800000, "delivery_days": 650, "warranty_years": 1},
+        {"supplier": "Genomatch Co., Ltd.", "quote_date_buddhist": "20 November 2568", "amount_baht": 174400000, "quantity": 2, "unit_amount_baht": 87200000, "delivery_days": 600, "warranty_years": 1}
+      ],
+      "lowest_quote_equals_budget": true,
+      "scope_note": "Two mobile X-band radar vehicles; not comparable on a like-for-like basis to a fixed S-band station."
+    }
+  ]
+}

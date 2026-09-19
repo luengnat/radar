@@ -1,0 +1,169 @@
+{
+  "as_of": "2026-09-17",
+  "currency_conversion": {
+    "pair": "PHP/THB",
+    "rate_thb_per_php": 0.5301,
+    "basis": "indicative historical market rate for 2026-09-16",
+    "source": "https://th.investing.com/currencies/php-thb-historical-data",
+    "additional_rates": {
+      "CNY/THB": {
+        "rate_thb_per_cny": 4.98,
+        "basis": "indicative historical market rate for 2026-09-16",
+        "source": "https://www.exchangerates.org.uk/CNY-THB-spot-exchange-rates-history-2026.html"
+      },
+      "ZAR/THB": {
+        "rate_thb_per_zar": 2.04,
+        "basis": "indicative historical market rate for 2026-09-16",
+        "source": "https://www.investing.com/currencies/zar-thb-historical-data"
+      },
+      "CAD/THB": {
+        "rate_thb_per_cad": 23.91,
+        "basis": "indicative historical market rate for 2026-09-16",
+        "source": "https://www.poundsterlinglive.com/history/CAD-THB-2026"
+      }
+    }
+  },
+  "thai_comparison_target": {
+    "award_range_thb": [408954000, 415160000],
+    "tor_signal": "S-band; dual polarization; Doppler; transmitter allowed as magnetron, klystron or solid state; peak power 750 kW; 2.7-2.9 GHz",
+    "package_features_visible_in_tor": [
+      "11 m or larger radome rated for at least 190 km/h wind",
+      "radar tower and new radar-tower building",
+      "100 kVA automatic standby generator and generator building",
+      "20 kVA UPS with at least 30 minutes backup plus additional UPS units",
+      "communications and network equipment",
+      "warehouse, solar-roof vehicle shelter and site works",
+      "two-year project completion and warranty/maintenance obligations"
+    ],
+    "source_file": "data/sources_egp/phitsanulok_tor.txt"
+  },
+  "benchmarks": [
+    {
+      "country": "Philippines",
+      "agency": "PAGASA",
+      "site": "Hinatuan",
+      "procurement_id": "IB 2025-50 NP",
+      "year": 2026,
+      "status": "awarded",
+      "price_php": 190345107.76,
+      "indicative_price_thb": 100901941.62,
+      "scope": "Supply, delivery, installation, testing, training and commissioning of S-band magnetron-type dual-polarization Doppler weather radar and accessories",
+      "technical_signal": "S-band; magnetron; dual polarization; Doppler weather radar",
+      "comparability": "partial",
+      "limitations": [
+        "The PAGASA bid bulletin expressly places the generator, ATS and air-conditioning under a separate building-construction scope; this price is therefore not a full site-infrastructure comparator to the TMD package.",
+        "The bulletin also describes coordination with a separate building contractor for the pedestal base, radome and tower interface.",
+        "Public notice does not provide a complete line-item BOQ for direct normalization against the Thai TOR.",
+        "Foreign exchange conversion is indicative and excludes tax, duty, financing and local-cost differences."
+      ],
+      "source": "https://pubfiles.pagasa.dost.gov.ph/pagasaweb/files/procurement/IB%202025-50%20NP_NOA_Enhanced%20-%20Signed_02182026%20Edited.pdf",
+      "scope_detail_source": "https://pubfiles.pagasa.dost.gov.ph/pagasaweb/files/procurement/SBB%20IB%202025-50-01_HInatuan.pdf"
+    },
+    {
+      "country": "Philippines",
+      "agency": "PAGASA",
+      "site": "Iloilo",
+      "procurement_id": "FY2024 Indicative APP",
+      "year": 2024,
+      "status": "budget_not_award",
+      "price_php": 200000000,
+      "indicative_price_thb": 106020000,
+      "scope": "S-band dual-polarization magnetron weather radar with accessories",
+      "technical_signal": "S-band; dual polarization; magnetron; accessories",
+      "comparability": "partial",
+      "limitations": [
+        "This is an indicative procurement budget, not a contract award.",
+        "The APP does not by itself establish tower, civil, power-backup, communications, warranty or maintenance scope.",
+        "Foreign exchange conversion is indicative and excludes tax, duty, financing and local-cost differences."
+      ],
+      "source": "https://pubfiles.pagasa.dost.gov.ph/pagasaweb/files/transparency/PAGASA%20Indicative%20APP%202024.pdf"
+    },
+    {
+      "country": "India",
+      "agency": "India Meteorological Department",
+      "site": "Multiple sites",
+      "procurement_id": "Procurement of eight S-band Polarimetric Doppler Weather Radar Systems",
+      "year": 2025,
+      "status": "tender_no_public_price_found",
+      "price_php": null,
+      "indicative_price_thb": null,
+      "scope": "Eight S-band polarimetric Doppler weather radar systems; tender states three-year warranty followed by seven-year CAMC",
+      "technical_signal": "S-band; polarimetric Doppler; klystron-based; 10-year support horizon",
+      "comparability": "technical_reference_only",
+      "source": "https://internal.imd.gov.in/tenders/20250510_td_313.pdf"
+    },
+    {
+      "country": "Pakistan",
+      "agency": "Pakistan Meteorological Department",
+      "site": "Multiple sites",
+      "procurement_id": "Market outreach / tender notice 2025",
+      "year": 2025,
+      "status": "market_outreach_no_public_price_found",
+      "price_php": null,
+      "indicative_price_thb": null,
+      "scope": "Fixed weather-surveillance radar with power-backup system and civil works",
+      "technical_signal": "S-band; magnetron; dual polarization; 850 kW or higher; 450 km range; 30 kVA genset and battery backup",
+      "comparability": "technical_reference_only",
+      "source": "https://circular.pmd.gov.pk/new/assets/tenders/tender-supply%2C-installation-and-civil-works-of-fixed-weather-surveillance-radars-with-power-backup-system-2025-03-20-10-59.pdf"
+    },
+    {
+      "country": "China",
+      "agency": "Zhoukou Meteorological Bureau / China Meteorological Administration procurement center",
+      "site": "Zhoukou, Henan",
+      "procurement_id": "ZQCD-26058",
+      "year": 2026,
+      "status": "awarded",
+      "price_cny": 14500000,
+      "indicative_price_thb": 72210000,
+      "scope": "S-band dual-line-polarization Doppler weather radar procurement",
+      "technical_signal": "S-band; dual polarization; Doppler weather radar",
+      "comparability": "equipment_or_scope_uncertain",
+      "limitations": [
+        "The public award notice does not disclose model, peak power, antenna size, tower, civil works, installation or warranty line items.",
+        "The notice records a single-source award, so it is a contract price but not a competitive market spread.",
+        "Foreign exchange conversion is indicative."
+      ],
+      "source": "https://www.ccgp.gov.cn/cggg/zygg/cjgg/202605/t20260518_26585111.htm"
+    },
+    {
+      "country": "South Africa",
+      "agency": "South African Weather Service",
+      "site": "Durban (Umhlanga), KwaZulu-Natal",
+      "procurement_id": "SAWS-391c/24",
+      "year": 2025,
+      "status": "bids_received_no_award_price_published",
+      "prices_zar": [54759628.75, 62855471.11, 66521928.77],
+      "indicative_prices_thb": [111709642.65, 128225161.06, 135704734.69],
+      "scope": "Turnkey acquisition, installation and commissioning of a dual-polarized S-band weather radar system",
+      "technical_signal": "S-band; dual polarization; turnkey acquisition/install/commissioning",
+      "comparability": "partial_to_good",
+      "limitations": [
+        "These are submitted bid prices, not a confirmed award price.",
+        "The public one-page result does not disclose peak power, range, antenna diameter, tower/civil BOQ or warranty terms.",
+        "Foreign exchange conversion is indicative."
+      ],
+      "source": "https://www.etenders.gov.za/Home/Download/?blobName=96b74600-291a-408d-9a01-0612c4d16ba8.pdf&downloadedFileName=BID++SAWS+391c+Publication+of+received+bids.pdf"
+    },
+    {
+      "country": "Canada",
+      "agency": "Environment and Climate Change Canada",
+      "site": "33-radar national network",
+      "procurement_id": "Canadian Weather Radar Replacement Project",
+      "year": 2016,
+      "status": "awarded_and_completed",
+      "program_price_cad": 180400000,
+      "quantity": 33,
+      "indicative_price_per_radar_thb": 130708000,
+      "scope": "Buy and install 33 S-band dual-polarization radars, including network/software adaptation and decommissioning activities over the program",
+      "technical_signal": "S-band; dual polarization; Doppler range 240 km; conventional range 330 km; 9.15 m antenna; 11.8 m radome; klystron transmitter",
+      "comparability": "good_system_class_but_older_and_bulk_discounted",
+      "limitations": [
+        "The price is a 2016 program price and is not inflation-adjusted to 2026.",
+        "The 33-unit program likely benefited from standardization and volume purchasing.",
+        "The Canadian system's published ranges and transmitter technology differ from the TMD TOR; per-unit division is an average, not a station-specific invoice.",
+        "The Canadian government page describes tower/shelter infrastructure but does not publish a line-item BOQ."
+      ],
+      "source": "https://www.canada.ca/en/environment-climate-change/services/weather-general-tools-resources/radar-overview/radar-replacement-project.html"
+    }
+  ]
+}

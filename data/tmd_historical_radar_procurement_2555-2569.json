@@ -1,0 +1,861 @@
+{
+ "metadata": {
+  "title": "Historical Thai Meteorological Department radar procurement records",
+  "retrieved_date": "2026-09-15",
+  "scope": "Primary-source records and clearly labelled index leads found while looking back through TMD procurement material.",
+  "currency": "THB",
+  "evidence_rule": "Amounts and winners are recorded only where a primary TMD document states them. Blank fields are not inferred.",
+  "coverage_note": "This is not yet a complete national e-GP census. The TMD public indexes and annual summaries are a reproducible starting corpus; GovSpending bulk/API extraction still requires the official API access path."
+ },
+ "verified_records": [
+  {
+   "fiscal_year_be": 2559,
+   "station_or_scope": "Chiang Rai and Surat Thani",
+   "activity_class": "core_purchase",
+   "radar_band": "Doppler",
+   "description": "Two Doppler weather radars with accessories and radar towers",
+   "procurement_method": "e-bidding",
+   "budget_baht": 307518000,
+   "reference_price_baht": 307518000,
+   "bids": [
+    {
+     "supplier": "Marwin Technologies Co., Ltd.",
+     "amount_baht": 302568000
+    },
+    {
+     "supplier": "Genomatch Co., Ltd.",
+     "amount_baht": 306880000
+    },
+    {
+     "supplier": "Scientific Research Limited Partnership",
+     "amount_baht": 304900000
+    }
+   ],
+   "selected_supplier": "Marwin Technologies Co., Ltd.",
+   "contract_value_baht": 302568000,
+   "contract_number": "สข.75/2559",
+   "contract_date_be": "12 February 2559",
+   "project_id": "58096222967",
+   "evidence_status": "Verified",
+   "source_url": "http://process3.gprocurement.go.th/egp2procmainWeb/jsp/procsearch.sch?servlet=gojsp&proc_id=ShowHTMLFile&processFlows=Procure&projectId=58096222967&templateType=W2&temp_Announ=A&temp_itemNo=0&seqNo=2",
+   "review_note": "Winner/value portal-verified from the archived e-GP W2 notice (TMD-33): sites Ban Due (Chiang Rai) + Hua Toei (Surat Thani), e-bidding EB.1/2559, notice 10 Feb 2559"
+  },
+  {
+   "fiscal_year_be": 2559,
+   "station_or_scope": "Bang Na, Bangkok",
+   "activity_class": "core_purchase",
+   "radar_band": "X-band",
+   "description": "Mobile Doppler Dual Polarization X-band radar with one vehicle",
+   "procurement_method": "e-bidding",
+   "budget_baht": 75000000,
+   "reference_price_baht": 75000000,
+   "bids": [
+    {
+     "supplier": "Scientific Research Limited Partnership",
+     "amount_baht": 48792000
+    },
+    {
+     "supplier": "Genomatch Co., Ltd.",
+     "amount_baht": 73616000
+    },
+    {
+     "supplier": "Marwin Technologies Co., Ltd.",
+     "amount_baht": 78110000
+    }
+   ],
+   "selected_supplier": "Scientific Research Limited Partnership",
+   "contract_value_baht": 48792000,
+   "contract_number": "สข.78/2559",
+   "contract_date_be": "15 March 2559",
+   "project_id": null,
+   "evidence_status": "Verified",
+   "source_url": "https://www.tmd.go.th/media/PDF/agreement_2559.pdf"
+  },
+  {
+   "fiscal_year_be": 2559,
+   "station_or_scope": "Lamphun",
+   "activity_class": "spare_parts",
+   "radar_band": null,
+   "description": "EDRP-9 Board spare part for weather radar",
+   "procurement_method": "special method",
+   "budget_baht": 4850000,
+   "reference_price_baht": 4850000,
+   "selected_supplier": "Marwin Technologies Co., Ltd.",
+   "contract_value_baht": 4815000,
+   "contract_number": "สจ.63/2559",
+   "contract_date_be": "26 January 2559",
+   "project_id": null,
+   "evidence_status": "Verified",
+   "source_url": "https://www.tmd.go.th/media/PDF/agreement_2559.pdf"
+  },
+  {
+   "fiscal_year_be": 2559,
+   "station_or_scope": "TMD radar network",
+   "activity_class": "spare_parts",
+   "radar_band": null,
+   "description": "Three items of weather-radar spare parts",
+   "procurement_method": "special method",
+   "reference_price_baht": 4937000,
+   "selected_supplier": "Genomatch Co., Ltd.",
+   "contract_value_baht": 4916650,
+   "contract_number": "สข.109/2559",
+   "contract_date_be": "5 July 2559",
+   "project_id": null,
+   "evidence_status": "Verified",
+   "review_note": "The source PDF's budget column is obscured by OCR/formatting; the reference price, selected supplier, and contract value are legible.",
+   "source_url": "https://www.tmd.go.th/media/PDF/agreement_2559.pdf"
+  },
+  {
+   "fiscal_year_be": 2559,
+   "station_or_scope": "Suvarnabhumi",
+   "activity_class": "support_or_maintenance",
+   "radar_band": "S-band",
+   "description": "Maintenance and repair of Doppler S-band weather radar with communications equipment",
+   "procurement_method": "special method",
+   "budget_baht": 2889000,
+   "reference_price_baht": 2889000,
+   "selected_supplier": "Marwin Technologies Co., Ltd.",
+   "contract_value_baht": 2889000,
+   "contract_number": "สจ.116/2559",
+   "contract_date_be": "29 July 2559",
+   "project_id": null,
+   "evidence_status": "Verified",
+   "source_url": "https://www.tmd.go.th/media/PDF/agreement_2559.pdf"
+  },
+  {
+   "fiscal_year_be": 2559,
+   "station_or_scope": "Rayong and Chai Nat",
+   "activity_class": "support_or_maintenance",
+   "radar_band": null,
+   "description": "Repair of generator used with weather radar systems",
+   "procurement_method": "quotation method",
+   "budget_baht": 208650,
+   "reference_price_baht": 208650,
+   "selected_supplier": "C & K Power Gen Co., Ltd.",
+   "contract_value_baht": 208650,
+   "contract_number": "สจ.135/2559",
+   "contract_date_be": "28 September 2559",
+   "project_id": null,
+   "evidence_status": "Verified",
+   "source_url": "https://www.tmd.go.th/media/PDF/agreement_2559.pdf"
+  },
+  {
+   "fiscal_year_be": 2561,
+   "station_or_scope": "Suvarnabhumi, Samut Prakan",
+   "activity_class": "core_purchase",
+   "radar_band": "S-band",
+   "description": "New Doppler S-band weather radar with communications equipment and radar tower",
+   "procurement_method": "e-bidding",
+   "budget_baht": 313280000,
+   "reference_price_baht": 313280000,
+   "bids": [
+    {
+     "supplier": "Marwin Technologies Co., Ltd.",
+     "amount_baht": 304950000
+    },
+    {
+     "supplier": "Scientific Research Limited Partnership",
+     "amount_baht": 308748500
+    },
+    {
+     "supplier": "Genomatch Co., Ltd.",
+     "amount_baht": 310621000
+    }
+   ],
+   "selected_supplier": "Marwin Technologies Co., Ltd.",
+   "contract_value_baht": 304950000,
+   "contract_number": "สข.70/2561",
+   "contract_date_be": "12 January 2561",
+   "project_id": null,
+   "evidence_status": "Verified",
+   "source_url": "https://www.tmd.go.th/media/PDF/agreement_2561.pdf"
+  },
+  {
+   "fiscal_year_be": 2561,
+   "station_or_scope": "Phuket and Lamphun",
+   "activity_class": "upgrade_or_repair",
+   "radar_band": null,
+   "description": "Upgrade of Dual Polarization weather radars at the Phuket and Lamphun meteorological stations",
+   "procurement_method": "e-bidding",
+   "budget_baht": 90000000,
+   "reference_price_baht": 90000000,
+   "bids": [
+    {
+     "supplier": "Scientific Research Limited Partnership",
+     "amount_baht": 86670000
+    },
+    {
+     "supplier": "Genomatch Co., Ltd.",
+     "amount_baht": 88596000
+    },
+    {
+     "supplier": "Marwin Technologies Co., Ltd.",
+     "amount_baht": 89238000
+    }
+   ],
+   "selected_supplier": "Scientific Research Limited Partnership",
+   "contract_value_baht": 86670000,
+   "reported_annual_value_baht": 86870000,
+   "contract_number": "สข.71/2561",
+   "contract_date_be": "16 January 2561",
+   "completion_date_be": "6 April 2562",
+   "project_id": null,
+   "evidence_status": "Verified",
+   "review_note": "TMD's FY 2561 procurement summary gives a 90,000,000-baht budget/reference price, three bidder totals, and a selected contract value of 86,670,000 baht (43,335,000 per item). TMD's FY 2561 annual report states 86,870,000 baht for the same contract, creating a 200,000-baht discrepancy that requires the signed contract or payment record to resolve.",
+   "source_url": "https://www.tmd.go.th/media/PDF/agreement_2561.pdf",
+   "annual_report_source_url": "https://tmd.go.th/media/Vision/annual_report2561s.pdf",
+   "planning_source_url": "https://tmd.go.th/media/Vision/actionplan-2561.pdf"
+  },
+  {
+   "fiscal_year_be": 2560,
+   "station_or_scope": "Suvarnabhumi, Samut Prakan",
+   "activity_class": "support_or_maintenance",
+   "radar_band": "S-band",
+   "description": "Maintenance and repair of Doppler S-band weather radar with communications equipment",
+   "procurement_method": "special method",
+   "budget_baht": 17334000,
+   "reference_price_baht": 17334000,
+   "bids": [
+    {
+     "supplier": "Marwin Technologies Co., Ltd.",
+     "amount_baht": 17333000
+    }
+   ],
+   "selected_supplier": "Marwin Technologies Co., Ltd.",
+   "contract_value_baht": 17333000,
+   "contract_number": "สจ.14/2560",
+   "contract_date_be": "17 October 2559",
+   "project_id": null,
+   "evidence_status": "Verified",
+   "review_note": "The FY 2560 summary lists one supplier and price; a bid-opening or procurement-file record is needed before treating this as a single-bid event.",
+   "source_url": "https://www.tmd.go.th/media/PDF/agreement_2560.pdf"
+  },
+  {
+   "fiscal_year_be": 2560,
+   "station_or_scope": "TMD radar systems",
+   "activity_class": "spare_parts",
+   "radar_band": null,
+   "description": "Electrical materials used to repair weather radar equipment",
+   "procurement_method": "quotation method",
+   "budget_baht": 112500,
+   "reference_price_baht": 102399,
+   "bids": [
+    {
+     "supplier": "UCI Corporation Co., Ltd.",
+     "amount_baht": 102399
+    }
+   ],
+   "selected_supplier": "UCI Corporation Co., Ltd.",
+   "contract_value_baht": 102399,
+   "contract_number": "สข.141/2560",
+   "contract_date_be": "2 August 2560",
+   "project_id": null,
+   "evidence_status": "Verified",
+   "source_url": "https://www.tmd.go.th/media/PDF/agreement_2560.pdf"
+  },
+  {
+   "fiscal_year_be": 2560,
+   "station_or_scope": "TMD radar systems",
+   "activity_class": "spare_parts",
+   "radar_band": null,
+   "description": "Computer parts used to maintain and repair weather radar equipment",
+   "procurement_method": "quotation method",
+   "budget_baht": 159151.8,
+   "reference_price_baht": 159151.8,
+   "bids": [
+    {
+     "supplier": "P Group Thai Intertrade Co., Ltd.",
+     "amount_baht": 159151.8
+    }
+   ],
+   "selected_supplier": "P Group Thai Intertrade Co., Ltd.",
+   "contract_value_baht": 159151.8,
+   "contract_number": "สจ.158/2560",
+   "contract_date_be": "25 August 2560",
+   "project_id": null,
+   "evidence_status": "Verified",
+   "source_url": "https://www.tmd.go.th/media/PDF/agreement_2560.pdf"
+  },
+  {
+   "fiscal_year_be": 2562,
+   "station_or_scope": "Rayong",
+   "activity_class": "upgrade_or_repair",
+   "radar_band": null,
+   "description": "Upgrade of Dual Polarization weather radar",
+   "procurement_method": "e-bidding",
+   "budget_baht": 43335000,
+   "reference_price_baht": 43335000,
+   "bids": [
+    {
+     "supplier": "Scientific Research Limited Partnership",
+     "amount_baht": 43174500
+    }
+   ],
+   "selected_supplier": "Scientific Research Limited Partnership",
+   "contract_value_baht": 43174500,
+   "contract_number": "สข.79/2562",
+   "contract_date_be": "21 January 2562",
+   "project_id": null,
+   "evidence_status": "Verified",
+   "review_note": "The FY 2562 summary lists one submitted price; qualification and bid-opening records are still required before treating this as a single-bid event.",
+   "source_url": "https://www.tmd.go.th/media/PDF/agreement_2562.pdf"
+  },
+  {
+   "fiscal_year_be": 2562,
+   "station_or_scope": "Chumphon",
+   "activity_class": "upgrade_or_repair",
+   "radar_band": null,
+   "description": "Upgrade of Dual Polarization weather radar",
+   "procurement_method": "e-bidding",
+   "budget_baht": 43335000,
+   "reference_price_baht": 43335000,
+   "bids": [
+    {
+     "supplier": "Scientific Research Limited Partnership",
+     "amount_baht": 43121500
+    }
+   ],
+   "selected_supplier": "Scientific Research Limited Partnership",
+   "contract_value_baht": 43121500,
+   "contract_number": "สข.80/2562",
+   "contract_date_be": "18 January 2562",
+   "project_id": null,
+   "evidence_status": "Verified",
+   "review_note": "The FY 2562 summary lists one submitted price; qualification and bid-opening records are still required before treating this as a single-bid event.",
+   "source_url": "https://www.tmd.go.th/media/PDF/agreement_2562.pdf"
+  },
+  {
+   "fiscal_year_be": 2555,
+   "station_or_scope": "Suvarnabhumi",
+   "activity_class": "support_or_maintenance",
+   "radar_band": "S-band",
+   "description": "Maintenance and repair of Doppler S-band weather radar with communications equipment",
+   "procurement_method": "special method",
+   "budget_baht": 2889000,
+   "contract_value_baht": 2889000,
+   "selected_supplier": "Marwin Technologies Co., Ltd.",
+   "contract_number": "71/2555",
+   "contract_date_be": "31 May 2555",
+   "project_id": null,
+   "evidence_status": "Verified",
+   "source_url": "https://www.tmd.go.th/media/PDF/purchase_plan_report2554-2555.pdf"
+  },
+  {
+   "fiscal_year_be": 2556,
+   "station_or_scope": "Sakon Nakhon and Narathiwat",
+   "activity_class": "core_purchase",
+   "radar_band": null,
+   "description": "Purchase of two Dual Polarization weather radars with accessories and radar towers",
+   "procurement_method": "e-Auction",
+   "budget_baht": 312000000,
+   "reference_price_baht": 312000000,
+   "bids": [
+    {
+     "supplier": "Marwin Technologies Co., Ltd.",
+     "amount_baht": 308994600
+    },
+    {
+     "supplier": "Scientific Research Limited Partnership",
+     "amount_baht": 310380000
+    },
+    {
+     "supplier": "Genomatch Co., Ltd.",
+     "amount_baht": 309872000
+    }
+   ],
+   "selected_supplier": "Marwin Technologies Co., Ltd.",
+   "contract_value_baht": 308994600,
+   "contract_number": "สข.83/2556",
+   "contract_date_be": "11 April 2556",
+   "project_id": null,
+   "evidence_status": "Verified",
+   "review_note": "The PDF OCR contains an adjacent stray 17,346,900-baht fragment; it is excluded because it is not attached to a named bidder in the radar row.",
+   "source_url": "https://www.tmd.go.th/media/PDF/agreement55_56.pdf"
+  },
+  {
+   "fiscal_year_be": 2562,
+   "station_or_scope": "Khao Kiew, Nakhon Nayok",
+   "activity_class": "upgrade_or_repair",
+   "radar_band": "C-band",
+   "description": "Upgrade of Dual Polarization weather radar",
+   "procurement_method": "e-bidding",
+   "budget_baht": 60000000,
+   "reference_price_baht": 60000000,
+   "selected_supplier": "Scientific Research Limited Partnership",
+   "contract_value_baht": 59385000,
+   "contract_number": "สข.84/2562",
+   "contract_date_be": "25 January 2562",
+   "project_id": null,
+   "evidence_status": "Verified",
+   "source_url": "https://www.tmd.go.th/media/PDF/agreement_2562.pdf"
+  },
+  {
+   "fiscal_year_be": 2562,
+   "station_or_scope": "Wichian Buri, Phetchabun",
+   "activity_class": "upgrade_or_repair",
+   "radar_band": null,
+   "description": "Upgrade of Dual Polarization weather radar",
+   "procurement_method": "e-bidding",
+   "budget_baht": 43335000,
+   "reference_price_baht": 43335000,
+   "selected_supplier": "Scientific Research Limited Partnership",
+   "contract_value_baht": 43174500,
+   "contract_number": "สข.85/2562",
+   "contract_date_be": "25 January 2562",
+   "project_id": null,
+   "evidence_status": "Verified",
+   "review_note": "The source's OCR layout interleaves a 43,299,690-baht bidder figure; only the clearly stated selected amount is recorded.",
+   "source_url": "https://www.tmd.go.th/media/PDF/agreement_2562.pdf"
+  },
+  {
+   "fiscal_year_be": 2567,
+   "station_or_scope": "Narathiwat",
+   "activity_class": "core_purchase",
+   "radar_band": "C-band",
+   "description": "New Dual Polarization weather radar with communications equipment and radar tower",
+   "procurement_method": "e-bidding",
+   "budget_baht": 150000000,
+   "reference_price_baht": 150000000,
+   "selected_supplier": "Marwin Technologies Co., Ltd.",
+   "contract_value_baht": 141775000,
+   "contract_number": "สข.167/2567",
+   "contract_date_be": "10 September 2567",
+   "project_id": "67049316538",
+   "evidence_status": "Verified",
+   "source_url": "https://tmd.go.th/media/procurement/egp/นราธวาส_240823.pdf",
+   "index_source_url": "https://www.tmd.go.th/Procurement/ProcurementAnnoucementPage?ProcurementTypeCode=W0",
+   "review_note": "Portal winner notice archived: lowest bidder, 8.225M (5.48%) under the 150M budget, EB.16/2567"
+  },
+  {
+   "fiscal_year_be": 2567,
+   "station_or_scope": "Surin",
+   "activity_class": "core_purchase",
+   "radar_band": "C-band",
+   "description": "New Dual Polarization weather radar with communications equipment and radar tower",
+   "procurement_method": "e-bidding",
+   "budget_baht": 150000000,
+   "reference_price_baht": 150000000,
+   "selected_supplier": "Marwin Technologies Co., Ltd.",
+   "contract_value_baht": 138565000,
+   "contract_number": "สข.168/2567",
+   "contract_date_be": "10 September 2567",
+   "project_id": "67039615683",
+   "evidence_status": "Verified",
+   "source_url": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=f8c106b5-4901-49bc-aab9-fb4ab248338d",
+   "index_source_url": "https://www.tmd.go.th/Procurement/ProcurementAnnoucementPage?ProcurementTypeCode=W0",
+   "review_note": "Portal winner notice archived: lowest bidder, 11.435M (7.62%) under the 150M budget, EB.15/2567"
+  },
+  {
+   "fiscal_year_be": 2567,
+   "station_or_scope": "Wichian Buri, Phetchabun",
+   "activity_class": "upgrade_or_repair",
+   "radar_band": "C-band",
+   "description": "Repair/upgrade of Dual Polarization weather radar",
+   "procurement_method": "e-bidding",
+   "contract_value_baht": 44163800,
+   "contract_number": "สข.142/2567",
+   "contract_date_be": "13 August 2567",
+   "project_id": "67059026010",
+   "evidence_status": "Verified",
+   "selected_supplier": null,
+   "source_url": "https://www.tmd.go.th/media/secretary/report-67.pdf"
+  },
+  {
+   "fiscal_year_be": 2567,
+   "station_or_scope": "Khao Kiew, Nakhon Nayok",
+   "activity_class": "upgrade_or_repair",
+   "radar_band": "C-band",
+   "description": "Repair/upgrade of Dual Polarization weather radar",
+   "procurement_method": "e-bidding",
+   "contract_value_baht": 57988500,
+   "contract_number": "สข.145/2567",
+   "contract_date_be": "14 August 2567",
+   "project_id": "67059024371",
+   "evidence_status": "Verified",
+   "selected_supplier": "Scientific Research Limited Partnership",
+   "source_url": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=c86d49f7-a206-4edd-ba43-74829708a443",
+   "review_note": "Supplier and value portal-verified from the archived winner notice: lowest bidder, 3.35% under the 60M budget, EB.18/2567"
+  },
+  {
+   "fiscal_year_be": 2567,
+   "station_or_scope": "Ubon Ratchathani",
+   "activity_class": "upgrade_or_repair",
+   "radar_band": "C-band",
+   "description": "Repair/upgrade of Dual Polarization weather radar",
+   "procurement_method": "e-bidding",
+   "budget_baht": 45000000,
+   "reference_price_baht": 45000000,
+   "selected_supplier": "Marwin Technologies Co., Ltd.",
+   "contract_value_baht": 44292500,
+   "contract_number": "สข.148/2567",
+   "contract_date_be": "16 August 2567",
+   "project_id": "67059024156",
+   "evidence_status": "Verified",
+   "source_url": "https://www.tmd.go.th/media/procurement/price/%E0%B8%AA%E0%B8%82%E0%B8%A3-1-%E0%B8%AA-%E0%B8%84-67.pdf",
+   "progress_source_url": "https://tmd.go.th/media/secretary/report68.pdf"
+  },
+  {
+   "fiscal_year_be": 2567,
+   "station_or_scope": "Rayong",
+   "activity_class": "upgrade_or_repair",
+   "radar_band": "C-band",
+   "description": "Repair/upgrade of Dual Polarization weather radar",
+   "procurement_method": "e-bidding",
+   "selected_supplier": "Genomatch Co., Ltd.",
+   "contract_value_baht": 47193600,
+   "contract_number": "สข.159/2567",
+   "contract_date_be": "30 August 2567",
+   "project_id": "67059309257",
+   "evidence_status": "Verified",
+   "source_url": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=610db47d-f7b4-4153-b0e5-db7d61ad5797",
+   "review_note": "Portal winner notice archived: lowest bidder at 47,193,600 which is 4.87% ABOVE the stated budget line, EB.29/2567"
+  },
+  {
+   "fiscal_year_be": 2567,
+   "station_or_scope": "Suvarnabhumi",
+   "activity_class": "upgrade_or_repair",
+   "radar_band": "S-band",
+   "description": "Repair/upgrade of weather radar",
+   "procurement_method": "e-bidding",
+   "contract_value_baht": 62589500,
+   "contract_number": "สข.147/2567",
+   "contract_date_be": "16 August 2567",
+   "project_id": "67049456830",
+   "evidence_status": "Verified",
+   "selected_supplier": "Marwin Technologies Co., Ltd.",
+   "source_url": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=e2bc55e4-8dad-47a0-838e-8621f8c7d3b0",
+   "review_note": "Supplier and value portal-verified from the archived winner notice: lowest bidder, 3.71% under the 65M budget, EB.17/2567"
+  },
+  {
+   "fiscal_year_be": 2563,
+   "station_or_scope": "Tak (Doi Muser) / ตาก (ดอยมูเซอ)",
+   "activity_class": "core_purchase",
+   "radar_band": "C-band dual-polarization",
+   "description": "C-band dual-polarization weather radar with interconnection equipment and radar tower at Tak (Doi Muser) Meteorological Station, Mae Tho, Mueang Tak (e-bidding; W2 winner notice 22 July 2563)",
+   "procurement_method": "e-bidding",
+   "selected_supplier": "Marwin Technologies Co., Ltd.",
+   "contract_value_baht": 147553000,
+   "project_id": "63017151753",
+   "winner_notice_date_be": "22 July 2563",
+   "review_note": "Winner selected as lowest bidder; the W2 notice names no rival bidders, so the bidder count remains open",
+   "evidence_status": "Verified",
+   "source_url": "http://process3.gprocurement.go.th/egp2procmainWeb/jsp/procsearch.sch?servlet=gojsp&proc_id=ShowHTMLFile&processFlows=Procure&projectId=63017151753&templateType=W2&temp_Announ=A&temp_itemNo=0&seqNo=2"
+  },
+  {
+   "fiscal_year_be": 2563,
+   "station_or_scope": "Ranong / ระนอง",
+   "activity_class": "core_purchase",
+   "radar_band": "C-band dual-polarization",
+   "description": "C-band dual-polarization weather radar with interconnection equipment and radar tower at Ranong Meteorological Station, Bang Rin, Mueang Ranong (e-bidding ref EB.21/2563, 7 February 2563; W2 winner notice 22 July 2563)",
+   "procurement_method": "e-bidding",
+   "selected_supplier": "Genomatch Co., Ltd.",
+   "contract_value_baht": 146985900,
+   "project_id": "63017153824",
+   "winner_notice_date_be": "22 July 2563",
+   "review_note": "Winner selected as lowest bidder; value identical to the Trang award (63017163547) to the satang; the W2 notice names no rival bidders, so the bidder count remains open",
+   "evidence_status": "Verified",
+   "source_url": "http://process3.gprocurement.go.th/egp2procmainWeb/jsp/procsearch.sch?servlet=gojsp&proc_id=ShowHTMLFile&processFlows=Procure&projectId=63017153824&templateType=W2&temp_Announ=A&temp_itemNo=0&seqNo=2"
+  },
+  {
+   "fiscal_year_be": 2563,
+   "station_or_scope": "Trang / ตรัง",
+   "activity_class": "core_purchase",
+   "radar_band": "C-band dual-polarization",
+   "description": "C-band dual-polarization weather radar with interconnection equipment and radar tower at Trang Meteorological Station, Khok Lo, Mueang Trang (e-bidding ref EB.20/2563, 7 February 2563; W2 winner notice 22 July 2563)",
+   "procurement_method": "e-bidding",
+   "selected_supplier": "Genomatch Co., Ltd.",
+   "contract_value_baht": 146985900,
+   "project_id": "63017163547",
+   "winner_notice_date_be": "22 July 2563",
+   "review_note": "Winner selected as lowest bidder; value identical to the Ranong award (63017153824) to the satang; the W2 notice names no rival bidders, so the bidder count remains open",
+   "evidence_status": "Verified",
+   "source_url": "http://process3.gprocurement.go.th/egp2procmainWeb/jsp/procsearch.sch?servlet=gojsp&proc_id=ShowHTMLFile&processFlows=Procure&projectId=63017163547&templateType=W2&temp_Announ=A&temp_itemNo=0&seqNo=2"
+  },
+  {
+   "fiscal_year_be": 2567,
+   "station_or_scope": "Sathing Phra / สทิงพระ",
+   "activity_class": "core_purchase",
+   "radar_band": "C-band dual-polarization",
+   "description": "C-band dual-polarization weather radar with interconnection equipment and radar tower at Sathing Phra Radar Station, Bo Dan, Sathing Phra, Songkhla (e-bidding EB.5/2567, 12 March 2567; portal winner notice 2 July 2567)",
+   "procurement_method": "e-bidding",
+   "budget_baht": 150000000,
+   "selected_supplier": "Scientific Research Limited Partnership",
+   "contract_value_baht": 139100000,
+   "contract_number": "สข.133/2567",
+   "contract_date_be": "17 July 2567",
+   "project_id": null,
+   "review_note": "Portal winner notice states lowest bidder, 10.9M (7.27%) under the 150M budget, and conditions signing on the FY2567 Budget Act; notice signed by Director-General Korravee Sitthichivapak",
+   "evidence_status": "Verified",
+   "source_url": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=dff167f0-6117-48e3-85aa-642cef0729f8"
+  }
+ ],
+ "progress_records": [
+  {
+   "fiscal_year_be": 2567,
+   "station_or_scope": "Sathing Phra, Songkhla",
+   "activity_class": "core_purchase",
+   "radar_band": "C-band",
+   "description": "C-band dual-polarization weather radar with communications equipment and radar tower",
+   "selected_supplier": "Scientific Research Limited Partnership",
+   "contract_value_baht": 139100000,
+   "contract_number": "สข.133/2567",
+   "contract_date_be": "17 July 2567",
+   "delivery_due_date_be": "8 January 2569",
+   "advance_payment_baht": 20865000,
+   "progress_percent_project": 57,
+   "progress_percent_fiscal_year_2568": 70,
+   "evidence_status": "Verified",
+   "source_url": "https://www.tmd.go.th/media/secretary/%E0%B8%A2%E0%B8%A8/report68.pdf",
+   "project_id": "M65080017382",
+   "review_note": "The report says the winner was announced 2 July 2567 and the contract was signed 17 July 2567. The earlier index lead is not counted as a second purchase."
+  },
+  {
+   "fiscal_year_be": 2567,
+   "station_or_scope": "Narathiwat",
+   "activity_class": "core_purchase_progress",
+   "contract_number": "สข.167/2567",
+   "contract_value_baht": 141775000,
+   "advance_payment_baht": 21266250,
+   "delivery_due_date_be": "4 March 2569",
+   "progress_percent_project": 45,
+   "reported_issue": "The report states that an additional 187-day extension would be required after first delivery.",
+   "evidence_status": "Verified",
+   "source_url": "https://www.tmd.go.th/media/secretary/%E0%B8%A2%E0%B8%A8/report68.pdf"
+  },
+  {
+   "fiscal_year_be": 2567,
+   "station_or_scope": "Surin",
+   "activity_class": "core_purchase_progress",
+   "contract_number": "สข.168/2567",
+   "contract_value_baht": 138565000,
+   "advance_payment_baht": 20784750,
+   "delivery_due_date_be": "4 March 2569",
+   "progress_percent_project": 45,
+   "progress_percent_fiscal_year_2568": 42,
+   "evidence_status": "Verified",
+   "source_url": "https://www.tmd.go.th/media/secretary/%E0%B8%A2%E0%B8%A8/report68.pdf"
+  },
+  {
+   "fiscal_year_be": 2567,
+   "station_or_scope": "Wichian Buri, Phetchabun",
+   "activity_class": "upgrade_or_repair_progress",
+   "contract_number": "สข.142/2567",
+   "contract_value_baht": 44163800,
+   "advance_payment_baht": 6624570,
+   "contract_end_date_be": "6 November 2568",
+   "progress_percent_project": 80,
+   "evidence_status": "Verified",
+   "source_url": "https://www.tmd.go.th/media/secretary/%E0%B8%A2%E0%B8%A8/report68.pdf"
+  },
+  {
+   "fiscal_year_be": 2567,
+   "station_or_scope": "Khao Kiew, Nakhon Nayok",
+   "activity_class": "upgrade_or_repair_progress",
+   "contract_number": "สข.145/2567",
+   "contract_value_baht": 57988500,
+   "advance_payment_baht": 8698275,
+   "contract_end_date_be": "7 November 2568",
+   "progress_percent_project": 80,
+   "evidence_status": "Verified",
+   "source_url": "https://www.tmd.go.th/media/secretary/%E0%B8%A2%E0%B8%A8/report68.pdf"
+  },
+  {
+   "fiscal_year_be": 2567,
+   "station_or_scope": "Ubon Ratchathani",
+   "activity_class": "upgrade_or_repair_progress",
+   "contract_number": "สข.148/2567",
+   "contract_value_baht": 44292500,
+   "advance_payment_baht": 6643875,
+   "contract_end_date_be": "9 November 2568",
+   "progress_percent_project": 100,
+   "status_note": "The report says final payment was made and the equipment was accepted for official use.",
+   "evidence_status": "Verified",
+   "source_url": "https://www.tmd.go.th/media/secretary/%E0%B8%A2%E0%B8%A8/report68.pdf"
+  },
+  {
+   "fiscal_year_be": 2567,
+   "station_or_scope": "Rayong",
+   "activity_class": "upgrade_or_repair_progress",
+   "contract_number": "สข.159/2567",
+   "contract_value_baht": 47193600,
+   "advance_payment_baht": 6750000,
+   "contract_end_date_be": "23 November 2568",
+   "progress_percent_project": 80,
+   "evidence_status": "Verified",
+   "source_url": "https://www.tmd.go.th/media/secretary/%E0%B8%A2%E0%B8%A8/report68.pdf"
+  },
+  {
+   "fiscal_year_be": 2567,
+   "station_or_scope": "Suvarnabhumi",
+   "activity_class": "upgrade_or_repair_progress",
+   "contract_number": "สข.147/2567",
+   "contract_value_baht": 62589500,
+   "advance_payment_baht": 9388425,
+   "contract_end_date_be": "9 November 2568",
+   "progress_percent_project": 100,
+   "status_note": "The report says final delivery was completed and the radar was accepted for official use.",
+   "evidence_status": "Verified",
+   "source_url": "https://www.tmd.go.th/media/secretary/%E0%B8%A2%E0%B8%A8/report68.pdf"
+  }
+ ],
+ "reported_leads": [
+  {
+   "period_be": "2557-2565",
+   "reported_scope": "Weather-radar contracts held by Marwin Technologies with TMD",
+   "reported_contract_count": 6,
+   "reported_total_baht": 1359530500,
+   "reported_aggregate_note": "The six-contract aggregate and the five-row comparison table are separate populations in the source reporting; do not sum or reconcile them as if they were the same six contracts.",
+   "reported_examined_project_count": 5,
+   "reported_comparator_companies": [
+    "Scientific Research Limited Partnership",
+    "Genomatch Co., Ltd."
+   ],
+   "reported_pattern": "The article says the two comparator firms appeared in all five examined projects; for projects in 2559 and 2561 it says three firms passed qualification but only Marwin submitted a price.",
+   "reported_table_rows": [
+    {
+     "fiscal_year_be": 2556,
+     "project_id": "55125172076",
+     "scope": "Two Dual Polarization radars with accessories and towers at Sakon Nakhon and Narathiwat",
+     "reported_bids": [
+      {
+       "supplier": "Scientific Research Limited Partnership",
+       "amount_baht": 310380000
+      },
+      {
+       "supplier": "Genomatch Co., Ltd.",
+       "amount_baht": 309872000
+      },
+      {
+       "supplier": "Marwin Technologies Co., Ltd.",
+       "amount_baht": 308994600
+      }
+     ],
+     "reported_winner": "Marwin Technologies Co., Ltd.",
+     "reported_contract_value_baht": 308994600,
+     "reported_contract_number": "สข.83/2556"
+    },
+    {
+     "fiscal_year_be": 2557,
+     "project_id": "56095016623",
+     "scope": "Two Doppler radars with accessories and towers at Don Mueang and the Upper Northeast Meteorological Center, Khon Kaen",
+     "reported_bids": [
+      {
+       "supplier": "Scientific Research Limited Partnership",
+       "amount_baht": 309990000
+      },
+      {
+       "supplier": "Genomatch Co., Ltd.",
+       "amount_baht": 310590000
+      },
+      {
+       "supplier": "Marwin Technologies Co., Ltd.",
+       "amount_baht": 309337000
+      }
+     ],
+     "reported_winner": "Marwin Technologies Co., Ltd.",
+     "reported_contract_value_baht": 309337000,
+     "reported_contract_number": "สข.44/2557"
+    },
+    {
+     "fiscal_year_be": 2558,
+     "project_id": "57115035872",
+     "scope": "Two Doppler radars with accessories and towers at Nan and the Lower Northeast Meteorological Center, Ubon Ratchathani",
+     "reported_bids": [
+      {
+       "supplier": "Scientific Research Limited Partnership",
+       "amount_baht": 307920000
+      },
+      {
+       "supplier": "Genomatch Co., Ltd.",
+       "amount_baht": 308087000
+      },
+      {
+       "supplier": "Marwin Technologies Co., Ltd.",
+       "amount_baht": 307518000
+      }
+     ],
+     "reported_winner": "Marwin Technologies Co., Ltd.",
+     "reported_contract_value_baht": 306929500,
+     "reported_contract_number": "สข.73/2558"
+    },
+    {
+     "fiscal_year_be": 2559,
+     "project_id": "58096222967",
+     "scope": "Two Doppler radars with accessories and towers at Chiang Rai and Surat Thani",
+     "reported_qualification_note": "The article says three firms passed qualification but only Marwin submitted a price.",
+     "reported_price_submission": {
+      "supplier": "Marwin Technologies Co., Ltd.",
+      "amount_baht": 302568000
+     },
+     "reported_winner": "Marwin Technologies Co., Ltd.",
+     "reported_contract_value_baht": 302568000,
+     "reported_contract_number": "สข.75/2559"
+    },
+    {
+     "fiscal_year_be": 2561,
+     "project_id": "60086072636",
+     "scope": "S-band Doppler radar with communications equipment and tower at Suvarnabhumi",
+     "reported_qualification_note": "The article says three firms passed qualification but only Marwin submitted a price.",
+     "reported_price_submission": {
+      "supplier": "Marwin Technologies Co., Ltd.",
+      "amount_baht": 304950000
+     },
+     "reported_winner": "Marwin Technologies Co., Ltd.",
+     "reported_contract_value_baht": 304950000,
+     "reported_contract_number": "สข.70/2561"
+    }
+   ],
+   "evidence_status": "Reported",
+   "source_url": "https://isranews.org/article/isranews/127124-invesmavidsids.html",
+   "follow_up_source_url": "https://isranews.org/article/isranews-scoop/127187-invesreda.html",
+   "required_primary_documents": [
+    "e-GP project IDs and winner notices for all six contracts",
+    "qualification and bid-opening reports for the five examined projects",
+    "submitted price list and technical pass/fail records for the 2559 and 2561 projects",
+    "signed contracts and contract summaries"
+   ],
+   "review_note": "The article's table is presented as an image and lists five comparison rows with project IDs 55125172076, 56095016623, 57115035872, 58096222967, and 60086072636. The article separately reports a six-contract aggregate; these are different populations, so their totals should not be reconciled as one set. Official TMD summaries show three listed price submissions for the FY 2559 and FY 2561 rows, contrary to the table's statement that only Marwin submitted a price. Do not treat the reported count or bidder pattern as verified until the underlying records are recovered."
+  }
+ ],
+ "index_leads": [
+  {
+   "fiscal_year_be": 2563,
+   "activity_class": "core_purchase",
+   "scope": "New C-band Dual Polarization radars at Tak (Doi Muser), Ranong, and Trang",
+   "project_ids": [
+    "63017151753",
+    "63017153824",
+    "63017163547"
+   ],
+   "evidence_status": "Index lead",
+   "source_url": "https://www.tmd.go.th/Procurement/ProcurementAnnoucementPage?ProcurementTypeCode=B0",
+   "next_documents": [
+    "winner notice",
+    "contract summary",
+    "bid-opening report"
+   ]
+  },
+  {
+   "fiscal_year_be": 2565,
+   "activity_class": "core_purchase",
+   "scope": "C-band Dual Polarization radar at Sathing Phra",
+   "project_ids": [
+    "M65080017382"
+   ],
+   "evidence_status": "Index lead",
+   "source_url": "https://www.tmd.go.th/Procurement/ProcurementAnnoucementPage?ProcurementTypeCode=P0",
+   "next_documents": [
+    "winner notice",
+    "contract summary",
+    "bid-opening report"
+   ]
+  },
+  {
+   "fiscal_year_be": 2560,
+   "activity_class": "plan_lead",
+   "scope": "Planned mobile X-band Dual Polarization radar, two Doppler radars for Chiang Rai and Surat Thani, and one Doppler radar at Hua Hin",
+   "evidence_status": "Plan only",
+   "source_url": "https://www.tmd.go.th/media/Vision/actionplan-2560.pdf"
+  }
+ ]
+}

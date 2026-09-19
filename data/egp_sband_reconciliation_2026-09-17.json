@@ -1,0 +1,97 @@
+{
+  "title": "Record-by-record reconciliation: TMD FY 2569 S-band radar tenders",
+  "retrieved_date": "2026-09-17",
+  "scope": "Four TMD project IDs checked against the official TMD award/contract summary and the fresh project-specific e-GP getProcureResult response.",
+  "mapping_rule": "The project ID and station name are the primary key. Prices are never reassigned between stations based on order, search-result position, or a transient empty tab.",
+  "records": [
+    {
+      "station": "Chumphon",
+      "project_id": "68099138543",
+      "tmd_contract_or_award_baht": 410987000,
+      "egp_winner": "บริษัท จีโนแมทช์ จำกัด",
+      "egp_winner_baht": 410987000,
+      "price_difference_baht": 0,
+      "bidder_count": 3,
+      "passed_count": 2,
+      "lowest_bidder": "บริษัท เอเซียเมท จำกัด",
+      "lowest_bid_baht": 391620000,
+      "lowest_result_flag": "N",
+      "passed_bidders": ["บริษัท จีโนแมทช์ จำกัด", "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด"],
+      "mapping_status": "reconciles",
+      "evidence": [
+        "data/egp_sband_procure_results_api_2026-09-17.json",
+        "data/sources_egp/chumphon_results_bidder_rows_2026-09-15.png"
+      ]
+    },
+    {
+      "station": "Bueng Kan",
+      "project_id": "68099138641",
+      "tmd_contract_or_award_baht": 415160000,
+      "egp_winner": "บริษัท จีโนแมทช์ จำกัด",
+      "egp_winner_baht": 415160000,
+      "price_difference_baht": 0,
+      "bidder_count": 3,
+      "passed_count": 2,
+      "lowest_bidder": "ห้างหุ้นส่วนจำกัด ไซแอนติฟิค รีเสิร์ช",
+      "lowest_bid_baht": 375570000,
+      "lowest_result_flag": "N",
+      "passed_bidders": ["บริษัท จีโนแมทช์ จำกัด", "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด"],
+      "mapping_status": "reconciles",
+      "evidence": [
+        "data/egp_sband_procure_results_api_2026-09-17.json",
+        "data/sources_egp/buengkan_sband_preliminary_bid_summary_2568.pdf",
+        "data/sources_egp/buengkan_results_bidder_rows_2026-09-17.png"
+      ]
+    },
+    {
+      "station": "Phitsanulok",
+      "project_id": "68099138724",
+      "tmd_contract_or_award_baht": 408954000,
+      "egp_winner": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+      "egp_winner_baht": 408954000,
+      "price_difference_baht": 0,
+      "bidder_count": 3,
+      "passed_count": 2,
+      "lowest_bidder": "บริษัท เอเซียเมท จำกัด",
+      "lowest_bid_baht": 389480000,
+      "lowest_result_flag": "N",
+      "passed_bidders": ["บริษัท จีโนแมทช์ จำกัด", "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด"],
+      "mapping_status": "reconciles",
+      "evidence": [
+        "data/egp_sband_procure_results_api_2026-09-17.json",
+        "data/sources_egp/phitsanulok_sband_preliminary_bid_summary_2568.pdf",
+        "data/sources_egp/phitsanulok_results_bidder_rows_2026-09-15.png"
+      ]
+    },
+    {
+      "station": "Krabi",
+      "project_id": "68099247067",
+      "tmd_contract_or_award_baht": 412699000,
+      "egp_winner": "บริษัท จีโนแมทช์ จำกัด",
+      "egp_winner_baht": 412699000,
+      "price_difference_baht": 0,
+      "bidder_count": 3,
+      "passed_count": 2,
+      "lowest_bidder": "ห้างหุ้นส่วนจำกัด ไซแอนติฟิค รีเสิร์ช",
+      "lowest_bid_baht": 375570000,
+      "lowest_result_flag": "N",
+      "passed_bidders": ["บริษัท จีโนแมทช์ จำกัด", "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด"],
+      "mapping_status": "reconciles",
+      "evidence": [
+        "data/egp_sband_procure_results_api_2026-09-17.json",
+        "data/sources_egp/krabi_results_bidder_rows_2026-09-15.png"
+      ]
+    }
+  ],
+  "totals": {
+    "station_count": 4,
+    "tmd_award_total_baht": 1647800000,
+    "egp_winner_total_baht": 1647800000,
+    "total_price_difference_baht": 0,
+    "all_mappings_reconcile": true,
+    "all_records_have_three_bidders": true,
+    "all_records_have_two_passers": true,
+    "all_records_lowest_bidder_not_passed": true
+  },
+  "limitation": "The public e-GP result response exposes result flags but not the written technical/qualification failure reasons. Those primary evaluation records remain requested evidence."
+}

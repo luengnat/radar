@@ -1,0 +1,398 @@
+[
+ {
+  "name": "ขอนแก่น",
+  "agency": "TMD",
+  "lat": 16.46,
+  "lon": 102.79,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "สกลนคร",
+  "agency": "TMD",
+  "lat": 17.16,
+  "lon": 104.13,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "อุบลราชธานี",
+  "agency": "TMD",
+  "lat": 15.25,
+  "lon": 104.87,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "พิษณุโลก",
+  "agency": "TMD",
+  "lat": 16.78,
+  "lon": 100.28,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "เชียงราย",
+  "agency": "TMD",
+  "lat": 19.95,
+  "lon": 99.88,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "ลำพูน",
+  "agency": "TMD",
+  "lat": 18.57,
+  "lon": 99.03,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "สุราษฎร์ธานี",
+  "agency": "TMD",
+  "lat": 9.13,
+  "lon": 99.15,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "ภูเก็ต",
+  "agency": "TMD",
+  "lat": 8.11,
+  "lon": 98.32,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "สงขลา",
+  "agency": "TMD",
+  "lat": 7.18,
+  "lon": 100.61,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "ชัยนาท",
+  "agency": "TMD",
+  "lat": 15.15,
+  "lon": 100.17,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "ระยอง",
+  "agency": "TMD",
+  "lat": 12.68,
+  "lon": 101.27,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "หัวหิน",
+  "agency": "TMD",
+  "lat": 12.57,
+  "lon": 99.95,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "อมก๋อย",
+  "agency": "RRD",
+  "lat": 17.79,
+  "lon": 98.36,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "ตาคลี",
+  "agency": "RRD",
+  "lat": 15.26,
+  "lon": 100.34,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "สัตหีบ",
+  "agency": "RRD",
+  "lat": 12.68,
+  "lon": 100.98,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "พนม",
+  "agency": "RRD",
+  "lat": 8.86,
+  "lon": 98.77,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "ร้องกวาง",
+  "agency": "RRD",
+  "lat": 18.34,
+  "lon": 100.32,
+  "radius_km": 150,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "บ้านผือ",
+  "agency": "RRD",
+  "lat": 17.68,
+  "lon": 102.47,
+  "radius_km": 150,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "ราษีไศล",
+  "agency": "RRD",
+  "lat": 15.34,
+  "lon": 104.15,
+  "radius_km": 150,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "ปะทิว",
+  "agency": "RRD",
+  "lat": 10.7,
+  "lon": 99.25,
+  "radius_km": 150,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "สิงหนคร",
+  "agency": "RRD",
+  "lat": 7.23,
+  "lon": 100.56,
+  "radius_km": 150,
+  "status": "existing",
+  "source": "THAITH radar page"
+ },
+ {
+  "name": "หาดใหญ่ (RRD, ใหม่)",
+  "agency": "RRD",
+  "lat": 6.97,
+  "lon": 100.53,
+  "radius_km": 240,
+  "status": "new-fy2567",
+  "source": "district centroid คอหงส์; GFMIS-04"
+ },
+ {
+  "name": "กระบี่ (TMD, ก่อสร้าง)",
+  "agency": "TMD",
+  "lat": 8.06,
+  "lon": 98.96,
+  "radius_km": 240,
+  "status": "new-fy2568",
+  "source": "TOR district centroid"
+ },
+ {
+  "name": "ชุมพร (TMD, ก่อสร้าง)",
+  "agency": "TMD",
+  "lat": 10.49,
+  "lon": 99.18,
+  "radius_km": 240,
+  "status": "new-fy2568",
+  "source": "TOR ต.ท่าตะเภอ"
+ },
+ {
+  "name": "พิษณุโลก (TMD, ก่อสร้าง)",
+  "agency": "TMD",
+  "lat": 16.78,
+  "lon": 100.28,
+  "radius_km": 240,
+  "status": "new-fy2568",
+  "source": "TOR ต.ท่าทอง"
+ },
+ {
+  "name": "บึงกาฬ (TMD, ก่อสร้าง)",
+  "agency": "TMD",
+  "lat": 18.36,
+  "lon": 103.65,
+  "radius_km": 240,
+  "status": "new-fy2568",
+  "source": "TOR ต.ไคสี"
+ },
+ {
+  "name": "อุดรธานี (RRD, ของบ 2570)",
+  "agency": "RRD",
+  "lat": 17.45,
+  "lon": 102.78,
+  "radius_km": 240,
+  "status": "requested-fy2570",
+  "source": "THAITH page"
+ },
+ {
+  "name": "พิมาย (RRD, ของบ 2570)",
+  "agency": "RRD",
+  "lat": 15.22,
+  "lon": 102.49,
+  "radius_km": 240,
+  "status": "requested-fy2570",
+  "source": "THAITH page"
+ },
+ {
+  "name": "พิมาย (RRD เดิม METEOR600S)",
+  "agency": "RRD",
+  "lat": 15.22,
+  "lon": 102.49,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "RRD-01 roster; CAPPI live (RRD-03)"
+ },
+ {
+  "name": "น่าน",
+  "agency": "TMD",
+  "lat": 18.78,
+  "lon": 100.78,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "public feed roster (weather.tmd.go.th/paipibat); feed nan/nan240"
+ },
+ {
+  "name": "แม่ฮ่องสอน",
+  "agency": "TMD",
+  "lat": 19.3,
+  "lon": 97.97,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "public feed roster (weather.tmd.go.th/paipibat); feed mhs240"
+ },
+ {
+  "name": "ตาก (ดอยมูเซอ)",
+  "agency": "TMD",
+  "lat": 16.75,
+  "lon": 98.7,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "public feed roster (weather.tmd.go.th/paipibat); feed tak; FY2563 C-band plan lead"
+ },
+ {
+  "name": "วิเชียรบุรี",
+  "agency": "TMD",
+  "lat": 15.66,
+  "lon": 101.1,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "public feed roster (weather.tmd.go.th/paipibat); feed phb"
+ },
+ {
+  "name": "สุรินทร์",
+  "agency": "TMD",
+  "lat": 14.88,
+  "lon": 103.42,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "public feed roster (weather.tmd.go.th/paipibat); FY2567 C-band contract (TMD-10)"
+ },
+ {
+  "name": "นครนายก (เขาเขียว)",
+  "agency": "TMD",
+  "lat": 14.1,
+  "lon": 101.2,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "public feed roster (weather.tmd.go.th/paipibat); feed kkw"
+ },
+ {
+  "name": "สมุทรสงคราม",
+  "agency": "TMD",
+  "lat": 13.41,
+  "lon": 100.0,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "public feed roster (weather.tmd.go.th/paipibat); feed skm240"
+ },
+ {
+  "name": "สุวรรณภูมิ",
+  "agency": "TMD",
+  "lat": 13.68,
+  "lon": 100.75,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "public feed roster (weather.tmd.go.th/paipibat); feed svp240"
+ },
+ {
+  "name": "ระนอง",
+  "agency": "TMD",
+  "lat": 9.94,
+  "lon": 98.62,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "public feed roster (weather.tmd.go.th/paipibat); feed rng240"
+ },
+ {
+  "name": "ตรัง",
+  "agency": "TMD",
+  "lat": 7.55,
+  "lon": 99.61,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "public feed roster (weather.tmd.go.th/paipibat); feed trg240"
+ },
+ {
+  "name": "สทิงพระ (C ใหม่)",
+  "agency": "TMD",
+  "lat": 7.22,
+  "lon": 100.1,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "public feed roster (weather.tmd.go.th/paipibat); สข.133/2567 (TMD-09)"
+ },
+ {
+  "name": "หนองจอก (กทม.)",
+  "agency": "BMA",
+  "lat": 13.83,
+  "lon": 100.82,
+  "radius_km": 120,
+  "status": "existing",
+  "source": "public feed roster (weather.tmd.go.th/paipibat); BMA X-band feed bma_nck"
+ },
+ {
+  "name": "หนองแขม (กทม.)",
+  "agency": "BMA",
+  "lat": 13.7,
+  "lon": 100.4,
+  "radius_km": 120,
+  "status": "existing",
+  "source": "public feed roster (weather.tmd.go.th/paipibat); BMA X-band feed bma_nkm"
+ },
+ {
+  "name": "สมุย",
+  "agency": "TMD",
+  "lat": 9.47,
+  "lon": 100.06,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "TMD official station/type list (ubonmet.tmd.go.th R-3.pdf, 2026-09-19): SMI C-Band; coords district-level approximate, exact site unverified"
+ },
+ {
+  "name": "หาดใหญ่ (TMD เดิม)",
+  "agency": "TMD",
+  "lat": 7.09,
+  "lon": 100.6,
+  "radius_km": 240,
+  "status": "existing",
+  "source": "TMD official station/type list (R-3.pdf): HYI C-Band + live feed weather.tmd.go.th/hyi.php (รัศมี 240 กม.); distinct from RRD's new Hat Yai station; coords approximate (Songkhla met-station area)"
+ }
+]

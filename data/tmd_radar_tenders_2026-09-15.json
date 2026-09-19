@@ -1,0 +1,58 @@
+[
+  {
+    "agency": "Thai Meteorological Department",
+    "station": "Phitsanulok",
+    "project_id": "68099138724",
+    "announcement_type_code": "B0",
+    "procurement_method": "e-bidding",
+    "announcement_date_from_be": "06/10/2568",
+    "announcement_date_to_be": "14/10/2568",
+    "title": "Scientific equipment procurement: S-band dual-polarization weather radar with communications equipment and radar tower at Phitsanulok Meteorological Station, Tha Thong, Mueang Phitsanulok, Phitsanulok, 1 unit",
+    "notice_url": "https://tmd.go.th/media/procurement/egp/68099138724_06102568.zip",
+    "source_index_url": "https://tmd.go.th/Procurement/ProcurementAnnoucementPage?ProcurementTypeCode=B0",
+    "bidder_count": null,
+    "bidder_count_status": "not disclosed in B0 draft-notice index"
+  },
+  {
+    "agency": "Thai Meteorological Department",
+    "station": "Chumphon",
+    "project_id": "68099138543",
+    "announcement_type_code": "B0",
+    "procurement_method": "e-bidding",
+    "announcement_date_from_be": "06/10/2568",
+    "announcement_date_to_be": "14/10/2568",
+    "title": "Scientific equipment procurement: S-band dual-polarization weather radar with communications equipment and radar tower at Chumphon Meteorological Station, Tha Taphao, Mueang Chumphon, Chumphon, 1 unit",
+    "notice_url": "https://tmd.go.th/media/procurement/egp/68099138543_06102568.zip",
+    "source_index_url": "https://tmd.go.th/Procurement/ProcurementAnnoucementPage?ProcurementTypeCode=B0",
+    "bidder_count": null,
+    "bidder_count_status": "not disclosed in B0 draft-notice index"
+  },
+  {
+    "agency": "Thai Meteorological Department",
+    "station": "Krabi",
+    "project_id": "68099247067",
+    "announcement_type_code": "B0",
+    "procurement_method": "e-bidding",
+    "announcement_date_from_be": "09/09/2568",
+    "announcement_date_to_be": "16/09/2568",
+    "title": "Scientific equipment procurement: S-band dual-polarization weather radar with communications equipment and radar tower at Krabi Meteorological Station, Nuea Khlong, Krabi, 1 unit",
+    "notice_url": "https://tmd.go.th/media/procurement/egp/68099247067_09092568.zip",
+    "source_index_url": "https://tmd.go.th/Procurement/ProcurementAnnoucementPage?ProcurementTypeCode=B0",
+    "bidder_count": null,
+    "bidder_count_status": "not disclosed in B0 draft-notice index"
+  },
+  {
+    "agency": "Thai Meteorological Department",
+    "station": "Bueng Kan",
+    "project_id": "68099138641",
+    "announcement_type_code": "B0",
+    "procurement_method": "e-bidding",
+    "announcement_date_from_be": "09/09/2568",
+    "announcement_date_to_be": "16/09/2568",
+    "title": "Scientific equipment procurement: S-band dual-polarization weather radar with communications equipment and radar tower at Bueng Kan Meteorological Station, Khaisri, Mueang Bueng Kan, Bueng Kan, 1 unit",
+    "notice_url": "https://tmd.go.th/media/procurement/egp/68099138641_09092568.zip",
+    "source_index_url": "https://tmd.go.th/Procurement/ProcurementAnnoucementPage?ProcurementTypeCode=B0",
+    "bidder_count": null,
+    "bidder_count_status": "not disclosed in B0 draft-notice index"
+  }
+]

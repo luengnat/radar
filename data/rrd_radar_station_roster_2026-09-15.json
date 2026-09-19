@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "title": "Royal Rainmaking Department official rain-radar station roster",
+    "retrieved_date": "2026-09-15",
+    "source_url": "https://www.royalrain.go.th/royalrain/Editor_Page.aspx?MenuId=43",
+    "evidence_status": "Verified",
+    "note": "This is an official station/mission page, not a procurement or payment register. The CAPPI publication view may contain a different currently exposed subset.",
+    "historical_snapshot_source_url": "https://www.royalrain.go.th/web/info/ShowDetail.aspx?DetailId=14336",
+    "historical_snapshot_date_be": "18 November 2564",
+    "historical_snapshot_note": "The 2564 knowledge page listed 10 stations (5 fixed S-band and 5 mobile C-band), with Rong Khwang listed as mobile and without Hat Yai; the current station page lists 12 stations, with Rong Khwang fixed and Hat Yai fixed, and Pluak Daeng mobile. This documents a roster difference over time, but does not by itself establish when or why any station was reclassified or replaced."
+  },
+  "fixed_s_band": [
+    {"name": "Omkoi", "province": "Chiang Mai", "location": "Yang Piang, Omkoi"},
+    {"name": "Rong Khwang", "province": "Phrae", "location": "Thung Si, Rong Khwang"},
+    {"name": "Takhli", "province": "Nakhon Sawan", "location": "Takhli"},
+    {"name": "Phimai", "province": "Nakhon Ratchasima", "location": "Rang Ka Yai, Phimai"},
+    {"name": "Sattahip", "province": "Chon Buri", "location": "Samae San, Sattahip"},
+    {"name": "Phanom", "province": "Surat Thani", "location": "Phanom"},
+    {"name": "Hat Yai", "province": "Songkhla", "location": "Kho Hong, Hat Yai"}
+  ],
+  "mobile_c_band": [
+    {"name": "Pluak Daeng", "province": "Rayong", "location": "Pluak Daeng"},
+    {"name": "Ban Phue", "province": "Udon Thani", "location": "Ban Phue"},
+    {"name": "Rasi Salai", "province": "Si Sa Ket", "location": "Rasi Salai"},
+    {"name": "Pathio", "province": "Chumphon", "location": "Pathio"},
+    {"name": "Singhanakhon", "province": "Songkhla", "location": "Singhanakhon"}
+  ],
+  "system_description": {
+    "fixed": {"band": "S-band", "frequency_ghz": 2.8, "count": 7},
+    "mobile": {"band": "C-band", "frequency_ghz": 5.6, "count": 5}
+  },
+  "historical_snapshots": [
+    {
+      "date_be": "18 November 2564",
+      "total_stations": 10,
+      "fixed_s_band": ["Omkoi", "Takhli", "Phimai", "Sattahip", "Phanom"],
+      "mobile_c_band": ["Rong Khwang", "Ban Phue", "Rasi Salai", "Pathio", "Singhanakhon"],
+      "source_url": "https://www.royalrain.go.th/web/info/ShowDetail.aspx?DetailId=14336",
+      "evidence_status": "Verified historical snapshot",
+      "review_note": "The page gives operational/educational information, not a procurement record. It should be compared with the signed Rong Khwang S-band contract and later asset register."
+    }
+  ]
+}

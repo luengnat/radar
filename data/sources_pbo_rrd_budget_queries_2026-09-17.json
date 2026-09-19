@@ -1,0 +1,35 @@
+{
+  "source": "pbo-mcp.thaith.ai",
+  "manual_url": "https://pbo-mcp.thaith.ai/manual",
+  "endpoint": "https://pbo-mcp.thaith.ai/mcp",
+  "queried_at": "2026-09-17",
+  "dataset_description": "GFMIS budget-disbursement line items, fiscal years 2558-2568; monetary fields are million baht",
+  "agency_match": {
+    "query": "SELECT DISTINCT ministry, agency FROM disbursements WHERE fiscal_year=2568 AND agency LIKE '%ฝนหลวง%' LIMIT 20",
+    "rows": [{"ministry":"กระทรวงเกษตรและสหกรณ์","agency":"กรมฝนหลวงและการบินเกษตร"}]
+  },
+  "fy2568_site_search": {
+    "query": "WHERE fiscal_year=2568 AND agency='กรมฝนหลวงและการบินเกษตร' AND (budget_item_name LIKE '%รังกาใหญ่%' OR budget_item_name LIKE '%อุดร%' OR budget_item_name LIKE '%เมืองมอน%')",
+    "row_count": 0
+  },
+  "phimai_radar_history": {
+    "query": "WHERE agency='กรมฝนหลวงและการบินเกษตร' AND budget_item_name LIKE '%พิมาย%' AND budget_item_name LIKE '%เรดาร์%'",
+    "rows": [
+      {"fiscal_year":2564,"item":"ชุดอุปกรณ์ระบบป้องกันความเสียหายเครื่องเรดาร์ตรวจอากาศแบบประจำที่ สำหรับสถานีเรดาร์ฝนหลวงพิมาย ตำบลรังกาใหญ่อำเภอพิมาย จังหวัดนครราชสีมา","act_budget_mb":0,"post_transfer_budget_mb":0,"disbursed_total_mb":null,"remaining_total_mb":null},
+      {"fiscal_year":2564,"item":"ชุดอุปกรณ์ระบบป้องกันความเสียหายเครื่องเรดาร์ตรวจอากาศแบบประจำที่ สำหรับสถานีเรดาร์ฝนหลวงพิมาย ตำบลรังกาใหญ่อำเภอพิมาย จังหวัดนครราชสีมา","act_budget_mb":null,"post_transfer_budget_mb":null,"disbursed_total_mb":null,"remaining_total_mb":0},
+      {"fiscal_year":2564,"item":"ชุดอุปกรณ์ระบบป้องกันความเสียหายเครื่องเรดาร์ตรวจอากาศแบบประจำที่ สำหรับสถานีเรดาร์ฝนหลวงพิมาย ตำบลรังกาใหญ่อำเภอพิมาย จังหวัดนครราชสีมา","act_budget_mb":null,"post_transfer_budget_mb":null,"disbursed_total_mb":null,"remaining_total_mb":0},
+      {"fiscal_year":2563,"item":"ชุดอุปกรณ์ระบบป้องกันความเสียหายเครื่องเรดาร์ตรวจอากาศแบบประจำที่ สำหรับสถานีเรดาร์ฝนหลวงพิมาย ตำบลรังกาใหญ่อำเภอพิมาย จังหวัดนครราชสีมา","act_budget_mb":5.5,"post_transfer_budget_mb":5.4838,"disbursed_total_mb":null,"disbursed_incl_po_mb":0},
+      {"fiscal_year":2561,"item":"ระบบกล้องวงจรปิด สถานีเรดาร์ฝนหลวงพิมาย ตำบลรังกาใหญ่ อำเภอพิมายจังหวัดนครราชสีมา","act_budget_mb":1.4,"post_transfer_budget_mb":0.5848,"disbursed_total_mb":0.5848}
+    ]
+  },
+  "fy2568_radar_rows": {
+    "query_scope": "fiscal_year=2568, agency='กรมฝนหลวงและการบินเกษตร', budget_item_name LIKE '%เรดาร์%'",
+    "rows": [
+      {"item":"ปรับปรุงเรดาร์ตรวจวัดกลุ่มฝนแบบประจำที่ ความถี่ S-Band แบบ Dual Polarization ตำบลพลูตาหลวง อำเภอสัตหีบ จังหวัดชลบุรี","act_budget_mb":46,"post_transfer_budget_mb":46,"disbursed_total_mb":46},
+      {"item":"งานจ้างซ่อมปรับปรุงผิวถนน สถานีเรดาร์สัตหีบ ตำบลพลูตาหลวง อำเภอสัตหีบ จังหวัดชลบุรี","act_budget_mb":4.1,"post_transfer_budget_mb":4.1,"disbursed_total_mb":4.085},
+      {"item":"ปรับปรุงเรดาร์ตรวจวัดกลุ่มฝนแบบประจำที่ ความถี่ S-Band แบบ Dual Polarization ตำบลพลูตาหลวง อำเภอสัตหีบ จังหวัดชลบุรี","act_budget_mb":null,"post_transfer_budget_mb":null,"disbursed_total_mb":null,"remaining_total_mb":0},
+      {"item":"เรดาร์ตรวจวัดกลุ่มฝนแบบประจำที่ ความถี่ S-Band แบบ Dual Polarization ตำบลคอหงส์ อำเภอหาดใหญ่ จังหวัดสงขลา","act_budget_mb":null,"post_transfer_budget_mb":null,"disbursed_total_mb":null,"remaining_total_mb":0.7244}
+    ]
+  },
+  "interpretation": "The PBO result is a disbursement-dataset search, not an enacted-budget or procurement-register search. Zero rows for FY2568 site terms cannot prove that a plan line was never proposed, and the dataset does not cover FY2570."
+}

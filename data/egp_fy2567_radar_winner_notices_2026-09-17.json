@@ -1,0 +1,70 @@
+{
+ "_metadata": {
+  "fetched": "2026-09-17",
+  "source": "TMD W0 index rows → process5 template-service PDFs / TMD media PDF",
+  "basis": "All five are winner notices (ประกาศผู้ชนะการเสนอราคา) signed by Director-General Korravee Sitthichivapak; each conditions contract signing on cross-year commitment approval"
+ },
+ "surin": {
+  "station": "สุรินทร์ (นอกเมือง อ.เมือง)",
+  "project_id": null,
+  "notice_date_be": "22/08/2567",
+  "e_bidding_ref": "EB.15/2567 ลงวันที่ 9 [month] 2567",
+  "winner": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+  "value_baht": 138565000.0,
+  "budget_baht": 150000000,
+  "under_baht": 11435000,
+  "under_pct": 7.62,
+  "archive": "data/sources_egp/surin_cband_winner_2567.pdf",
+  "notice_url": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=f8c106b5-4901-49bc-aab9-fb4ab248338d"
+ },
+ "narathiwat": {
+  "station": "นราธิวาส (บางนาค อ.เมือง)",
+  "project_id": "67049316538",
+  "notice_date_be": "22/08/2567",
+  "e_bidding_ref": "EB.16/2567 ลงวันที่ 9 [month] 2567",
+  "winner": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+  "value_baht": 141775000.0,
+  "budget_baht": 150000000,
+  "under_baht": 8225000,
+  "under_pct": 5.48,
+  "archive": "data/sources_egp/narathiwat_67049316538_winner_2567.pdf",
+  "notice_url": "https://tmd.go.th/media/procurement/egp/นราธวาส_240823.pdf"
+ },
+ "rayong_upgrade": {
+  "station": "ระยอง (ตะพง อ.เมือง) C-band dual-pol upgrade",
+  "project_id": null,
+  "notice_date_be": "30/07/2567",
+  "e_bidding_ref": "EB.29/2567 ลงวันที่ 28 พฤษภาคม 2567",
+  "winner": "บริษัท จีโนแมทช์ จำกัด",
+  "value_baht": 47193600.0,
+  "budget_note": "สูงกว่าเงินงบประมาณ 2,193,600 บาท คิดเป็นร้อยละ 4.87 (winning price ABOVE the stated budget line)",
+  "archive": "data/sources_egp/rayong_cband_upgrade_winner_2567.pdf",
+  "notice_url": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=610db47d-f7b4-4153-b0e5-db7d61ad5797"
+ },
+ "khaokiew_upgrade": {
+  "station": "เขาเขียว (หินตั้ง อ.เมืองนครนายก) C-band dual-pol upgrade",
+  "project_id": null,
+  "notice_date_be": "24/07/2567",
+  "e_bidding_ref": "EB.18/2567 ลงวันที่ 14 พฤษภาคม 2567",
+  "winner": "ห้างหุ้นส่วนจำกัด ไซแอนติฟิค รีเสิร์ช",
+  "value_baht": 57988500.0,
+  "budget_baht": 60000000,
+  "under_baht": 2011500,
+  "under_pct": 3.35,
+  "archive": "data/sources_egp/khaokiew_cband_upgrade_winner_2567.pdf",
+  "notice_url": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=c86d49f7-a206-4edd-ba43-74829708a443"
+ },
+ "suvarnabhumi_upgrade": {
+  "station": "สุวรรณภูมิ (ราชาเทวะ อ.บางพลี) S-band upgrade",
+  "project_id": null,
+  "notice_date_be": "23/07/2567",
+  "e_bidding_ref": "EB.17/2567 ลงวันที่ 14 พฤษภาคม 2567",
+  "winner": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+  "value_baht": 62589500.0,
+  "budget_baht": 65000000,
+  "under_baht": 2410500,
+  "under_pct": 3.71,
+  "archive": "data/sources_egp/suvarnabhumi_sband_upgrade_winner_2567.pdf",
+  "notice_url": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=e2bc55e4-8dad-47a0-838e-8621f8c7d3b0"
+ }
+}

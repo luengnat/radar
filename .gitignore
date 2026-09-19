@@ -1,0 +1,6 @@
+_site/
+tmp/
+scripts/__pycache__/
+.DS_Store
+.omc/
+data/radar_procurement_sweep_2026-09-15.json

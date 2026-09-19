@@ -1,0 +1,229 @@
+{
+ "metadata": {
+  "source": "e-GP project detail page (ผลการจัดซื้อจัดจ้าง tab), browser session",
+  "retrieved_date": "2026-09-17",
+  "portal_url": "https://process5.gprocurement.go.th/egp-agpc01-web/announcement/procurement/",
+  "note": "Fresh browser/API recheck completed 17 Sep 2026. All four FY 2569 project IDs return result rows in getProcureResult: Chumphon 68099138543, Bueng Kan 68099138641, Phitsanulok 68099138724, and Krabi 68099247067. An earlier browser session incorrectly associated Krabi prices with the Bueng Kan record; the current project-specific API responses reconcile with TMD-07. Station identities are fixed by the project pages and project IDs.",
+  "reconciliation_note": "Supersedes the earlier 412,699,000/414,625,000 values incorrectly stored under Bueng Kan. Fresh e-GP responses place those values under Krabi and place 415,160,000/419,440,000 under Bueng Kan.",
+  "tor_zip_recipe": {
+   "note": "Full e-Bidding document zip (TOR, 13MB) for Phitsanulok is downloadable from the portal without login:",
+   "steps": [
+    "GET /egp-approval-service/apv-common/infoProcureDocAnnounZipTemp?projectId=68099138724 -> data.zipId",
+    "GET /egp-upload-service/v1/downloadFileTest?fileId=<zipId> -> application/zip",
+    "verified working in a browser session 2026-09-15; zipId=954022c42d764539bb9ed7c8113c4473 (may be session-bound)"
+   ],
+   "browser_only": "fetch from page context after passing the portal normally; direct curl hits the Cloudflare gate"
+  },
+  "synced_to": "data/egp_sband_procure_results_api_2026-09-17.json (authoritative station-price mapping from getProcureResult API)"
+ },
+ "records": [
+  {
+   "project_id": "68099138543",
+   "station": "Chumphon",
+   "method": "e-bidding",
+   "source_api": "https://process5.gprocurement.go.th/egp-atpj27-service/pb/a-egp-allt-project/announcement/getProcureResult?projectId=68099138543",
+   "bidders": [
+    {
+     "name": "บริษัท จีโนแมทช์ จำกัด",
+     "reg_no": "0105543029577",
+     "submitted_baht": 410987000,
+     "consideration": "passed",
+     "winner": true,
+     "agreed_baht": 410987000
+    },
+    {
+     "name": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+     "reg_no": "0105551041947",
+     "submitted_baht": 412142600,
+     "consideration": "passed",
+     "winner": false,
+     "agreed_baht": null
+    },
+    {
+     "name": "บริษัท เอเซียเมท จำกัด",
+     "reg_no": "0105530060373",
+     "submitted_baht": 391620000,
+     "consideration": "not passed",
+     "winner": false,
+     "agreed_baht": null
+    }
+   ],
+   "source_docs": {
+    "results_screenshot": "data/sources_egp/chumphon_results_bidder_rows_2026-09-15.png"
+   }
+  },
+  {
+   "project_id": "68099138641",
+   "station": "Bueng Kan",
+   "method": "e-bidding",
+   "source_api": "https://process5.gprocurement.go.th/egp-atpj27-service/pb/a-egp-allt-project/announcement/getProcureResult?projectId=68099138641",
+   "bidders": [
+    {
+     "name": "บริษัท จีโนแมทช์ จำกัด",
+     "reg_no": "0105543029577",
+     "submitted_baht": 415160000,
+     "consideration": "passed",
+     "winner": true,
+     "agreed_baht": 415160000
+    },
+    {
+     "name": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+     "reg_no": "0105551041947",
+     "submitted_baht": 419440000,
+     "consideration": "passed",
+     "winner": false,
+     "agreed_baht": null
+    },
+    {
+     "name": "ห้างหุ้นส่วนจำกัด ไซแอนติฟิค รีเสิร์ช",
+     "reg_no": "0103534016083",
+     "submitted_baht": 375570000,
+     "consideration": "not passed",
+     "winner": false,
+     "agreed_baht": null
+    }
+   ],
+   "preliminary": {
+    "date": "28/10/2568",
+    "bidder_count": 3,
+    "lowest_preliminary_baht": 375570000
+   },
+   "document_submitters": [
+    {
+     "name": "ห้างหุ้นส่วนจำกัด ไซแอนติฟิค รีเสิร์ช",
+     "date": "28/10/2568"
+    },
+    {
+     "name": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+     "date": "28/10/2568"
+    },
+    {
+     "name": "บริษัท จีโนแมทช์ จำกัด",
+     "date": "28/10/2568"
+    }
+   ],
+   "passed_qualification_technical": [
+    {
+     "name": "บริษัท จีโนแมทช์ จำกัด"
+    },
+    {
+     "name": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด"
+    }
+   ],
+   "source_docs": {
+    "preliminary_summary_pdf": "data/sources_egp/buengkan_sband_preliminary_bid_summary_2568.pdf",
+    "results_screenshot": "data/sources_egp/buengkan_results_bidder_rows_2026-09-17.png"
+   },
+   "source_reconciliation": "Fresh project-specific e-GP response returns 415,160,000 for Bueng Kan, matching TMD-07 contract สข.40/2569. The earlier 412,699,000/414,625,000 pair belonged to Krabi and was mis-associated during the earlier session."
+  },
+  {
+   "project_id": "68099138724",
+   "station": "Phitsanulok",
+   "method": "e-bidding",
+   "source_api": "https://process5.gprocurement.go.th/egp-atpj27-service/pb/a-egp-allt-project/announcement/getProcureResult?projectId=68099138724",
+   "bidders": [
+    {
+     "name": "บริษัท จีโนแมทช์ จำกัด",
+     "reg_no": "0105543029577",
+     "submitted_baht": 410987000,
+     "consideration": "passed",
+     "winner": false,
+     "agreed_baht": null
+    },
+    {
+     "name": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+     "reg_no": "0105551041947",
+     "submitted_baht": 408954000,
+     "consideration": "passed",
+     "winner": true,
+     "agreed_baht": 408954000
+    },
+    {
+     "name": "บริษัท เอเซียเมท จำกัด",
+     "reg_no": "0105530060373",
+     "submitted_baht": 389480000,
+     "consideration": "not passed",
+     "winner": false,
+     "agreed_baht": null
+    }
+   ],
+   "preliminary": {
+    "date": "24/11/2568",
+    "bidder_count": 3,
+    "lowest_preliminary_baht": 389480000
+   },
+   "document_submitters": [
+    {
+     "name": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+     "date": "24/11/2568"
+    },
+    {
+     "name": "บริษัท เอเซียเมท จำกัด",
+     "date": "24/11/2568"
+    },
+    {
+     "name": "บริษัท จีโนแมทช์ จำกัด",
+     "date": "24/11/2568"
+    }
+   ],
+   "passed_qualification_technical": [
+    {
+     "name": "บริษัท จีโนแมทช์ จำกัด"
+    },
+    {
+     "name": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด"
+    }
+   ],
+   "winner": {
+    "name": "Marwin Technologies",
+    "agreed_baht": 408954000
+   },
+   "source_docs": {
+    "preliminary_summary_pdf": "data/sources_egp/phitsanulok_sband_preliminary_bid_summary_2568.pdf",
+    "results_screenshot": "data/sources_egp/phitsanulok_results_bidder_rows_2026-09-15.png",
+    "technical_passers_modal_screenshot": "data/sources_egp/phitsanulok_technical_passers_modal_2026-09-17.png"
+   }
+  },
+  {
+   "project_id": "68099247067",
+   "station": "Krabi",
+   "method": "e-bidding",
+   "source_api": "https://process5.gprocurement.go.th/egp-atpj27-service/pb/a-egp-allt-project/announcement/getProcureResult?projectId=68099247067",
+   "bidders": [
+    {
+     "name": "บริษัท จีโนแมทช์ จำกัด",
+     "reg_no": "0105543029577",
+     "submitted_baht": 412699000,
+     "consideration": "passed",
+     "winner": true,
+     "agreed_baht": 412699000
+    },
+    {
+     "name": "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด",
+     "reg_no": "0105551041947",
+     "submitted_baht": 414625000,
+     "consideration": "passed",
+     "winner": false,
+     "agreed_baht": null
+    },
+    {
+     "name": "ห้างหุ้นส่วนจำกัด ไซแอนติฟิค รีเสิร์ช",
+     "reg_no": "0103534016083",
+     "submitted_baht": 375570000,
+     "consideration": "not passed",
+     "winner": false,
+     "agreed_baht": null
+    }
+   ],
+   "preliminary": {
+    "date": "28/10/2568",
+    "bidder_count": 3,
+    "lowest_preliminary_baht": 375570000
+   },
+   "source_docs": {
+    "results_screenshot": "data/sources_egp/krabi_results_bidder_rows_2026-09-15.png"
+   },
+   "source_reconciliation": "Fresh project-specific e-GP response returns 412,699,000 for Krabi, matching TMD-06/07 contract สข.39/2569. The results tab was transiently empty in an earlier browser session; it is not a current data gap."
+  }
+ ]
+}

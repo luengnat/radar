@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "title": "Royal Rainmaking Department radar-related procurement records",
+    "retrieved_date": "2026-09-15",
+    "scope": "Radar procurement, payment, maintenance, and spare-parts activities explicitly described in official Royal Rainmaking Department reports.",
+    "source_urls": [
+      "https://www.royalrain.go.th/UploadFile/01584325650422.pdf",
+      "https://www.royalrain.go.th/UploadFile/04270725651026.pdf",
+      "https://www.royalrain.go.th/UploadFile/09374525670726.pdf",
+      "https://www.royalrain.go.th/UploadFile/02464625660811.pdf"
+    ],
+    "evidence_rule": "Amounts are recorded as reported project or progress amounts. No supplier or award winner is inferred where the source excerpt does not name one."
+  },
+  "verified_records": [
+    {
+      "fiscal_year_be": 2564,
+      "activity_class": "new_radar_purchase",
+      "site": "Rong Khwang, Phrae",
+      "radar_band": "S-band",
+      "description": "Fixed S-band dual-polarization rain radar with building and accessories",
+      "procurement_method": "Specific/direct method (เฉพาะเจาะจง)",
+      "budget_or_reference_price_baht": 395000000,
+      "contract_value_baht": 394295000,
+      "saving_baht": 705000,
+      "saving_percent_reported": 0.18,
+      "selected_supplier": "Genomatch Co., Ltd.",
+      "contract_number": "คภ./ฝล.37/2564",
+      "contract_date_sources": [
+        {
+          "date_be": "2 สิงหาคม 2564",
+          "source_url": "https://www.royalrain.go.th/UploadFile/09212125670726.pdf",
+          "note": "FY 2564 progress report"
+        },
+        {
+          "date_be": "27 สิงหาคม 2564",
+          "source_url": "https://www.royalrain.go.th/UploadFile/04270725651026.pdf",
+          "note": "FY 2565 performance report"
+        }
+      ],
+      "payment_milestones": [
+        {
+          "fiscal_year_be": 2565,
+          "installment": 1,
+          "amount_baht": 177432750,
+          "source_url": "https://www.royalrain.go.th/UploadFile/04270725651026.pdf"
+        }
+      ],
+      "evidence_status": "Verified",
+      "source_urls": [
+        "https://www.royalrain.go.th/UploadFile/01584325650422.pdf",
+        "https://www.royalrain.go.th/UploadFile/09212125670726.pdf",
+        "https://www.royalrain.go.th/UploadFile/04270725651026.pdf"
+      ],
+      "review_note": "Official reports disagree on the contract date; preserve both dates until the signed contract is obtained."
+    },
+    {
+      "fiscal_year_be": 2566,
+      "activity_class": "support_or_maintenance",
+      "scope": "Combined maintenance of radar systems, upper-air instruments, short-wave upper-air instruments, and automatic rain gauges",
+      "amount_as_reported_baht": 453218,
+      "selected_supplier": null,
+      "contract_status": "The report describes the maintenance activity and amount; no supplier is named in the extracted section.",
+      "evidence_status": "Verified",
+      "source_url": "https://www.royalrain.go.th/UploadFile/09374525670726.pdf"
+    },
+    {
+      "fiscal_year_be": 2566,
+      "activity_class": "spare_parts",
+      "radar_oem_or_platform": "Gematronik",
+      "description": "Spare parts for Royal Rainmaking radar used with GEMATRONIK radar",
+      "amount_as_reported_baht": 13535300,
+      "selected_supplier": null,
+      "contract_status": "The report states that the plan, TOR and price work were completed and a contract was made; delivery was due by 23 December 2566.",
+      "evidence_status": "Verified",
+      "source_url": "https://www.royalrain.go.th/UploadFile/09374525670726.pdf"
+    },
+    {
+      "fiscal_year_be": 2566,
+      "activity_class": "spare_parts",
+      "radar_oem_or_platform": "EEC",
+      "description": "Spare parts for Royal Rainmaking radar used with EEC radar",
+      "amount_as_reported_baht": 1556500,
+      "selected_supplier": null,
+      "contract_status": "The report states that the plan, TOR and price work were completed and a contract was made; delivery was due by 9 October 2566.",
+      "evidence_status": "Verified",
+      "source_url": "https://www.royalrain.go.th/UploadFile/09374525670726.pdf"
+    }
+  ],
+  "planned_records": [
+    {
+      "plan_period_be": "2566-2570",
+      "activity_class": "radar_system_improvement",
+      "station_or_scope": "Sattahip",
+      "radar_band": "S-band",
+      "planned_amount_million_baht": 230.0,
+      "planned_fiscal_year_be": 2567,
+      "evidence_status": "Verified plan",
+      "source_url": "https://www.royalrain.go.th/UploadFile/02464625660811.pdf"
+    },
+    {
+      "plan_period_be": "2566-2570",
+      "activity_class": "radar_system_improvement",
+      "station_or_scope": "Phimai",
+      "radar_band": "S-band",
+      "planned_amount_million_baht": 235.0,
+      "planned_fiscal_year_be": 2568,
+      "evidence_status": "Verified plan",
+      "source_url": "https://www.royalrain.go.th/UploadFile/02464625660811.pdf"
+    },
+    {
+      "plan_period_be": "2566-2570",
+      "activity_class": "radar_system_improvement",
+      "station_or_scope": "Phanom",
+      "radar_band": "S-band",
+      "planned_amount_million_baht": 240.0,
+      "planned_fiscal_year_be": 2569,
+      "evidence_status": "Verified plan",
+      "source_url": "https://www.royalrain.go.th/UploadFile/02464625660811.pdf"
+    },
+    {
+      "plan_period_be": "2566-2570",
+      "activity_class": "new_radar_purchase",
+      "station_or_scope": "Ban Phue",
+      "radar_band": "S-band",
+      "planned_amount_million_baht": 460.0,
+      "planned_fiscal_year_be": 2567,
+      "evidence_status": "Verified plan",
+      "source_url": "https://www.royalrain.go.th/UploadFile/02464625660811.pdf"
+    },
+    {
+      "plan_period_be": "2566-2570",
+      "activity_class": "new_radar_purchase",
+      "station_or_scope": "Hat Yai",
+      "radar_band": "S-band",
+      "planned_amount_million_baht": 460.0,
+      "planned_fiscal_year_be": 2567,
+      "evidence_status": "Verified plan",
+      "source_url": "https://www.royalrain.go.th/UploadFile/02464625660811.pdf"
+    },
+    {
+      "plan_period_be": "2566-2570",
+      "activity_class": "new_radar_purchase",
+      "station_or_scope": "Rasi Salai",
+      "radar_band": "S-band",
+      "planned_amount_million_baht": 475.0,
+      "planned_fiscal_year_be": 2570,
+      "evidence_status": "Verified plan",
+      "source_url": "https://www.royalrain.go.th/UploadFile/02464625660811.pdf"
+    },
+    {
+      "plan_period_be": "2566-2570",
+      "activity_class": "radar_spare_parts",
+      "station_or_scope": "Royal Rainmaking radar network",
+      "planned_amount_million_baht": 200.0,
+      "planned_fiscal_years_be": [2567, 2568, 2569, 2570],
+      "evidence_status": "Verified plan",
+      "source_url": "https://www.royalrain.go.th/UploadFile/02464625660811.pdf",
+      "review_note": "The plan allocates 50 million baht per year for radar spare parts; it is not evidence of a completed purchase."
+    }
+  ],
+  "excluded_related_items": [
+    {
+      "description": "Spare parts for VAISALA upper-air instruments",
+      "amount_as_reported_baht": 1374880,
+      "reason": "Not radar-related"
+    },
+    {
+      "description": "Cloud-physics instrument maintenance",
+      "amount_as_reported_baht": 499923,
+      "reason": "Not radar-related"
+    }
+  ]
+}

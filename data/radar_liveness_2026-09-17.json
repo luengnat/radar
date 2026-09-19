@@ -1,0 +1,35 @@
+{
+ "metadata": {
+  "checked": "2026-09-17 ~14:00 ICT",
+  "method": "fetched latest frame from each portal"
+ },
+ "tmd": {
+  "live_feeds": 25,
+  "note": "all station feeds served current images; krb serves the byte-identical Out-of-Service placeholder GIF (54766 B) seen since 2019",
+  "krb_placeholder": true
+ },
+ "rrd_cappi": {
+  "live_today": [
+   "อมก๋อย",
+   "ร้องกวาง",
+   "ตาคลี",
+   "ราษีไศล",
+   "สิงหนคร",
+   "พิมาย",
+   "บ้านผือ",
+   "ปะทิว",
+   "สัตหีบ"
+  ],
+  "no_data_returned": [
+   "พนม",
+   "ปลวกแดง"
+  ],
+  "note": "Checked via api.php?station= (faster than HTML page): 9 of 11 stations returned frames timestamped 2026-09-17 13:54-14:00 ICT — including Sattahip (141 frames, fresh from its FY2568 46M upgrade) and Phimai (same-day frame while its 480M replacement is in the FY2570 process). Phanom and Pluak Daeng API returned 'data not found' this pass — not proof of permanent outage."
+ },
+ "addendum_2026_09_19": {
+  "note": "Stations added to the map from the TMD official list (R-3.pdf) after the 17 Sep sweep were checked individually on 19 Sep 2026.",
+  "hyi_tmd": "live — weather.tmd.go.th/hyi/hyi240_latest.jpg served a current 800x800 image (217,082 bytes)",
+  "smi_tmd": "feed page exists (smi.php) but smi/smi240_latest.jpg returned HTTP 404 on 19 Sep 2026 — no image verified; not proof of outage",
+  "rng_trg_mhs": "rng240_latest.jpg (141,004 B), trg240_latest.jpg (77,778 B) and mhs240_latest.jpg (80,823 B) all served current images on 19 Sep 2026; trg.php wrapper page itself returns 404 — a site-navigation gap, not an outage signal"
+ }
+}

@@ -1,0 +1,487 @@
+{
+ "metadata": {
+  "created": "2026-09-17",
+  "method": "OEM datasheet research (4 agents: EEC, Leonardo, other makers, Thai dealer lines) vs two tender envelopes. Envelope A = TMD FY2569 TOR (verified, archived). Envelope B numeric = RRD Phimai/Udon draft TOR (tier Reported, from dossier). Judgments on datasheet cells only; unknown = unknown.",
+  "caveats": [
+   "Envelope B brand-line effect judged separately (printed brand narrows to Leonardo channel)",
+   "METEOR 600S specs are secondary-source",
+   "JRC/Toshiba/Probecom partial data",
+   "The claim that AsiaMet offered a Vaisala-line radar is Reported; the power-envelope fail mechanism is a hypothesis pending technical-evaluation reports"
+  ]
+ },
+ "envelope_A_TMD_verified": {
+  "freq": "2700-2900",
+  "tx": [
+   "Magnetron",
+   "Klystron",
+   "Solid State"
+  ],
+  "peak_kw_min": 750,
+  "dish_m_min": 8.0,
+  "gain_db_min": 44.5,
+  "hpbw_max": 1.0
+ },
+ "envelope_B_RRD_reported_numeric": {
+  "freq": "2700-2900",
+  "tx": [
+   "Magnetron"
+  ],
+  "peak_kw_min": 850
+ },
+ "matrix": [
+  {
+   "manufacturer": "EEC (Enterprise Electronics Corporation)",
+   "model": "DWSR-8501S",
+   "transmitter": "High-Power Coaxial Magnetron",
+   "peak_power_kw": 850,
+   "freq_mhz": "2700-3000",
+   "source": "https://www.eecweathertech.com/pdf/EEC-S-Band-Specs.pdf (corroborated by https://www.radartutorial.eu/19.kartei/10.weather/pubs/EEC-S-Band-Systems.pdf and https://www.eecradar.com/pdf/EEC-ULM-Polarimetric-Doppler-Radar.pdf)",
+   "confidence": "high",
+   "envelope_A_TMD_verified": {
+    "freq": "pass",
+    "tx": "pass",
+    "peak_kw": "pass",
+    "dish": "pass",
+    "gain": "pass",
+    "hpbw": "pass"
+   },
+   "envelope_B_RRD_reported": {
+    "freq": "pass",
+    "tx": "pass",
+    "peak_kw": "pass"
+   }
+  },
+  {
+   "manufacturer": "EEC (Enterprise Electronics Corporation)",
+   "model": "DWSR-8501S/K",
+   "transmitter": "Klystron",
+   "peak_power_kw": 850,
+   "freq_mhz": "2700-3000",
+   "source": "https://www.eecweathertech.com/pdf/EEC-S-Band-Specs.pdf (corroborated by https://www.radartutorial.eu/19.kartei/10.weather/pubs/EEC-S-Band-Systems.pdf)",
+   "confidence": "high",
+   "envelope_A_TMD_verified": {
+    "freq": "pass",
+    "tx": "pass",
+    "peak_kw": "pass",
+    "dish": "pass",
+    "gain": "pass",
+    "hpbw": "pass"
+   },
+   "envelope_B_RRD_reported": {
+    "freq": "pass",
+    "tx": "fail",
+    "peak_kw": "pass"
+   }
+  },
+  {
+   "manufacturer": "EEC (Enterprise Electronics Corporation)",
+   "model": "Defender S850 (current S-band product)",
+   "transmitter": "High-Power Coaxial Magnetron",
+   "peak_power_kw": 850,
+   "freq_mhz": "2700-2900",
+   "source": "https://www.eecradar.com/pdf/EEC-Defender-SBAND-specs.pdf (installs: https://www.eecradar.com/pdf/TMA-Press-Release.pdf, https://www.eecradar.com/pdf/Panama-Canal-Press-Release.pdf)",
+   "confidence": "high",
+   "envelope_A_TMD_verified": {
+    "freq": "pass",
+    "tx": "pass",
+    "peak_kw": "pass",
+    "dish": "pass",
+    "gain": "pass",
+    "hpbw": "pass"
+   },
+   "envelope_B_RRD_reported": {
+    "freq": "pass",
+    "tx": "pass",
+    "peak_kw": "pass"
+   }
+  },
+  {
+   "manufacturer": "EEC (Enterprise Electronics Corporation)",
+   "model": "Defender SK850 (current S-band product)",
+   "transmitter": "Klystron",
+   "peak_power_kw": "750 (minimum)",
+   "freq_mhz": "2700-3000",
+   "source": "https://www.eecradar.com/pdf/EEC-Defender-SBAND-specs.pdf",
+   "confidence": "high",
+   "envelope_A_TMD_verified": {
+    "freq": "pass",
+    "tx": "pass",
+    "peak_kw": "pass",
+    "dish": "pass",
+    "gain": "pass",
+    "hpbw": "pass"
+   },
+   "envelope_B_RRD_reported": {
+    "freq": "pass",
+    "tx": "fail",
+    "peak_kw": "fail"
+   }
+  },
+  {
+   "manufacturer": "EEC (Enterprise Electronics Corporation)",
+   "model": "DWSR-93 (S-band legacy, e.g. DWSR-93S)",
+   "transmitter": "unknown",
+   "peak_power_kw": "unknown",
+   "freq_mhz": "unknown",
+   "source": "https://www.jma.go.jp/jma/en/photogallery/WMO-ASEAN_Radar_Workshop_Jan2024/Country%20Report%202024_Vietnam.pdf",
+   "confidence": "medium",
+   "envelope_A_TMD_verified": {
+    "freq": "unknown",
+    "tx": "fail",
+    "peak_kw": "unknown",
+    "dish": "unknown",
+    "gain": "unknown",
+    "hpbw": "unknown"
+   },
+   "envelope_B_RRD_reported": {
+    "freq": "unknown",
+    "tx": "fail",
+    "peak_kw": "unknown"
+   }
+  },
+  {
+   "manufacturer": "EEC (Enterprise Electronics Corporation)",
+   "model": "DWSR-2501C / DWSR-3501C",
+   "transmitter": "High-Power Coaxial Magnetron (2501C/K variant: Klystron)",
+   "peak_power_kw": "250 and 350",
+   "freq_mhz": "5200-5700",
+   "source": "https://www.eecradar.com/pdf/EEC-C-Band-Specs.pdf (corroborated by https://www.radartutorial.eu/19.kartei/10.weather/karte026.en.html)",
+   "confidence": "high",
+   "envelope_A_TMD_verified": {
+    "freq": "fail",
+    "tx": "pass",
+    "peak_kw": "fail",
+    "dish": "fail",
+    "gain": "pass",
+    "hpbw": "pass"
+   },
+   "envelope_B_RRD_reported": {
+    "freq": "fail",
+    "tx": "pass",
+    "peak_kw": "fail"
+   }
+  },
+  {
+   "manufacturer": "EEC (Enterprise Electronics Corporation)",
+   "model": "DWSR-5001C",
+   "transmitter": "High-Power Coaxial Magnetron",
+   "peak_power_kw": 500,
+   "freq_mhz": "5400-5900",
+   "source": "https://www.eecradar.com/pdf/EEC-C-Band-Specs.pdf (corroborated by https://www.radartutorial.eu/19.kartei/10.weather/karte026.en.html)",
+   "confidence": "high",
+   "envelope_A_TMD_verified": {
+    "freq": "fail",
+    "tx": "pass",
+    "peak_kw": "fail",
+    "dish": "fail",
+    "gain": "pass",
+    "hpbw": "pass"
+   },
+   "envelope_B_RRD_reported": {
+    "freq": "fail",
+    "tx": "pass",
+    "peak_kw": "fail"
+   }
+  },
+  {
+   "manufacturer": "LEONARDO Germany GmbH (formerly Selex ES / SELEX Sistemi Integrati / Gematronik, Neuss, Germany)",
+   "model": "METEOR 700S",
+   "transmitter": "Coaxial Magnetron with solid state, IGBT-switched modulator (2nd generation solid-state modulator, graceful degradation)",
+   "peak_power_kw": "850 kW",
+   "freq_mhz": "2700 - 2900 MHz (S-Band)",
+   "source": "https://electronics.leonardo.com/documents/16277707/18381876/METEOR+700S_17071035104_EN.pdf",
+   "confidence": "datasheet",
+   "envelope_A_TMD_verified": {
+    "freq": "pass",
+    "tx": "pass",
+    "peak_kw": "pass",
+    "dish": "pass",
+    "gain": "pass",
+    "hpbw": "pass"
+   },
+   "envelope_B_RRD_reported": {
+    "freq": "pass",
+    "tx": "pass",
+    "peak_kw": "pass"
+   }
+  },
+  {
+   "manufacturer": "LEONARDO Germany GmbH (formerly Selex ES / Gematronik)",
+   "model": "METEOR 1700S (current datasheet, 202510-1-02)",
+   "transmitter": "Klystron with solid state, IGBT-switched modulator (fully coherent)",
+   "peak_power_kw": "1000 kW (technical data table; note: overview text on the leonardogermany.com product page still says '750kW klystron' - internal discrepancy)",
+   "freq_mhz": "2700 - 2900 MHz (S-Band)",
+   "source": "https://electronics.leonardo.com/documents/16277707/18389918/METEOR+1700S_202510-1-02.pdf",
+   "confidence": "datasheet",
+   "envelope_A_TMD_verified": {
+    "freq": "pass",
+    "tx": "pass",
+    "peak_kw": "pass",
+    "dish": "pass",
+    "gain": "pass",
+    "hpbw": "pass"
+   },
+   "envelope_B_RRD_reported": {
+    "freq": "pass",
+    "tx": "fail",
+    "peak_kw": "pass"
+   }
+  },
+  {
+   "manufacturer": "Selex ES GmbH (formerly SELEX Sistemi Integrati / Gematronik; now LEONARDO Germany GmbH)",
+   "model": "METEOR 1700S (Selex ES-era datasheet, Ref. 27091548102)",
+   "transmitter": "Klystron with solid state, IGBT-switched modulator",
+   "peak_power_kw": "750 kW",
+   "freq_mhz": "2700 - 2900 MHz (S-Band)",
+   "source": "https://www.radartutorial.eu/19.kartei/10.weather/pubs/Selex-ES-METEOR-1700S.pdf",
+   "confidence": "datasheet",
+   "envelope_A_TMD_verified": {
+    "freq": "pass",
+    "tx": "pass",
+    "peak_kw": "pass",
+    "dish": "pass",
+    "gain": "pass",
+    "hpbw": "pass"
+   },
+   "envelope_B_RRD_reported": {
+    "freq": "pass",
+    "tx": "fail",
+    "peak_kw": "fail"
+   }
+  },
+  {
+   "manufacturer": "SELEX Sistemi Integrati GmbH (Gematronik Weather Radar Systems; now LEONARDO Germany GmbH)",
+   "model": "METEOR 1600S (official datasheet, Ref. 144512)",
+   "transmitter": "Klystron (transmitter TXS 1600) with solid state, IGBT-switched modulator",
+   "peak_power_kw": "750 kW",
+   "freq_mhz": "2700 - 2900 MHz (S-Band)",
+   "source": "https://www.radartutorial.eu/19.kartei/10.weather/pubs/Datasheet_METEOR_1600S.pdf",
+   "confidence": "datasheet",
+   "envelope_A_TMD_verified": {
+    "freq": "pass",
+    "tx": "pass",
+    "peak_kw": "pass",
+    "dish": "fail",
+    "gain": "fail",
+    "hpbw": "fail"
+   },
+   "envelope_B_RRD_reported": {
+    "freq": "pass",
+    "tx": "fail",
+    "peak_kw": "fail"
+   }
+  },
+  {
+   "manufacturer": "Gematronik / Selex ES (now LEONARDO Germany GmbH)",
+   "model": "METEOR 600S",
+   "transmitter": "Magnetron keyed by semiconductor (solid-state) modulator - coaxial magnetron type per successor 700S description",
+   "peak_power_kw": "850 kW (secondary source and installation literature; no official datasheet currently published)",
+   "freq_mhz": "2.7 - 2.9 GHz (S-Band); e.g. 2796 MHz (Malaysia Subang), 2880 MHz (Cambodia) in installations",
+   "source": "https://www.radartutorial.eu/19.kartei/10.weather/karte009.en.html",
+   "confidence": "secondary",
+   "envelope_A_TMD_verified": {
+    "freq": "fail",
+    "tx": "pass",
+    "peak_kw": "pass",
+    "dish": "pass",
+    "gain": "unknown",
+    "hpbw": "fail"
+   },
+   "envelope_B_RRD_reported": {
+    "freq": "fail",
+    "tx": "pass",
+    "peak_kw": "pass"
+   }
+  },
+  {
+   "manufacturer": "Japan Radio Co., Ltd. (JRC)",
+   "model": "JMA-254 Series S-Band RAINWATCHER",
+   "transmitter": "Solid State Power Amplifier (no transmitting tube)",
+   "peak_power_kw": "≥8 kW (duty cycle ≤20%); JRC Japanese product page states 10 kW peak",
+   "freq_mhz": "2700-2900",
+   "source": "https://www.jrc.co.jp/hubfs/jrc-corp/assets/pdf/en/product/jma-254_201905.pdf",
+   "confidence": "datasheet",
+   "envelope_A_TMD_verified": {
+    "freq": "pass",
+    "tx": "pass",
+    "peak_kw": "fail",
+    "dish": "fail",
+    "gain": "fail",
+    "hpbw": "fail"
+   },
+   "envelope_B_RRD_reported": {
+    "freq": "pass",
+    "tx": "fail",
+    "peak_kw": "fail"
+   }
+  },
+  {
+   "manufacturer": "Toshiba (Toshiba Infrastructure Systems & Solutions Corporation; weather radar business transferred to Toshiba Denpa Technology in Feb 2025)",
+   "model": "S-band Solid-State Weather Radar (SSWR) - Taiwan Central Weather Bureau system",
+   "transmitter": "Solid-state transmitter using Toshiba microwave transistors, several redundant PA modules (Toshiba SSWR literature documents GaN HEMT power amplifier units); no transmitter tube",
+   "peak_power_kw": "",
+   "freq_mhz": "S-band (exact range not published by Toshiba)",
+   "source": "https://www.global.toshiba/ww/news/corporate/2017/03/pr2101.html",
+   "confidence": "brochure",
+   "envelope_A_TMD_verified": {
+    "freq": "unknown",
+    "tx": "fail",
+    "peak_kw": "unknown",
+    "dish": "unknown",
+    "gain": "unknown",
+    "hpbw": "unknown"
+   },
+   "envelope_B_RRD_reported": {
+    "freq": "unknown",
+    "tx": "fail",
+    "peak_kw": "unknown"
+   }
+  },
+  {
+   "manufacturer": "IACIT (Brazil)",
+   "model": "RMT 0100DS-DP Weather Doppler Radar, S Band Dual Polarization",
+   "transmitter": "Pulsed coaxial magnetron oscillator of high stability with solid-state modulator; optional klystron or solid-state amplifier",
+   "peak_power_kw": ">750 kW, adjustable (duty cycle 0.0012)",
+   "freq_mhz": "2700-2900 (tuneable)",
+   "source": "https://www.iacit.com.br/library/download.php?path=../arquivo/componentes/dccb9cba05d8f04ffc42.pdf",
+   "confidence": "datasheet",
+   "envelope_A_TMD_verified": {
+    "freq": "pass",
+    "tx": "pass",
+    "peak_kw": "pass",
+    "dish": "pass",
+    "gain": "pass",
+    "hpbw": "pass"
+   },
+   "envelope_B_RRD_reported": {
+    "freq": "pass",
+    "tx": "pass",
+    "peak_kw": "fail"
+   }
+  },
+  {
+   "manufacturer": "IACIT (Brazil)",
+   "model": "RMT 0200 Dual Polarization S-band Doppler Weather Radar, Solid State Transmission",
+   "transmitter": "Solid State Amplifier; SDR-based transceiver generating NLFM waveforms for sidelobe mitigation",
+   "peak_power_kw": "≥2.5 kW per channel (duty cycle ≤10%)",
+   "freq_mhz": "2700-2900",
+   "source": "https://www.iacit.com.br/library/download.php?path=../arquivo/componentes/aa8396e09f5f9068baa0.pdf",
+   "confidence": "datasheet",
+   "envelope_A_TMD_verified": {
+    "freq": "pass",
+    "tx": "pass",
+    "peak_kw": "fail",
+    "dish": "pass",
+    "gain": "pass",
+    "hpbw": "pass"
+   },
+   "envelope_B_RRD_reported": {
+    "freq": "pass",
+    "tx": "fail",
+    "peak_kw": "fail"
+   }
+  },
+  {
+   "manufacturer": "Shaanxi Probecom Microwave Technology Co., Ltd. (China)",
+   "model": "S Band Dual Polarization Full Coherent Weather Radar",
+   "transmitter": "",
+   "peak_power_kw": "",
+   "freq_mhz": "2700-2900",
+   "source": "http://www.probecom.cn/Meteorogical-Radars/S-Band-Dual-Polarization-Weather.html",
+   "confidence": "brochure",
+   "envelope_A_TMD_verified": {
+    "freq": "pass",
+    "tx": "unknown",
+    "peak_kw": "unknown",
+    "dish": "unknown",
+    "gain": "unknown",
+    "hpbw": "unknown"
+   },
+   "envelope_B_RRD_reported": {
+    "freq": "pass",
+    "tx": "unknown",
+    "peak_kw": "unknown"
+   }
+  }
+ ],
+ "dealer_lines": {
+  "AsiaMet": "Vaisala line (reported); bid FY2569 S-band and failed technical at Chumphon+Phitsanulok as lowest bidder",
+  "Scientific_Research": "EEC line (reported/verified at RRD); failed technical as lowest bidder at Bueng Kan+Krabi",
+  "Marwin": "EEC (reported)",
+  "Genomatch": "Leonardo/Gematronik (reported)"
+ },
+ "asiaMet_scientific_claims": [
+  {
+   "claim": "ASIAMET (1) — Registry: ASIAMET CO., LTD. (บริษัท เอเซียเมท จำกัด), commercial reg 0105530060373, is registered as a distributor/installer of telecommunications equipment, scientific instruments and meteorological instruments. Note: Thai directories list its address in Lat Krabang (105 Moo 4, Chalong Krung Rd), not Bang Rak; the Bang Rak/Silom address belongs to the later-converted Scientific Research Co., Ltd. The e-GP bidder rows confirm reg 0105530060373 is the firm that bid the TMD radar tenders.",
+   "source_url": "https://www.dataforthai.com/company/0105530060373/"
+  },
+  {
+   "claim": "ASIAMET (2) — OEM line = VAISALA (Finland). Primary scanned TMD announcement (OCR'd): TMD e-procurement no. 25/2552 for 'โครงการจัดหาเครื่องมือตรวจอากาศการบินที่ทางวิ่งที่ ๓ (สุวรรณภูมิ) ๑ ระบบ' (aviation weather observation system, Suvarnabhumi Runway 3); 3 envelopes submitted, only 2 passed technical: บริษัท เอเซียเมท จำกัด and บริษัท เอ็กเซล คอนซัลแตนท์ส จำกัด (Excel Consultants). Committee selected the VAISALA brand, product of VAISALA Oyj FINLAND, purchased from AsiaMet for 164,245,000 THB (0.50% under the 165M reference price), approved by the ICT Minister. Local OCR working copy: /Users/nat/.claude/projects/-Users-nat-dev-radar/c42fd9f0-a585-4edc-8948-0a5254a22e21/tool-results/webfetch-1789614943022-ynohkn.pdf",
+   "source_url": "https://infocenter.oic.go.th/FILEWEB/CABINFOCENTER17/DRAWER019/GENERAL/DATA0000/00000304.PDF"
+  },
+  {
+   "claim": "ASIAMET (3) — TMD, 2555 (2012): AsiaMet won maintenance/repair contract สจ.5/2555 (9 Nov 2011) for the Doppler weather radar with interconnection equipment at Suvarnabhumi Airport, 5,778,000 THB, special (วิธีพิเศษ) method — its documented radar-adjacent win.",
+   "source_url": "https://www.tmd.go.th/media/PDF/agreement54-55.pdf"
+  },
+  {
+   "claim": "ASIAMET (4) — TMD, 2561 (2018): AsiaMet was one of 3 bidders on the Suvarnabhumi lightning Warning System (สข.69/2561): Genomatch won at 328,490,000 THB; Marwin bid 332,531,390; AsiaMet's price not printed in the TMD summary — a documented loss.",
+   "source_url": "https://www.tmd.go.th/media/PDF/agreement_2561.pdf"
+  },
+  {
+   "claim": "ASIAMET (5) — TMD, Apr 2567 (2024): AsiaMet won e-bidding 'ซื้อครุภัณฑ์วิทยาศาสตร์ เครื่องมือตรวจวัดอุตุนิยมวิทยาการบินเพื่อสนับสนุนการบริหารจัดการจราจรทางอากาศ (MET/ATM) ระยะที่ 1 ที่ท่าอากาศยานสุวรรณภูมิ 1 ระบบ' as lowest bidder at 623,810,000 THB (budget 635M); winner announced 10 Apr 2567, contract สข.117/2567 signed 26 Apr 2567. Isranews criticized the award as signed before the FY2567 Budget Act took effect ('จัดซื้อก่อนได้งบ') and noted the losing comparators were 'the same old group' of TMD vendors. This is TMD's aviation-weather program (Thailand's aviation meteorology sits under TMD's อุตุนิยมวิทยาการบิน bureau, not DoA).",
+   "source_url": "https://www.isranews.org/article/isranews-news/128975-invescomods.html"
+  },
+  {
+   "claim": "ASIAMET (6) — TMD, 20 Jan 2569 (2026): primary e-GP winner announcement (pdftotext-verified) — AsiaMet again lowest bidder and winner of e-bidding EB.6/2569 'ปรับปรุงเครื่องมือตรวจอากาศการบิน ที่ท่าอากาศยานสุวรรณภูมิ 1 ระบบ' at 385,914,300 THB incl. VAT, 2.93% under budget; project ID 68099138830. Local copy: /Users/nat/.claude/projects/-Users-nat-dev-radar/c42fd9f0-a585-4edc-8948-0a5254a22e21/tool-results/webfetch-1789615322219-t9y4al.pdf",
+   "source_url": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=58b1c69b-9e43-4e2c-a16c-b9224f121475"
+  },
+  {
+   "claim": "ASIAMET (7) — TMD FY2569 S-band radar tenders: AsiaMet BID weather radar to กรมอุตุนิยมวิทยา (TMD) and failed technical/qualification consideration despite being lowest bidder at both stations it entered: Chumphon (project 68099138543) 391,620,000 THB, result flag N; Phitsanulok (68099138724) 389,480,000 THB, result flag N. Winners: Genomatch (Chumphon 410,987,000) and Marwin (Phitsanulok 408,954,000). Fresh API snapshot: /Users/nat/dev/radar/data/egp_sband_procure_results_api_2026-09-17.json",
+   "source_url": "https://process5.gprocurement.go.th/egp-atpj27-service/pb/a-egp-allt-project/announcement/getProcureResult?projectId=68099138543"
+  },
+  {
+   "claim": "ASIAMET (8) — The TMD FY2569 S-band TOR is brand-neutral (no OEM named anywhere; magnetron/klystron/solid-state all permitted; 2700–2900 MHz, 750 kW peak, ≥8 m antenna, HPBW ≤1.0°, PRF 250–2000 Hz, dual-pol; identical 446,166,666.66 THB reference price at all four stations). Which OEM AsiaMet offered in the rejected S-band bids is NOT publicly disclosed (no MAL/manufacturer authorization letter published); its documented OEM relationship is Vaisala for AWOS/aviation weather, so a Vaisala radar offer is plausible but unverified. Local spec extract: /Users/nat/dev/radar/data/tmd_sband_tor_specs_2568.json",
+   "source_url": "https://process5.gprocurement.go.th/egp-atpj27-service/pb/a-egp-allt-project/announcement/getProcureResult?projectId=68099138724"
+  },
+  {
+   "claim": "ASIAMET (9) — กรมฝนหลวง (RRD): no record found of AsiaMet bidding or winning any RRD radar tender (RRD records show only Genomatch, Scientific Research and Marwin as radar counterparties 2560–2569). กรมการขนส่งทางอากาศ (DoA/DOT): no public e-GP radar tender record naming AsiaMet (or any bidder list) found; Thai aviation-weather procurement runs through TMD. The '~480M per station' figure in the public record is RRD's FY2570 budget request for 2 radars (Udon Thani + Phimai, 480M each, 960M total), per MP Chayaphol's censure-debate critique — not a DoA award.",
+   "source_url": "https://www.dailynews.co.th/news/6173355/"
+  },
+  {
+   "claim": "SCIENTIFIC RESEARCH (1) — Registry: ห้างหุ้นส่วนจำกัด ไซแอนติฟิค รีเสิร์ช (Scientific Research Limited Partnership), reg 0103534016083, registered business: trading, importing, installing, repairing and maintaining hydrological and meteorological instruments. It later converted to บริษัท ไซแอนติฟิค รีเสิร์ช จำกัด (reg 0105569102638, 10M THB capital, Kamol Suko building, Silom Rd, Bang Rak, Bangkok) — the Bang Rak address in the task brief matches this entity; e-GP bidder rows for the FY2569 radar tenders still carry the LP registration 0103534016083.",
+   "source_url": "https://data.creden.co/company/general/0103534016083"
+  },
+  {
+   "claim": "SCIENTIFIC RESEARCH (2) — OEM line = EEC (Enterprise Electronics Corporation, USA) at กรมฝนหลวง (RRD): (a) Feb 2560 RRD monthly summary shows two EEC-brand rain-radar spare-parts lots — SR won lot 1 at 5,215,500 THB and Genomatch lot 2 at 5,050,000 THB (the two also competed against each other); (b) FY2564 report records 5 EEC-brand radar purchases at 498,850 THB by specific method; (c) 2562: RRD's mobile royal-rainmaking weather laboratories ยี่ห้อ EEC (Phrae, Songkhla, Chumphon) supplied by SR with 49,321,930-THB installments; (d) FY2568: EEC-fleet mobile radar spares (Singhanakhon station) 5,389,000 THB to SR. RRD's own fleet history confirms EEC DWSR-8500S S-band radars ran 2542–2556 before Gematronik METEOR 600S replaced them.",
+   "source_url": "https://www.royalrain.go.th/UploadFile/12305125621030.pdf"
+  },
+  {
+   "claim": "SCIENTIFIC RESEARCH (3) — Additional TMD product lines beyond radar: 1680 MHz automatic upper-air sounding systems, AWOS, Transmissometer Processing Units (1.5M, สข.22/2568), Radiometrics-brand short-wave upper-air/microwave-radiometer spares at RRD (3.886M + 7.568M in 2565), and a Smart Broadcast for Shipping system (28.58M). Aggregate TMD footprint per Isranews/govspending: 47+ projects worth 868.34M THB (2558–2566).",
+   "source_url": "https://isranews.org/article/isranews-scoop/127374-invecassoooo.html"
+  },
+  {
+   "claim": "SCIENTIFIC RESEARCH (4) — Major TMD radar WINS: 2555 two dual-pol weather radars 300,941,000 THB (e-auction, สข.39/2555); 2559 mobile X-band dual-pol radar 48,792,000 THB (สข.78/2559 — an outlier bid 35% under the 75M median vs Genomatch 73.6M / Marwin 78.1M); 2561 dual-pol upgrades Phuket+Lamphun 86,670,000 (สข.71/2561); 2562 upgrades Rayong (43.17M), Chumphon (43.12M), Khao Khiao (59.39M), Wichian Buri (43.17M); 2567 new C-band dual-pol radar Sathing Phra, Songkhla 139,100,000 (สข.133/2567) and Khao Khiao C-band overhaul 57,988,500 (สข.145/2567); FY2569 Samut Songkhram radar O&M 19,800,000 (สจ.13/2569).",
+   "source_url": "https://www.tmd.go.th/media/PDF/agreement_2559.pdf"
+  },
+  {
+   "claim": "SCIENTIFIC RESEARCH (5) — PUBLIC BID FAILURES/REJECTIONS (a) FY2569 TMD S-band dual-pol radar e-biddings: SR submitted the LOWEST price at BOTH stations it entered — Bueng Kan (68099138641) 375,570,000 THB and Krabi (68099247067) 375,570,000 THB (identical price for both stations) — and received result flag N (did not pass qualification/technical consideration) at both; only Genomatch (winner) and Marwin passed. (b) Historical losses in the ~300M fixed-radar series to Marwin: 2557 Don Mueang+Khon Kaen (SR 309.99M vs winner 309.337M), 2558 Nan+Ubon (307.92M vs 306.9295M), 2559 Chiang Rai+Surat Thani (304.9M vs 302.568M), 2561 Suvarnabhumi S-band (308.7485M vs 304.95M) — bids consistently within 0.4–1.8% of the winner; 2556 S-band spares lost to Marwin (9.29M vs 9.2448M); 2557 radar spares lost to Genomatch (1.819M vs 1.6906M). (c) RRD 2567 selective-method radars Hat Yai (455.171M) and Sattahip (228M, both won by Genomatch): SR served only as a reference-price quotation source (21–22 Mar 2567), not selected. Snapshot: /Users/nat/dev/radar/data/egp_sband_reconciliation_2026-09-17.json",
+   "source_url": "https://process5.gprocurement.go.th/egp-atpj27-service/pb/a-egp-allt-project/announcement/getProcureResult?projectId=68099138641"
+  },
+  {
+   "claim": "SCIENTIFIC RESEARCH (6) — RRD FY2570 '480M/station' quotation round: for the Udon Thani and Phimai replacement radars (480M budget each, 960M total), the three quotation sets are Genomatch 480.0M (exactly the budget; Genomatch's letter claims sole Thai distributorship of Leonardo/Gematronik), Scientific Research 486.3M (+1.31%) and Marwin 492.0M (+2.50%) — identical totals for BOTH sites with different scope mixes, all dated 19 June 2569, same day as RRD's own ปร.4/ปร.5 forms; construction portion 62,215,600 identical across provinces. Draft TOR tables for Phimai/Udon print 'ยี่ห้อ LEONARDO/Gematronik' in the spec table (850 kW requirement), while the EEC DWSR-class envelope offered through SR's channel also fits numerically. So SR is positioned in the 480M program as the EEC-channel quote, not (yet) a bidder — no e-bidding TOR has been published as of 15 Sep 2026.",
+   "source_url": "https://www.royalrain.go.th/royalrain/Page_list.aspx?MenuId=763"
+  },
+  {
+   "claim": "SCIENTIFIC RESEARCH (7) — Investigative scrutiny (Isranews, Mar 2567): SR and Genomatch — the two recurring TMD radar/upper-air vendors — used the SAME auditor (นายไชยวุฒิ จิตธิวงษ์) since 2547 (Genomatch switched in 2564), and appear as reciprocal bid comparators ('คู่เทียบ') in the same tenders; SR+Genomatch combined exceed 2,400M THB of TMD contracts 2558–2566. Isranews presented the linkages without alleging an offense; neither company responded to requests for comment.",
+   "source_url": "https://isranews.org/article/isranews-scoop/127374-invecassoooo.html"
+  },
+  {
+   "claim": "CROSS-CUTTING — FY2569 S-band outcome pattern: all four TMD station tenders (Chumphon, Bueng Kan, Phitsanulok, Krabi) had exactly 3 bidders from the same pool {Genomatch, Marwin, AsiaMet or Scientific Research}; the two incumbents (Genomatch/Marwin) passed and split the 1,647.8M THB in awards; the two lowest-priced challengers (AsiaMet at Chumphon/Phitsanulok, SR at Bueng Kan/Krabi) both failed technical/qualification with no published reason — the committee's failure reports are an explicit evidence gap. Source analysis: /Users/nat/dev/radar/data/sources_egp/technical_evaluation_gap_2026-09-17.md",
+   "source_url": "https://process5.gprocurement.go.th/egp-atpj27-service/pb/a-egp-allt-project/announcement/getProcureResult?projectId=68099247067"
+  },
+  {
+   "claim": "CONTEXT — vendor-OEM mapping from the repo dossier (multi-channel, none proven exclusive): Marwin Technologies → EEC; Genomatch → Leonardo/Gematronik METEOR line (also bought Gematronik spares at RRD); Scientific Research → EEC in RRD work; AsiaMet → Vaisala in TMD aviation weather. Both Leonardo METEOR 700S and EEC DWSR-8501S fit the TMD 750 kW TOR envelope, so the TOR itself did not hard-lock one OEM. Repo analysis: /Users/nat/dev/radar/CLAUDE.md",
+   "source_url": "https://isranews.org/article/isranews-scoop/127124-invesmavidsids.html"
+  }
+ ]
+}

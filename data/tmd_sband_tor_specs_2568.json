@@ -1,0 +1,72 @@
+{
+ "metadata": {
+  "source": "TMD FY2569 S-band dual-pol e-bidding TOR (identical technical package across all four stations; extracted from Attach_TOR_1.pdf)",
+  "retrieved_date": "2026-09-17",
+  "files": [
+   "data/sources_egp/phitsanulok_sband_ebidding_docs_2568.zip (and chumphon/buengkan/krabi sets)",
+   "extracted texts: *_tor.txt in data/sources_egp/"
+  ],
+  "note": "TOR contains NO brand names. Spec is technology-neutral (magnetron/klystron/solid-state all allowed). Contrast: RRD Phimai/Udon draft TOR names LEONARDO/Gematronik and requires 850 kW (per dossier)."
+ },
+ "reference_price_baht": 446166666.66,
+ "budget_baht": 425000000,
+ "qualifications": {
+  "prior_supply_contract": "within 10 years before submission; full contract copies required",
+  "dealer_appointment": "5.2 - manufacturer or Thai distributor appointment required",
+  "standards": "5.3 - ISO 9001:2015 + manufacturer must have WMO/UNDP/NATO project record",
+  "spares_support": "5.4 - >=5 years main-equipment spares",
+  "solid_state_alt": "if solid-state transmitter offered: >=5 installed sites of the exact model"
+ },
+ "key_specs": {
+  "antenna": {
+   "type": "Parabolic Prime Focus with Dual-Pol Feed Horn",
+   "reflector_diameter_m": ">=8",
+   "min_gain_dB": ">=44.5",
+   "hpbw_deg": "<=1.0",
+   "azimuth": "0-360 both directions",
+   "elevation_deg": "-2 to 90",
+   "positioning_accuracy_deg": "<=0.05",
+   "scan_speed_rpm": ">=6"
+  },
+  "radome": {
+   "material": "fiberglass",
+   "diameter_m": ">=11",
+   "wind_rating_kmh": ">=190"
+  },
+  "transmitter": {
+   "type": "Magnetron or Klystron or Solid State",
+   "freq_MHz": "2700-2900",
+   "peak_power_kW": 750,
+   "pulse_width_us": [
+    "0.4-2.0",
+    "0.5-3.3",
+    "0.4-4.5"
+   ],
+   "prf_Hz": "250-2000 user-selectable"
+  },
+  "performance": {
+   "effective_range_km": ">500"
+  }
+ },
+ "award_results_ref": "data/egp_sband_procure_results_api_2026-09-17.json",
+ "reference_price_breakdown": {
+  "note": "From e-GP project page ราคากลาง (พิมพ์ครั้งที่ 1) — identical structure on all four station pages (screenshots archived)",
+  "rows": [
+   {
+    "item": "เครื่องเรดาร์ตรวจอากาศแบบ S Band ชนิด Dual Polarization พร้อมอุปกรณ์เชื่อมโยง อาคาร และระบบสื่อสาร",
+    "subtotal_baht": 380513600.0
+   },
+   {
+    "item": "เงินสำรองจ่ายสำหรับกรณีฉุกเฉินหรือจำเป็น (สำหรับงานซื้อ) (ร้อยละ 5) [label as displayed; the amount equals total − subtotal and does not equal 5% of the subtotal — verify against the underlying ประกาศราคากลาง form]",
+    "subtotal_baht": 65653066.66
+   }
+  ],
+  "total_baht": 446166666.66,
+  "screenshots": [
+   "chumphon_project_price_page_2026-09-17.png",
+   "buengkan_project_price_page_2026-09-17.png",
+   "krabi_project_price_page_2026-09-17.png",
+   "phitsanulok_project_price_page_2026-09-17.png"
+  ]
+ }
+}
