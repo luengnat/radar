@@ -1,5 +1,6 @@
 _site/
 tmp/
+tmp_probe/
 scripts/__pycache__/
 .DS_Store
 .omc/
