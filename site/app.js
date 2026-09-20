@@ -18,6 +18,8 @@ let stations = [];
 let activeAgency = "all";
 let activeYear = "all";
 let selectedMapStationId = null;
+let mapAgencyFilter = "all";
+let mapBandFilter = "all";
 
 function money(value) {
   if (value === null || value === undefined || value === "") return "—";
@@ -106,9 +108,11 @@ function yearSummaries() {
 }
 
 function yearLabel(summary) {
-  if (summary.year === 2570) return "ปีปัจจุบัน · ร่าง/คำขอ";
+  if (summary.year === 2570 && summary.eventCount && summary.planCount) return "ปีปัจจุบัน · ประกาศผล + แผน";
+  if (summary.year === 2570 && summary.eventCount) return "ปีปัจจุบัน · พบประกาศผล";
+  if (summary.year === 2570) return "ปีปัจจุบัน · แผน/คำขอ";
   if (summary.eventCount && summary.planCount) return "ผลจัดซื้อ + แผน";
-  if (summary.eventCount) return "ผลจัดซื้อ / สัญญา";
+  if (summary.eventCount) return "ผลจัดซื้อ / ประกาศผล";
   return "แผน / คำขอ";
 }
 
@@ -253,10 +257,17 @@ function bandOf(station) {
 }
 
 function bandKey(station) {
-  const text = `${bandOf(station)} ${valueAt(station.radar?.official_tmd_type, "")}`.toLowerCase();
-  if (text.includes("s-band") || text.includes("s dual") || text.includes("s-band")) return "S";
-  if (text.includes("c-band") || text.includes("c dual") || text.includes("c (")) return "C";
-  if (text.includes("x-band") || text.includes("x dual")) return "X";
+  const classify = (raw) => {
+    const text = String(raw || "").trim().toUpperCase();
+    if (/^S(?:$|[-\s/(])|\bS[- ]?BAND\b/.test(text)) return "S";
+    if (/^C(?:$|[-\s/(])|\bC[- ]?BAND\b/.test(text)) return "C";
+    if (/^X(?:$|[-\s/(])|\bX[- ]?BAND\b/.test(text)) return "X";
+    return "unknown";
+  };
+  const primary = classify(bandOf(station));
+  if (primary !== "unknown") return primary;
+  const official = classify(valueAt(station.radar?.official_tmd_type, ""));
+  if (official !== "unknown") return official;
   return "unknown";
 }
 
@@ -298,9 +309,18 @@ function eventLabel(event) {
     core_purchase: "จัดซื้อหลัก",
     upgrade_or_repair: "อัปเกรด / ซ่อม",
     support_or_maintenance: "บำรุงรักษา",
+    maintenance: "บำรุงรักษา",
     spare_parts: "อะไหล่",
   };
   return labels[activity] || activity.replaceAll("_", " ");
+}
+
+function eventStage(event) {
+  const contractNumber = valueAt(event.contract_number, "");
+  const contractDate = valueAt(event.contract_date_be, "");
+  if (contractNumber || (Array.isArray(contractDate) ? contractDate.length : contractDate)) return "สัญญา";
+  if (valueAt(event.winner_notice_date_be, "") || eventWinner(event) !== "ยังไม่ระบุ") return "ประกาศผู้ชนะ";
+  return "ผลจัดซื้อ";
 }
 
 function sourceHref(sourceId, locator = "") {
@@ -315,7 +335,11 @@ function sourceHref(sourceId, locator = "") {
 
 function firstSourceLink(event) {
   const sourceUrl = valueAt(event.source_url, "");
-  if (sourceUrl) return sourceUrl;
+  if (sourceUrl) {
+    if (/^https?:\/\//i.test(sourceUrl)) return sourceUrl;
+    if (sourceUrl.split("/").length > 2) return `${PUBLIC_REPO_BASE}${sourceUrl}`;
+    return sourceUrl;
+  }
   const refs = [];
   Object.values(event).forEach((node) => {
     if (node && typeof node === "object" && Array.isArray(node.source)) refs.push(...node.source);
@@ -456,7 +480,11 @@ function renderMapSelected(station) {
   const latest = latestStationRecord(station);
   const latestAmount = latest?.kind === "event" ? eventAmount(latest.record) : valueAt(latest?.record?.planned_amount_baht, null);
   const latestLabel = latest ? `${latest.year} · ${latest.kind === "event" ? eventLabel(latest.record) : `แผน/คำขอ · ${eventLabel(latest.record)}`} · ${latestAmount ? compactMoney(latestAmount) : "มูลค่าไม่ระบุ"}` : "ยังไม่มี procurement event หรือแผนที่ผูกกับสถานีนี้";
-  panel.innerHTML = `<h4>${nameOf(station)}</h4><div class="map-selected-meta">${agencyLabel(agencyOf(station))} · ${RISK_META[risk.status].label}</div><p class="map-selected-note">${latestLabel}</p>`;
+  const coverageRow = coverageStationFor(station);
+  const rangeOverride = coverageRangeOverride();
+  const radius = coverageRow ? (rangeOverride ?? Number(coverageRow.radius_km)) : null;
+  const radiusLabel = Number.isFinite(radius) ? ` · รัศมี ${radius.toLocaleString("th-TH")} กม.${rangeOverride ? " (ทดลอง)" : ""}` : "";
+  panel.innerHTML = `<h4>${nameOf(station)}</h4><div class="map-selected-meta">${agencyLabel(agencyOf(station))} · ${mapBandLabel(bandKey(station))}${radiusLabel} · ${RISK_META[risk.status].label}</div><p class="map-selected-note">${latestLabel}</p>`;
   button.disabled = false;
 }
 
@@ -468,7 +496,29 @@ function selectMapStation(stationId) {
   $$(".map-point").forEach((point) => point.classList.toggle("selected", point.dataset.stationId === stationId));
 }
 
-function renderCoverageBrief() {
+function haversineKm(first, second) {
+  const toRadians = (degrees) => degrees * Math.PI / 180;
+  const lat1 = toRadians(Number(first.lat));
+  const lat2 = toRadians(Number(second.lat));
+  const deltaLat = lat2 - lat1;
+  const deltaLon = toRadians(Number(second.lon) - Number(first.lon));
+  const a = Math.sin(deltaLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(deltaLon / 2) ** 2;
+  return 6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function overlapPairCount(rows, radiusOverride) {
+  let count = 0;
+  rows.forEach((station, index) => {
+    rows.slice(index + 1).forEach((other) => {
+      const firstRadius = radiusOverride ?? Number(station.radius_km);
+      const secondRadius = radiusOverride ?? Number(other.radius_km);
+      if ([firstRadius, secondRadius].every(Number.isFinite) && haversineKm(station, other) <= firstRadius + secondRadius) count += 1;
+    });
+  });
+  return count;
+}
+
+function renderCoverageBrief(visibleCoverage = coverageStations, radiusOverride = null) {
   const panel = $("#coverage-brief");
   if (!panel || !coverageSummary) return;
   const existing = coverageStations.filter((station) => station.status === "existing").length;
@@ -477,13 +527,59 @@ function renderCoverageBrief() {
   const marginal = Object.values(coverageSummary.new_stations_marginal || {});
   const newLand = marginal.reduce((sum, item) => sum + Number(item.newly_covered_km2 || 0), 0);
   const udon = coverageSummary.udon_site_coverage_before;
-  panel.innerHTML = `<p><strong>${percentages["3plus"] ?? "—"}%</strong> ของ land grid อยู่ในรัศมี <b>3 สถานีขึ้นไป</b> จากสถานีเดิม ${existing} แห่ง<br /><b>${planned} รายการใหม่</b> เพิ่มพื้นที่ที่ยังไม่ถูกครอบคลุมรวมประมาณ <b>${newLand.toLocaleString("th-TH")} km²</b> ตามแบบจำลอง${udon ? `<br />จุดอุดรฯ ก่อนเพิ่มโครงการมี overlap อยู่แล้ว <b>${udon} ชั้น</b>` : ""}<br /><span>หมายเหตุ: เป็นวงกลมเชิงเรขาคณิต ยังไม่หักภูเขา ความสูงลำคลื่น หรือ beam blockage</span></p>`;
+  const filteredScenario = mapAgencyFilter !== "all" || mapBandFilter !== "all" || radiusOverride !== null || visibleCoverage.length !== existing;
+  const overlapPairs = overlapPairCount(visibleCoverage, radiusOverride);
+  const rangeLabel = radiusOverride === null ? "ตามค่าที่บันทึกของแต่ละสถานี" : `${radiusOverride.toLocaleString("th-TH")} กม. เท่ากันทุกวง`;
+  const baseline = filteredScenario ? "" : `<strong>${percentages["3plus"] ?? "—"}%</strong> ของ land grid อยู่ในรัศมี <b>3 สถานีขึ้นไป</b> จากสถานีเดิม ${existing} แห่ง<br /><b>${planned} รายการใหม่</b> เพิ่มพื้นที่ที่ยังไม่ถูกครอบคลุมรวมประมาณ <b>${newLand.toLocaleString("th-TH")} km²</b> ตามแบบจำลอง${udon ? `<br />จุดอุดรฯ ก่อนเพิ่มโครงการมี overlap อยู่แล้ว <b>${udon} ชั้น</b><br />` : ""}`;
+  panel.innerHTML = `<p>${baseline}<strong>${visibleCoverage.length}</strong> วงที่กำลังแสดง · <b>${overlapPairs.toLocaleString("th-TH")} คู่สถานี</b> มีวงตัดกัน<br />ระยะที่ใช้: <b>${rangeLabel}</b><br /><span>${filteredScenario ? "ตัวกรอง/ระยะทดลองเปลี่ยนเฉพาะภาพและจำนวนคู่วงตัดกัน ไม่ได้คำนวณ land grid 3 ชั้นใหม่ · " : ""}วงกลมเชิงเรขาคณิตยังไม่หักภูเขา ความสูงลำคลื่น หรือ beam blockage</span></p>`;
 }
 
-function coverageEllipse(station, project) {
+function normalizedMapStationName(name) {
+  return String(name || "").replace(/\s*\([^)]*\)\s*$/, "").trim();
+}
+
+function coverageMasterStation(coverageStation) {
+  const normalizedName = normalizedMapStationName(coverageStation.name);
+  return stations.find((station) => agencyOf(station) === coverageStation.agency && nameOf(station) === normalizedName) || null;
+}
+
+function coverageStationFor(station) {
+  return coverageStations.find((row) => row.agency === agencyOf(station) && normalizedMapStationName(row.name) === nameOf(station)) || null;
+}
+
+function coverageBandKey(coverageStation) {
+  const station = coverageMasterStation(coverageStation);
+  return station ? bandKey(station) : "unknown";
+}
+
+function mapBandLabel(key) {
+  return { all: "ทุก band", S: "S-band", C: "C-band", X: "X-band", unknown: "ยังไม่ระบุ band" }[key] || key;
+}
+
+function mapAgencyLabel(key) {
+  return key === "all" ? "ทุกหน่วยงาน" : agencyLabel(key);
+}
+
+function mapStationMatches(station) {
+  return (mapAgencyFilter === "all" || agencyOf(station) === mapAgencyFilter)
+    && (mapBandFilter === "all" || bandKey(station) === mapBandFilter);
+}
+
+function coverageStationMatches(station) {
+  return (mapAgencyFilter === "all" || station.agency === mapAgencyFilter)
+    && (mapBandFilter === "all" || coverageBandKey(station) === mapBandFilter);
+}
+
+function coverageRangeOverride() {
+  const enabled = $("#coverage-range-toggle")?.checked ?? false;
+  const value = Number($("#coverage-range")?.value);
+  return enabled && Number.isFinite(value) ? value : null;
+}
+
+function coverageEllipse(station, project, radiusOverride = null) {
   const lat = Number(station.lat);
   const lon = Number(station.lon);
-  const radius = Number(station.radius_km);
+  const radius = radiusOverride ?? Number(station.radius_km);
   if (![lat, lon, radius].every(Number.isFinite)) return "";
   const [x, y] = project([lon, lat]);
   const lonDelta = radius / (111.32 * Math.max(Math.cos(lat * Math.PI / 180), .25));
@@ -494,6 +590,14 @@ function coverageEllipse(station, project) {
   return `<ellipse class="coverage-ring agency-${station.agency} ${planned ? "planned" : "existing"}" cx="${x.toFixed(3)}" cy="${y.toFixed(3)}" rx="${Math.abs(x2 - x).toFixed(3)}" ry="${Math.abs(y2 - y).toFixed(3)}"></ellipse>`;
 }
 
+function mapPointShape(band, radius) {
+  const r = Number(radius.toFixed(3));
+  if (band === "C") return `<rect class="map-dot" x="${-r}" y="${-r}" width="${2 * r}" height="${2 * r}" rx=".12"></rect>`;
+  if (band === "X") return `<path class="map-dot" d="M0 ${-r} L${r} ${r * .82} L${-r} ${r * .82} Z"></path>`;
+  if (band === "unknown") return `<path class="map-dot" d="M0 ${-r} L${r} 0 L0 ${r} L${-r} 0 Z"></path>`;
+  return `<circle class="map-dot" r="${r}"></circle>`;
+}
+
 function renderMap() {
   const container = $("#station-map");
   if (!container || !mapGeo) return;
@@ -501,26 +605,33 @@ function renderMap() {
   const landPaths = (mapGeo.features || []).map((feature) => `<path class="map-land" d="${svgGeometryPath(feature.geometry, project)}"></path>`).join("");
   const showCoverage = $("#coverage-toggle")?.checked ?? true;
   const includePlanned = $("#planned-coverage-toggle")?.checked ?? false;
-  const coverageLayer = showCoverage ? coverageStations.filter((station) => includePlanned || station.status === "existing").map((station) => coverageEllipse(station, project)).join("") : "";
-  const points = stations.map((station) => {
+  const radiusOverride = coverageRangeOverride();
+  const visibleCoverage = coverageStations.filter((station) => (includePlanned || station.status === "existing") && coverageStationMatches(station));
+  const coverageLayer = showCoverage ? visibleCoverage.map((station) => coverageEllipse(station, project, radiusOverride)).join("") : "";
+  const eligibleStations = stations.filter(mapStationMatches);
+  const mappedStations = eligibleStations.filter((station) => stationCoordinates(station));
+  const points = mappedStations.map((station) => {
     const coordinates = stationCoordinates(station);
-    if (!coordinates) return "";
     const [x, y] = project(coordinates);
     const risk = stationRiskAssessment(station);
     const radius = risk.status === "review" ? 1.35 : risk.status === "planned" ? 1.08 : .82;
     const halo = risk.status === "review" ? 2.35 : risk.status === "planned" ? 1.75 : 1.2;
     const id = valueAt(station.station_id, "");
-    return `<g class="map-point agency-${agencyOf(station)} ${risk.status === "review" ? "risk-review" : risk.status === "planned" ? "risk-planned" : ""}" data-station-id="${id}" tabindex="0" role="button" aria-label="${nameOf(station)} · ${RISK_META[risk.status].label}" transform="translate(${x.toFixed(3)} ${y.toFixed(3)})"><circle class="map-halo" r="${halo}"></circle><circle class="map-dot" r="${radius}"></circle><title>${nameOf(station)} · ${agencyLabel(agencyOf(station))} · ${RISK_META[risk.status].label}</title></g>`;
+    const band = bandKey(station);
+    return `<g class="map-point agency-${agencyOf(station)} band-${band} ${risk.status === "review" ? "risk-review" : risk.status === "planned" ? "risk-planned" : ""}" data-station-id="${id}" tabindex="0" role="button" aria-label="${nameOf(station)} · ${agencyLabel(agencyOf(station))} · ${mapBandLabel(band)} · ${RISK_META[risk.status].label}" transform="translate(${x.toFixed(3)} ${y.toFixed(3)})"><circle class="map-halo" r="${halo}"></circle>${mapPointShape(band, radius)}<title>${nameOf(station)} · ${agencyLabel(agencyOf(station))} · ${mapBandLabel(band)} · ${RISK_META[risk.status].label}</title></g>`;
   }).join("");
   container.innerHTML = `<svg viewBox="0 0 100 140" role="img" aria-label="แผนที่ตำแหน่งสถานีเรดาร์ประเทศไทย"><g aria-hidden="true"><path class="map-water-grid" d="M5 24H95 M5 48H95 M5 72H95 M5 96H95 M5 120H95 M25 4V136 M50 4V136 M75 4V136"></path></g><g>${landPaths}</g><g aria-hidden="true">${coverageLayer}</g><g>${points}</g></svg>`;
-  renderCoverageBrief();
-  const mapped = stations.filter((station) => stationCoordinates(station)).length;
-  setText("#map-count", `${mapped} / ${stations.length} สถานีมีพิกัด · ${stations.length - mapped} รายการไม่มีพิกัดจึงไม่เดา`);
+  renderCoverageBrief(showCoverage ? visibleCoverage : [], radiusOverride);
+  setText("#map-count", `${mappedStations.length} จุดบนแผนที่ · ${mapAgencyLabel(mapAgencyFilter)} / ${mapBandLabel(mapBandFilter)}${eligibleStations.length - mappedStations.length ? ` · ${eligibleStations.length - mappedStations.length} รายการไม่มีพิกัด` : ""}`);
   $$(".map-point", container).forEach((point) => {
     point.addEventListener("click", () => selectMapStation(point.dataset.stationId));
     point.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") selectMapStation(point.dataset.stationId); });
   });
-  if (selectedMapStationId) selectMapStation(selectedMapStationId);
+  if (selectedMapStationId && mappedStations.some((station) => valueAt(station.station_id) === selectedMapStationId)) selectMapStation(selectedMapStationId);
+  else if (selectedMapStationId) {
+    selectedMapStationId = null;
+    renderMapSelected(null);
+  }
 }
 
 function renderPoliticalTimeline() {
@@ -557,6 +668,9 @@ function renderYearView() {
   if (!strip || !detail) return;
   const summaries = yearSummaries();
   const current = summaries.find((summary) => summary.year === 2570);
+  if (current) {
+    setText("#hero-current-year-title", `ปีปัจจุบัน: พบประกาศผล ${current.eventCount} รายการ + แผน/คำขอ ${current.planCount} รายการ`);
+  }
   const selected = activeYear === "all" ? current : summaries.find((summary) => summary.year === Number(activeYear));
   if (select) {
     select.innerHTML = `<option value="all">ทุกปีงบประมาณ</option>${summaries.map((summary) => `<option value="${summary.year}">ปี ${summary.year}</option>`).join("")}`;
@@ -570,13 +684,15 @@ function renderYearView() {
   strip.innerHTML = summaries.map((summary) => {
     const isCurrent = summary.year === 2570;
     const isActive = (activeYear === "all" && isCurrent) || Number(activeYear) === summary.year;
-    const value = summary.eventValue || summary.planValue;
-    const valueLabel = summary.eventValue ? "มูลค่า event" : "มูลค่าแผน";
+    const valueSummary = summary.eventValue && summary.planValue
+      ? `ผล ${compactMoney(summary.eventValue)} · แผน ${compactMoney(summary.planValue)}`
+      : summary.eventValue ? `ผลที่พบ · ${compactMoney(summary.eventValue)}`
+        : summary.planValue ? `มูลค่าแผน · ${compactMoney(summary.planValue)}` : "ยังไม่ระบุมูลค่า";
     return `<button type="button" class="year-card ${isCurrent ? "year-card-current" : ""} ${isActive ? "year-card-active" : ""}" data-year="${summary.year}" role="listitem" aria-pressed="${isActive}">
       <span class="year-card-top"><b>ปี ${summary.year}</b>${isCurrent ? '<i>ปัจจุบัน</i>' : ""}</span>
       <span class="year-card-label">${yearLabel(summary)}</span>
-      <span class="year-card-count"><strong>${summary.eventCount}</strong><small>event</small><strong>${summary.planCount}</strong><small>แผน</small></span>
-      <span class="year-card-value">${value ? `${valueLabel} · ${compactMoney(value)}` : "ยังไม่ระบุมูลค่า"}</span>
+      <span class="year-card-count"><strong>${summary.eventCount}</strong><small>ผล/สัญญา</small><strong>${summary.planCount}</strong><small>แผน</small></span>
+      <span class="year-card-value">${valueSummary}</span>
     </button>`;
   }).join("");
   $$(".year-card", strip).forEach((card) => card.addEventListener("click", () => selectYear(card.dataset.year)));
@@ -584,21 +700,27 @@ function renderYearView() {
   const focus = selected || current;
   if (!focus) return;
   const isCurrent = focus.year === 2570;
-  const status = isCurrent ? "ปีปัจจุบัน · ร่างงบ/คำขอ" : yearLabel(focus);
+  const status = yearLabel(focus);
   const itemHtml = focus.items.slice().sort((a, b) => {
-    if (a.kind !== b.kind) return a.kind === "plan" ? -1 : 1;
+    if (a.kind !== b.kind) return a.kind === "event" ? -1 : 1;
     return nameOf(a.station).localeCompare(nameOf(b.station), "th");
   }).map(({ kind, station, record }) => {
     const amount = kind === "event" ? eventAmount(record) : valueAt(record.planned_amount_baht, null);
     const title = kind === "event" ? eventLabel(record) : `แผน/คำขอ · ${eventLabel(record)}`;
-    return `<li><span><b>${nameOf(station)}</b><small>${title}</small></span><strong>${amount ? compactMoney(amount) : "—"}</strong></li>`;
+    const stage = kind === "event" ? eventStage(record) : "ยังไม่ใช่ผลจัดซื้อ";
+    const source = kind === "event" ? firstSourceLink(record) : "";
+    const sourceLink = source ? `<a href="${source}" target="_blank" rel="noreferrer">เปิดหลักฐาน ↗</a>` : "";
+    return `<li class="year-item year-item-${kind}"><span><i>${stage}</i><b>${nameOf(station)}</b><small>${title}</small>${sourceLink}</span><strong>${amount ? compactMoney(amount) : "—"}</strong></li>`;
   }).join("");
   const totalLabel = focus.eventValue && focus.planValue
-    ? `event ${compactMoney(focus.eventValue)} · plan ${compactMoney(focus.planValue)}`
-    : focus.eventValue ? `event ${compactMoney(focus.eventValue)}` : focus.planValue ? `แผน ${compactMoney(focus.planValue)}` : "มูลค่ายังไม่ระบุ";
-  const currentNote = isCurrent ? '<div class="year-current-note"><b>อ่านให้ถูกชั้น:</b> ปี 2570 ในชุดนี้เป็นคำขอ/ร่าง TOR ของ RRD ยังไม่ใช่ผลประกาศ e-GP หรือสัญญา</div>' : "";
+    ? `ประกาศผล/สัญญา ${compactMoney(focus.eventValue)} · แผน/คำขอ ${compactMoney(focus.planValue)}`
+    : focus.eventValue ? `ประกาศผล/สัญญา ${compactMoney(focus.eventValue)}` : focus.planValue ? `แผน/คำขอ ${compactMoney(focus.planValue)}` : "มูลค่ายังไม่ระบุ";
+  const currentNote = isCurrent ? `<div class="year-evidence-split">
+    <div class="year-evidence-award"><span>หลักฐานผลที่พบ</span><strong>${focus.eventCount} รายการ · ${compactMoney(focus.eventValue)}</strong><p>ประกาศผู้ชนะงานบำรุงรักษาเรดาร์ S-band สุวรรณภูมิของ TMD — ยังไม่พบเลขที่/วันที่สัญญา และประกาศกำหนดเงื่อนไขเรื่อง พ.ร.บ.งบประมาณกับการจัดสรรเงิน</p></div>
+    <div class="year-evidence-plan"><span>แผนและคำของบ</span><strong>${focus.planCount} รายการ · ${compactMoney(focus.planValue)}</strong><p>รายการของกรมฝนหลวงฯ ยังเป็นแผน/ร่าง TOR/คำของบ ไม่ใช่ประกาศผู้ชนะหรือสัญญา</p></div>
+  </div><div class="year-current-note"><b>อ่านให้ถูกชั้น:</b> “ประกาศผู้ชนะ” ไม่เท่ากับ “สัญญาที่ลงนามแล้ว” และ “แผน/คำขอ” ยังไม่ใช่ผลจัดซื้อ</div>` : "";
   const sourceLinks = isCurrent ? `<div class="year-sources"><span>เปิดดูงบภายนอก</span><a href="http://budget-explorer.peoplesparty.or.th/" target="_blank" rel="noreferrer">Budget Explorer พรรคประชาชน ↗</a><a href="https://openbudget.wevis.info/?budget_source=2570-draft-1" target="_blank" rel="noreferrer">Thailand Open Budget · ร่าง 2570 ↗</a></div>` : "";
-  detail.innerHTML = `<p class="eyebrow">YEAR DETAIL${activeYear === "all" ? " · โฟกัสปีล่าสุด" : ""}</p><h3>ปีงบประมาณ ${focus.year}</h3><span class="year-status">${status}</span><div class="year-detail-stats"><div><strong>${focus.eventCount}</strong><span>event / สัญญา</span></div><div><strong>${focus.planCount}</strong><span>แผน / คำขอ</span></div><div><strong>${focus.stations.size}</strong><span>สถานี/พื้นที่</span></div></div><p class="year-total">${totalLabel}</p>${currentNote}<ul class="year-item-list">${itemHtml || "<li>ยังไม่มีรายการย่อย</li>"}</ul>${sourceLinks}<p class="year-filter-note">กดปีด้านซ้ายหรือ dropdown เพื่อกรองสถานีและ ledger ให้เหลือเฉพาะปีนี้</p>`;
+  detail.innerHTML = `<p class="eyebrow">YEAR DETAIL${activeYear === "all" ? " · โฟกัสปีล่าสุด" : ""}</p><h3>ปีงบประมาณ ${focus.year}</h3><span class="year-status">${status}</span><div class="year-detail-stats"><div><strong>${focus.eventCount}</strong><span>ผลจัดซื้อ / สัญญา</span></div><div><strong>${focus.planCount}</strong><span>แผน / คำขอ</span></div><div><strong>${focus.stations.size}</strong><span>สถานี/พื้นที่</span></div></div><p class="year-total">${totalLabel}</p>${currentNote}<ul class="year-item-list">${itemHtml || "<li>ยังไม่มีรายการย่อย</li>"}</ul>${sourceLinks}<p class="year-filter-note">กดปีด้านซ้ายหรือ dropdown เพื่อกรองสถานีและ ledger ให้เหลือเฉพาะปีนี้</p>`;
 }
 
 function renderStations() {
@@ -688,13 +810,16 @@ function renderDialog(station) {
     const source = firstSourceLink(event);
     const eventRisk = eventRiskAssessment(station, event);
     const facts = [
+      ["ขั้นของหลักฐาน", eventStage(event)],
       ["ผู้ขาย / ผู้รับสัญญา", valueAt(event.seller, "ยังไม่ระบุ")],
       ["ผู้ชนะ", eventWinner(event)],
+      ["วันที่ประกาศผู้ชนะ", valueAt(event.winner_notice_date_be, "")],
       ["เลขสัญญา / วันที่", [contractNo, Array.isArray(contractDate) ? contractDate.join(", ") : contractDate].filter(Boolean).join(" / ") || "ยังไม่ระบุ"],
+      ["สถานะสัญญา", valueAt(event.contract_status, "")],
       ["มูลค่า", eventAmount(event) ? money(eventAmount(event)) : "ยังไม่ระบุ"],
       ["รหัสโครงการ", valueAt(event.project_id, "—")],
       ["วิธีจัดซื้อ", valueAt(event.procurement_method, "—")],
-    ];
+    ].filter(([, value]) => value !== "" && value !== null && value !== undefined);
     return `<article class="dialog-event"><div class="dialog-event-head"><span>${eventYear(event)} · ${eventLabel(event)}</span><span>${valueAt(event.radar_band, "")}</span></div><p>${valueAt(event.description, "ไม่มีคำอธิบายเพิ่มเติมใน event")}</p><div class="dialog-facts">${facts.map(([label, value]) => `<div class="dialog-fact"><label>${label}</label><b>${value}</b></div>`).join("")}</div>${riskPanel("", eventRisk)}${politicalDialogBlock(station, event)}${bidders.length ? `<div class="dialog-bidders"><label>disclosed bidders / ผู้ยื่นราคาที่เปิดเผย</label><ul>${bidders.map((bidder) => `<li><span>${bidderName(bidder)}${bidder.result_flag ? ` [${bidder.result_flag}]` : ""}</span><span>${bidderAmount(bidder) ? money(bidderAmount(bidder)) : "—"}</span></li>`).join("")}</ul></div>` : ""}<div class="dialog-source"><a href="${source}" target="_blank" rel="noreferrer">เปิด source ของ event ↗</a></div></article>`;
   }).join("") : '<p class="muted">ยังไม่มี procurement event ที่ผูกกับสถานีนี้</p>';
   const plannedHtml = planned.length ? `<div class="dialog-section-title" style="margin-top:24px">PLANNED / REQUESTED</div>${planned.map((event) => `<article class="dialog-event planned-event"><div class="dialog-event-head"><span>${valueAt(event.fiscal_year_be, valueAt(event.fiscal_years_be, "แผน"))} · ${eventLabel(event)}</span><span>${valueAt(event.radar_band, "")}</span></div><p>${valueAt(event.description, "แผน/คำขอ")}</p><div class="dialog-facts"><div class="dialog-fact"><label>planned amount</label><b>${valueAt(event.planned_amount_baht) ? money(valueAt(event.planned_amount_baht)) : "—"}</b></div><div class="dialog-fact"><label>draft platform</label><b>${valueAt(event.brand_or_platform_in_draft_tor, "ยังไม่ระบุ")}</b></div><div class="dialog-fact"><label>evidence</label><b>${valueAt(event.evidence_status, "—")}</b></div></div></article>`).join("")}` : "";
@@ -721,8 +846,35 @@ function wireControls() {
   $("#band-filter").addEventListener("change", renderStations);
   $("#risk-filter").addEventListener("change", renderStations);
   $("#year-filter").addEventListener("change", (event) => selectYear(event.target.value));
+  $$('[data-map-agency]').forEach((button) => button.addEventListener("click", () => {
+    mapAgencyFilter = button.dataset.mapAgency;
+    $$('[data-map-agency]').forEach((item) => {
+      const active = item === button;
+      item.classList.toggle("active", active);
+      item.setAttribute("aria-pressed", String(active));
+    });
+    renderMap();
+  }));
+  $$('[data-map-band]').forEach((button) => button.addEventListener("click", () => {
+    mapBandFilter = button.dataset.mapBand;
+    $$('[data-map-band]').forEach((item) => {
+      const active = item === button;
+      item.classList.toggle("active", active);
+      item.setAttribute("aria-pressed", String(active));
+    });
+    renderMap();
+  }));
   $("#coverage-toggle").addEventListener("change", renderMap);
   $("#planned-coverage-toggle").addEventListener("change", renderMap);
+  $("#coverage-range-toggle").addEventListener("change", (event) => {
+    $("#coverage-range").disabled = !event.target.checked;
+    setText("#coverage-range-value", event.target.checked ? `${Number($("#coverage-range").value).toLocaleString("th-TH")} กม. · ค่าทดลอง` : "ตามข้อมูลสถานี");
+    renderMap();
+  });
+  $("#coverage-range").addEventListener("input", (event) => {
+    setText("#coverage-range-value", `${Number(event.target.value).toLocaleString("th-TH")} กม. · ค่าทดลอง`);
+    renderMap();
+  });
   $("#map-open-station").addEventListener("click", () => { if (selectedMapStationId) openStation(selectedMapStationId); });
   $("#dialog-close").addEventListener("click", () => $("#station-dialog").close());
   $("#station-dialog").addEventListener("click", (event) => { if (event.target === event.currentTarget) event.currentTarget.close(); });

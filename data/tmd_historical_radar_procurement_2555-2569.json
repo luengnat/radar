@@ -5,7 +5,9 @@
   "scope": "Primary-source records and clearly labelled index leads found while looking back through TMD procurement material.",
   "currency": "THB",
   "evidence_rule": "Amounts and winners are recorded only where a primary TMD document states them. Blank fields are not inferred.",
-  "coverage_note": "This is not yet a complete national e-GP census. The TMD public indexes and annual summaries are a reproducible starting corpus; GovSpending bulk/API extraction still requires the official API access path."
+  "coverage_note": "This is not yet a complete national e-GP census. The TMD public indexes and annual summaries are a reproducible starting corpus; GovSpending bulk/API extraction still requires the official API access path.",
+  "last_updated_date": "2026-09-20",
+  "records_verified": 29
  },
  "verified_records": [
   {
@@ -587,6 +589,22 @@
    "review_note": "Portal winner notice states lowest bidder, 10.9M (7.27%) under the 150M budget, and conditions signing on the FY2567 Budget Act; notice signed by Director-General Korravee Sitthichivapak",
    "evidence_status": "Verified",
    "source_url": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=dff167f0-6117-48e3-85aa-642cef0729f8"
+  },
+  {
+   "fiscal_year_be": 2570,
+   "station_or_scope": "Suvarnabhumi",
+   "activity_class": "maintenance",
+   "radar_band": "S-band Doppler",
+   "description": "Maintenance with repair of the S-band Doppler weather radar with interconnection equipment and radar tower at Suvarnabhumi Airport, 12 months (1 Oct 2569 - 30 Sep 2570)",
+   "procurement_method": "specific/direct (วิธีเฉพาะเจาะจง)",
+   "contract_value_baht": 31200000,
+   "selected_supplier": "Marwin Technologies Co., Ltd.",
+   "winner_notice_date_be": "14 September 2569",
+   "contract_status": "Winner announced; contract signature conditional on the FY2570 Budget Act taking effect and budget allocation being received",
+   "evidence_status": "Verified",
+   "source_url": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf",
+   "official_source_url": "https://www.tmd.go.th/media/procurement/egp/2-ประกาศกรมอตนยมวทยา-เรอง-ประกาศผลผชนะการเสนอราคา-จางเหมาบารงรกษาพรอมซอมแซมเครองเรดารตรวจอากาศแบบ-doppler-ชนด-s-band-พรอมอปกรณเชอมโยงและหอเรดาร-ททาอากาศยานสวรรณภม-ประจา-ปงบประมาณ.pdf",
+   "review_note": "Winner notice dated 14 Sep 2569 (W0 index 17/09/2569): lowest bidder at 2,600,000 baht/month; retroactive effect from 1 Oct per กค (กวจ) 0405.2/ว 630 (20 Aug 2569); signature conditioned on the FY2570 Budget Act and allocation; archived as data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf (TMD-36)"
   }
  ],
  "progress_records": [

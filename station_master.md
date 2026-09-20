@@ -1,6 +1,6 @@
 # Radar station master — มองรวดเดียว
 
-> สร้างจาก `data/radar_stations_map.json` และ corpora ที่ระบุใน JSON เมื่อ 2026-09-19 ด้วย `scripts/build_station_master.py`; unknown = ยังไม่พบเอกสารยืนยัน
+> สร้างจาก `data/radar_stations_map.json` และ corpora ที่ระบุใน JSON เมื่อ 2026-09-20 ด้วย `scripts/build_station_master.py`; unknown = ยังไม่พบเอกสารยืนยัน
 
 **43 station records (mapped + official-list-only)** — TMD 29, RRD 12, BMA 2
 
@@ -42,7 +42,7 @@
 | สุรินทร์ | TMD | 14.88, 103.42 | 240 km | C / DP ใช่ / TMD-list: C-Band | — | existing | Current image in agency feed sweep | 2567 Marwin Technologies Co., Ltd. 138,565,000 บาท (สข.168/2567) | S-TMD-FEED, S-MAP, S-TMD-WEATHER, S-TMD-KNOWLEDGE, S-TMD-HIST, S-LIVE |
 | นครนายก | TMD | 14.1, 101.2 | 240 km | C / DP ใช่ / TMD-list: C-Band | — | existing | Current image in agency feed sweep | 2562 Scientific Research Limited Partnership 59,385,000 บาท (สข.84/2562); 2567 Scientific Research Limited Partnership 57,988,500 บาท (สข.145/2567) | S-TMD-FEED, S-MAP, S-TMD-WEATHER, S-TMD-KNOWLEDGE, S-TMD-HIST, S-LIVE |
 | สมุทรสงคราม | TMD | 13.41, 100.0 | 240 km | — / DP ไม่ระบุ / TMD-list: Dual Polarization | — | existing | Current image in agency feed sweep | — | S-TMD-FEED, S-MAP, S-TMD-WEATHER, S-TMD-KNOWLEDGE, S-LIVE |
-| สุวรรณภูมิ | TMD | 13.68, 100.75 | 240 km | S / DP ไม่ระบุ / TMD-list: S-Band | EEC DWSR-8501S-9 (Reported (dossier registry)) | existing | Current image in agency feed sweep | 2561 Marwin Technologies Co., Ltd. 304,950,000 บาท (สข.70/2561); 2567 Marwin Technologies Co., Ltd. 62,589,500 บาท (สข.147/2567) | S-TMD-FEED, S-MAP, S-TMD-WEATHER, S-TMD-KNOWLEDGE, S-OEM-REPORTED, S-TMD-HIST, S-LIVE |
+| สุวรรณภูมิ | TMD | 13.68, 100.75 | 240 km | S / DP ไม่ระบุ / TMD-list: S-Band | EEC DWSR-8501S-9 (Reported (dossier registry)) | existing | Current image in agency feed sweep | 2567 Marwin Technologies Co., Ltd. 62,589,500 บาท (สข.147/2567); 2570 Marwin Technologies Co., Ltd. 31,200,000 บาท | S-TMD-FEED, S-MAP, S-TMD-WEATHER, S-TMD-KNOWLEDGE, S-OEM-REPORTED, S-TMD-HIST, S-LIVE |
 | ระนอง | TMD | 9.94, 98.62 | 240 km | C dual-pol / DP ใช่ / TMD-list: X-Band | — | existing | Current image in agency feed sweep | 2563 Genomatch Co., Ltd. 146,985,900 บาท | S-TMD-FEED, S-MAP, S-TMD-WEATHER, S-TMD-KNOWLEDGE, S-TMD-HIST, S-STATION-JOIN, S-LIVE |
 | ตรัง | TMD | 7.55, 99.61 | 240 km | C dual-pol / DP ใช่ / TMD-list: X-Band | — | existing | Current image in agency feed sweep | 2563 Genomatch Co., Ltd. 146,985,900 บาท | S-TMD-FEED, S-MAP, S-TMD-WEATHER, S-TMD-KNOWLEDGE, S-TMD-HIST, S-STATION-JOIN, S-LIVE |
 | สทิงพระ | TMD | 7.22, 100.1 | 240 km | C dual-pol / DP ใช่ / TMD-list: C-Band | — | existing | Current image in agency feed sweep | 2567 Scientific Research Limited Partnership 139,100,000 บาท (สข.133/2567) | S-TMD-FEED, S-MAP, S-TMD-WEATHER, S-TMD-KNOWLEDGE, S-TMD-HIST, S-LIVE |
@@ -86,6 +86,7 @@
 | สุวรรณภูมิ | TMD | 2560 | support_or_maintenance / S-band | Marwin Technologies Co., Ltd. | Marwin Technologies Co., Ltd. | สจ.14/2560 / 17 October 2559 | Marwin Technologies Co., Ltd. 17,333,000 บาท | 17,333,000 บาท | — |
 | สุวรรณภูมิ | TMD | 2561 | core_purchase / S-band | Marwin Technologies Co., Ltd. | Marwin Technologies Co., Ltd. | สข.70/2561 / 12 January 2561 | Marwin Technologies Co., Ltd. 304,950,000 บาท; Scientific Research Limited Partnership 308,748,500 บาท; Genomatch Co., Ltd. 310,621,000 บาท | 304,950,000 บาท | — |
 | สุวรรณภูมิ | TMD | 2567 | upgrade_or_repair / S-band | Marwin Technologies Co., Ltd. | Marwin Technologies Co., Ltd. | สข.147/2567 / 16 August 2567 | — | 62,589,500 บาท | 67049456830 |
+| สุวรรณภูมิ | TMD | 2570 | maintenance / S-band Doppler | Marwin Technologies Co., Ltd. | Marwin Technologies Co., Ltd. | — | — | 31,200,000 บาท | — |
 | ระนอง | TMD | 2563 | core_purchase / C-band dual-polarization | Genomatch Co., Ltd. | Genomatch Co., Ltd. | — | — | 146,985,900 บาท | 63017153824 |
 | ตรัง | TMD | 2563 | core_purchase / C-band dual-polarization | Genomatch Co., Ltd. | Genomatch Co., Ltd. | — | — | 146,985,900 บาท | 63017163547 |
 | สทิงพระ | TMD | 2567 | core_purchase / C-band dual-polarization | Scientific Research Limited Partnership | Scientific Research Limited Partnership | สข.133/2567 / 17 July 2567 | — | 139,100,000 บาท | — |

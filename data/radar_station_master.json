@@ -9,7 +9,7 @@
     ]
   },
   "generated_on": {
-    "value": "2026-09-19",
+    "value": "2026-09-20",
     "source": [
       {
         "id": "S-BUILD"
@@ -735,6 +735,15 @@
             },
             "evidence_status": {
               "value": "Verified",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "https://www.tmd.go.th/media/PDF/agreement55_56.pdf"
+                }
+              ]
+            },
+            "review_note": {
+              "value": "The PDF OCR contains an adjacent stray 17,346,900-baht fragment; it is excluded because it is not attached to a named bidder in the radar row.",
               "source": [
                 {
                   "id": "S-TMD-HIST",
@@ -2570,6 +2579,15 @@
                 }
               ]
             },
+            "review_note": {
+              "value": "Winner/value portal-verified from the archived e-GP W2 notice (TMD-33): sites Ban Due (Chiang Rai) + Hua Toei (Surat Thani), e-bidding EB.1/2559, notice 10 Feb 2559",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "http://process3.gprocurement.go.th/egp2procmainWeb/jsp/procsearch.sch?servlet=gojsp&proc_id=ShowHTMLFile&processFlows=Procure&projectId=58096222967&templateType=W2&temp_Announ=A&temp_itemNo=0&seqNo=2"
+                }
+              ]
+            },
             "contract_year_be": {
               "value": 2559,
               "source": [
@@ -3174,6 +3192,15 @@
                 }
               ]
             },
+            "review_note": {
+              "value": "TMD's FY 2561 procurement summary gives a 90,000,000-baht budget/reference price, three bidder totals, and a selected contract value of 86,670,000 baht (43,335,000 per item). TMD's FY 2561 annual report states 86,870,000 baht for the same contract, creating a 200,000-baht discrepancy that requires the signed contract or payment record to resolve.",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "https://www.tmd.go.th/media/PDF/agreement_2561.pdf"
+                }
+              ]
+            },
             "contract_year_be": {
               "value": 2561,
               "source": [
@@ -3641,6 +3668,15 @@
                 }
               ]
             },
+            "review_note": {
+              "value": "Winner/value portal-verified from the archived e-GP W2 notice (TMD-33): sites Ban Due (Chiang Rai) + Hua Toei (Surat Thani), e-bidding EB.1/2559, notice 10 Feb 2559",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "http://process3.gprocurement.go.th/egp2procmainWeb/jsp/procsearch.sch?servlet=gojsp&proc_id=ShowHTMLFile&processFlows=Procure&projectId=58096222967&templateType=W2&temp_Announ=A&temp_itemNo=0&seqNo=2"
+                }
+              ]
+            },
             "contract_year_be": {
               "value": 2559,
               "source": [
@@ -4083,6 +4119,15 @@
             },
             "evidence_status": {
               "value": "Verified",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "https://www.tmd.go.th/media/PDF/agreement_2561.pdf"
+                }
+              ]
+            },
+            "review_note": {
+              "value": "TMD's FY 2561 procurement summary gives a 90,000,000-baht budget/reference price, three bidder totals, and a selected contract value of 86,670,000 baht (43,335,000 per item). TMD's FY 2561 annual report states 86,870,000 baht for the same contract, creating a 200,000-baht discrepancy that requires the signed contract or payment record to resolve.",
               "source": [
                 {
                   "id": "S-TMD-HIST",
@@ -5305,6 +5350,15 @@
                 }
               ]
             },
+            "review_note": {
+              "value": "The FY 2562 summary lists one submitted price; qualification and bid-opening records are still required before treating this as a single-bid event.",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "https://www.tmd.go.th/media/PDF/agreement_2562.pdf"
+                }
+              ]
+            },
             "contract_year_be": {
               "value": 2562,
               "source": [
@@ -5458,6 +5512,15 @@
             },
             "evidence_status": {
               "value": "Verified",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=610db47d-f7b4-4153-b0e5-db7d61ad5797"
+                }
+              ]
+            },
+            "review_note": {
+              "value": "Portal winner notice archived: lowest bidder at 47,193,600 which is 4.87% ABOVE the stated budget line, EB.29/2567",
               "source": [
                 {
                   "id": "S-TMD-HIST",
@@ -9679,6 +9742,15 @@
                 }
               ]
             },
+            "review_note": {
+              "value": "The FY 2562 summary lists one submitted price; qualification and bid-opening records are still required before treating this as a single-bid event.",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "https://www.tmd.go.th/media/PDF/agreement_2562.pdf"
+                }
+              ]
+            },
             "contract_year_be": {
               "value": 2562,
               "source": [
@@ -12553,6 +12625,15 @@
                 }
               ]
             },
+            "winner_notice_date_be": {
+              "value": "22 July 2563",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "http://process3.gprocurement.go.th/egp2procmainWeb/jsp/procsearch.sch?servlet=gojsp&proc_id=ShowHTMLFile&processFlows=Procure&projectId=63017151753&templateType=W2&temp_Announ=A&temp_itemNo=0&seqNo=2"
+                }
+              ]
+            },
             "project_id": {
               "value": "63017151753",
               "source": [
@@ -12564,6 +12645,15 @@
             },
             "evidence_status": {
               "value": "Verified",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "http://process3.gprocurement.go.th/egp2procmainWeb/jsp/procsearch.sch?servlet=gojsp&proc_id=ShowHTMLFile&processFlows=Procure&projectId=63017151753&templateType=W2&temp_Announ=A&temp_itemNo=0&seqNo=2"
+                }
+              ]
+            },
+            "review_note": {
+              "value": "Winner selected as lowest bidder; the W2 notice names no rival bidders, so the bidder count remains open",
               "source": [
                 {
                   "id": "S-TMD-HIST",
@@ -13009,6 +13099,15 @@
             },
             "evidence_status": {
               "value": "Verified",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "https://www.tmd.go.th/media/PDF/agreement_2562.pdf"
+                }
+              ]
+            },
+            "review_note": {
+              "value": "The source's OCR layout interleaves a 43,299,690-baht bidder figure; only the clearly stated selected amount is recorded.",
               "source": [
                 {
                   "id": "S-TMD-HIST",
@@ -13732,6 +13831,15 @@
                 }
               ]
             },
+            "review_note": {
+              "value": "Portal winner notice archived: lowest bidder, 11.435M (7.62%) under the 150M budget, EB.15/2567",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=f8c106b5-4901-49bc-aab9-fb4ab248338d"
+                }
+              ]
+            },
             "contract_year_be": {
               "value": 2567,
               "source": [
@@ -14441,6 +14549,15 @@
             },
             "evidence_status": {
               "value": "Verified",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=c86d49f7-a206-4edd-ba43-74829708a443"
+                }
+              ]
+            },
+            "review_note": {
+              "value": "Supplier and value portal-verified from the archived winner notice: lowest bidder, 3.35% under the 60M budget, EB.18/2567",
               "source": [
                 {
                   "id": "S-TMD-HIST",
@@ -15602,6 +15719,15 @@
                 }
               ]
             },
+            "review_note": {
+              "value": "The FY 2560 summary lists one supplier and price; a bid-opening or procurement-file record is needed before treating this as a single-bid event.",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "https://www.tmd.go.th/media/PDF/agreement_2560.pdf"
+                }
+              ]
+            },
             "contract_year_be": {
               "value": 2560,
               "source": [
@@ -15961,6 +16087,15 @@
                 }
               ]
             },
+            "review_note": {
+              "value": "Supplier and value portal-verified from the archived winner notice: lowest bidder, 3.71% under the 65M budget, EB.17/2567",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=e2bc55e4-8dad-47a0-838e-8621f8c7d3b0"
+                }
+              ]
+            },
             "contract_year_be": {
               "value": 2567,
               "source": [
@@ -16003,6 +16138,188 @@
                 {
                   "id": "S-TMD-HIST",
                   "locator": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=e2bc55e4-8dad-47a0-838e-8621f8c7d3b0"
+                }
+              ]
+            }
+          },
+          {
+            "fiscal_year_be": {
+              "value": 2570,
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
+                }
+              ]
+            },
+            "activity_class": {
+              "value": "maintenance",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
+                }
+              ]
+            },
+            "scope": {
+              "value": "Suvarnabhumi",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
+                }
+              ]
+            },
+            "radar_band": {
+              "value": "S-band Doppler",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
+                }
+              ]
+            },
+            "description": {
+              "value": "Maintenance with repair of the S-band Doppler weather radar with interconnection equipment and radar tower at Suvarnabhumi Airport, 12 months (1 Oct 2569 - 30 Sep 2570)",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
+                }
+              ]
+            },
+            "procurement_method": {
+              "value": "specific/direct (วิธีเฉพาะเจาะจง)",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
+                }
+              ]
+            },
+            "winner": {
+              "value": "Marwin Technologies Co., Ltd.",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
+                }
+              ]
+            },
+            "contract_value_baht": {
+              "value": 31200000,
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
+                }
+              ]
+            },
+            "winner_notice_date_be": {
+              "value": "14 September 2569",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
+                }
+              ]
+            },
+            "contract_status": {
+              "value": "Winner announced; contract signature conditional on the FY2570 Budget Act taking effect and budget allocation being received",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
+                }
+              ]
+            },
+            "evidence_status": {
+              "value": "Verified",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
+                }
+              ]
+            },
+            "review_note": {
+              "value": "Winner notice dated 14 Sep 2569 (W0 index 17/09/2569): lowest bidder at 2,600,000 baht/month; retroactive effect from 1 Oct per กค (กวจ) 0405.2/ว 630 (20 Aug 2569); signature conditioned on the FY2570 Budget Act and allocation; archived as data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf (TMD-36)",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
+                }
+              ]
+            },
+            "official_source_url": {
+              "value": "https://www.tmd.go.th/media/procurement/egp/2-ประกาศกรมอตนยมวทยา-เรอง-ประกาศผลผชนะการเสนอราคา-จางเหมาบารงรกษาพรอมซอมแซมเครองเรดารตรวจอากาศแบบ-doppler-ชนด-s-band-พรอมอปกรณเชอมโยงและหอเรดาร-ททาอากาศยานสวรรณภม-ประจา-ปงบประมาณ.pdf",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
+                }
+              ]
+            },
+            "contract_year_be": {
+              "value": 2570,
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
+                }
+              ]
+            },
+            "contract_number": {
+              "value": null,
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
+                }
+              ]
+            },
+            "contract_date_be": {
+              "value": null,
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
+                }
+              ]
+            },
+            "seller": {
+              "value": "Marwin Technologies Co., Ltd.",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
+                }
+              ]
+            },
+            "contract_winner": {
+              "value": "Marwin Technologies Co., Ltd.",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
+                }
+              ]
+            },
+            "contract_bidders": {
+              "value": null,
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
+                }
+              ]
+            },
+            "source_url": {
+              "value": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
                 }
               ]
             }
@@ -16181,6 +16498,10 @@
           {
             "id": "S-TMD-HIST",
             "locator": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=e2bc55e4-8dad-47a0-838e-8621f8c7d3b0"
+          },
+          {
+            "id": "S-TMD-HIST",
+            "locator": "data/sources_tmd/suvarnabhumi_sband_maintenance_winner_2570.pdf"
           },
           {
             "id": "S-TMD-HIST",
@@ -16464,6 +16785,15 @@
                 }
               ]
             },
+            "winner_notice_date_be": {
+              "value": "22 July 2563",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "http://process3.gprocurement.go.th/egp2procmainWeb/jsp/procsearch.sch?servlet=gojsp&proc_id=ShowHTMLFile&processFlows=Procure&projectId=63017153824&templateType=W2&temp_Announ=A&temp_itemNo=0&seqNo=2"
+                }
+              ]
+            },
             "project_id": {
               "value": "63017153824",
               "source": [
@@ -16475,6 +16805,15 @@
             },
             "evidence_status": {
               "value": "Verified",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "http://process3.gprocurement.go.th/egp2procmainWeb/jsp/procsearch.sch?servlet=gojsp&proc_id=ShowHTMLFile&processFlows=Procure&projectId=63017153824&templateType=W2&temp_Announ=A&temp_itemNo=0&seqNo=2"
+                }
+              ]
+            },
+            "review_note": {
+              "value": "Winner selected as lowest bidder; value identical to the Trang award (63017163547) to the satang; the W2 notice names no rival bidders, so the bidder count remains open",
               "source": [
                 {
                   "id": "S-TMD-HIST",
@@ -16898,6 +17237,15 @@
                 }
               ]
             },
+            "winner_notice_date_be": {
+              "value": "22 July 2563",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "http://process3.gprocurement.go.th/egp2procmainWeb/jsp/procsearch.sch?servlet=gojsp&proc_id=ShowHTMLFile&processFlows=Procure&projectId=63017163547&templateType=W2&temp_Announ=A&temp_itemNo=0&seqNo=2"
+                }
+              ]
+            },
             "project_id": {
               "value": "63017163547",
               "source": [
@@ -16909,6 +17257,15 @@
             },
             "evidence_status": {
               "value": "Verified",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "http://process3.gprocurement.go.th/egp2procmainWeb/jsp/procsearch.sch?servlet=gojsp&proc_id=ShowHTMLFile&processFlows=Procure&projectId=63017163547&templateType=W2&temp_Announ=A&temp_itemNo=0&seqNo=2"
+                }
+              ]
+            },
+            "review_note": {
+              "value": "Winner selected as lowest bidder; value identical to the Ranong award (63017153824) to the satang; the W2 notice names no rival bidders, so the bidder count remains open",
               "source": [
                 {
                   "id": "S-TMD-HIST",
@@ -17378,6 +17735,15 @@
                 }
               ]
             },
+            "review_note": {
+              "value": "Portal winner notice states lowest bidder, 10.9M (7.27%) under the 150M budget, and conditions signing on the FY2567 Budget Act; notice signed by Director-General Korravee Sitthichivapak",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "https://process5.gprocurement.go.th/egp-template-service/dwnt/view-pdf-file?templateId=dff167f0-6117-48e3-85aa-642cef0729f8"
+                }
+              ]
+            },
             "contract_year_be": {
               "value": 2567,
               "source": [
@@ -17519,6 +17885,15 @@
             },
             "evidence_status": {
               "value": "Verified",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "https://www.tmd.go.th/media/secretary/%E0%B8%A2%E0%B8%A8/report68.pdf"
+                }
+              ]
+            },
+            "review_note": {
+              "value": "The report says the winner was announced 2 July 2567 and the contract was signed 17 July 2567. The earlier index lead is not counted as a second purchase.",
               "source": [
                 {
                   "id": "S-TMD-HIST",
@@ -18845,6 +19220,15 @@
                 }
               ]
             },
+            "review_note": {
+              "value": "The PDF OCR contains an adjacent stray 17,346,900-baht fragment; it is excluded because it is not attached to a named bidder in the radar row.",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "https://www.tmd.go.th/media/PDF/agreement55_56.pdf"
+                }
+              ]
+            },
             "contract_year_be": {
               "value": 2556,
               "source": [
@@ -19024,6 +19408,15 @@
             },
             "evidence_status": {
               "value": "Verified",
+              "source": [
+                {
+                  "id": "S-TMD-HIST",
+                  "locator": "https://tmd.go.th/media/procurement/egp/นราธวาส_240823.pdf"
+                }
+              ]
+            },
+            "review_note": {
+              "value": "Portal winner notice archived: lowest bidder, 8.225M (5.48%) under the 150M budget, EB.16/2567",
               "source": [
                 {
                   "id": "S-TMD-HIST",

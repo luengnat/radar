@@ -44,7 +44,7 @@
             <a class="button button-primary" href="#stations">สำรวจสถานี <span>↓</span></a>
             <a class="button button-quiet" href="#procurement">ดูสัญญาและผู้ยื่นราคา <span>↗</span></a>
           </div>
-          <a class="hero-current-year" href="#years"><span>FY2570 / CURRENT BUDGET LENS</span><b>ปีปัจจุบัน: แผนและคำขอ ยังไม่ใช่สัญญา</b><i>เปิดมุมมองปี →</i></a>
+          <a class="hero-current-year" href="#years"><span>FY2570 / CURRENT BUDGET LENS</span><b id="hero-current-year-title">ปีปัจจุบัน: พบประกาศผล + แผน/คำขอ</b><i>เปิดมุมมองปี →</i></a>
           <p class="hero-note"><span>หลักการอ่าน:</span> ตัวเลขที่มี source คือหลักฐานที่พบแล้ว — ไม่ใช่ข้อสรุปว่ามีการทุจริต</p>
         </div>
 
@@ -109,14 +109,36 @@
         <div class="shell">
           <div class="section-heading reveal">
             <div><p class="eyebrow">02 / STATION MAP</p><h2>สถานีอยู่ตรงไหน</h2></div>
-            <p class="section-intro">แผนที่จุดสถานีจากพิกัดใน station master — สีแยกหน่วยงาน ขนาดจุดแยกระดับคัดกรอง และจุดที่ยังไม่มีพิกัดจะไม่ถูกเดาขึ้นมา</p>
+            <p class="section-intro">กรองสถานีตามหน่วยงานและย่านความถี่ได้โดยตรง — สีบอกหน่วยงาน รูปทรงบอก band และปรับรัศมีทดลองเพื่อดูความซ้อนทับได้โดยไม่ปนกับค่าที่เอกสารระบุ</p>
           </div>
           <div class="map-layout">
             <div class="map-frame reveal">
               <div class="map-frame-head"><span id="map-count">กำลังวาดแผนที่…</span><span>คลิกจุดเพื่อดูสถานี</span></div>
+              <div class="map-filter-panel" aria-label="ตัวกรองแผนที่">
+                <div class="map-filter-group" role="group" aria-label="กรองตามหน่วยงาน">
+                  <span>หน่วยงาน</span>
+                  <button class="active" type="button" data-map-agency="all" aria-pressed="true">ทั้งหมด</button>
+                  <button type="button" data-map-agency="TMD" aria-pressed="false">อุตุฯ</button>
+                  <button type="button" data-map-agency="RRD" aria-pressed="false">ฝนหลวง</button>
+                  <button type="button" data-map-agency="BMA" aria-pressed="false">กทม.</button>
+                </div>
+                <div class="map-filter-group" role="group" aria-label="กรองตามย่านความถี่">
+                  <span>Band</span>
+                  <button class="active" type="button" data-map-band="all" aria-pressed="true">ทั้งหมด</button>
+                  <button type="button" data-map-band="S" aria-pressed="false">S</button>
+                  <button type="button" data-map-band="C" aria-pressed="false">C</button>
+                  <button type="button" data-map-band="X" aria-pressed="false">X</button>
+                  <button type="button" data-map-band="unknown" aria-pressed="false">ไม่ระบุ</button>
+                </div>
+                <div class="map-range-control">
+                  <label class="map-range-switch"><input id="coverage-range-toggle" type="checkbox" /> ทดลองใช้รัศมีเดียวกัน</label>
+                  <input id="coverage-range" type="range" min="50" max="300" step="10" value="240" disabled aria-label="กำหนดรัศมีครอบคลุมทดลอง หน่วยกิโลเมตร" />
+                  <output id="coverage-range-value" for="coverage-range">ตามข้อมูลสถานี</output>
+                </div>
+              </div>
               <div class="map-controls" role="group" aria-label="ชั้นข้อมูลแผนที่">
-                <label><input id="coverage-toggle" type="checkbox" checked /> แสดงวงรัศมีครอบคลุม</label>
-                <label><input id="planned-coverage-toggle" type="checkbox" /> รวมแผน/โครงการใหม่</label>
+                <label><input id="coverage-toggle" type="checkbox" checked /> วงรัศมีครอบคลุม</label>
+                <label><input id="planned-coverage-toggle" type="checkbox" /> วงของแผน/โครงการใหม่</label>
               </div>
               <div id="station-map" class="station-map"><div class="empty-state">กำลังโหลดแผนที่…</div></div>
             </div>
@@ -125,9 +147,15 @@
               <p class="eyebrow">READ THE MAP</p>
               <h3>จุดเล็ก<br /><em>ไม่ได้แปลว่าเล็กน้อย</em></h3>
               <div class="map-legend">
+                <p>สี = หน่วยงาน</p>
                 <div><i class="legend-dot legend-tmd"></i><span>TMD / อุตุนิยมวิทยา</span></div>
                 <div><i class="legend-dot legend-rrd"></i><span>RRD / ฝนหลวง</span></div>
                 <div><i class="legend-dot legend-bma"></i><span>BMA / กรุงเทพมหานคร</span></div>
+                <p>รูปทรง = ย่านความถี่</p>
+                <div><i class="legend-band legend-band-s"></i><span>วงกลม = S-band</span></div>
+                <div><i class="legend-band legend-band-c"></i><span>สี่เหลี่ยม = C-band</span></div>
+                <div><i class="legend-band legend-band-x"></i><span>สามเหลี่ยม = X-band</span></div>
+                <div><i class="legend-band legend-band-unknown"></i><span>ข้าวหลามตัด = ยังไม่ระบุ</span></div>
                 <div><i class="legend-ring legend-coverage"></i><span>วงโปร่งใส = รัศมีคุ้มครอง</span></div>
                 <div><i class="legend-ring legend-review"></i><span>จุดวงใหญ่ = ตรวจเพิ่ม</span></div>
               </div>
@@ -143,7 +171,7 @@
         <div class="shell">
           <div class="section-heading reveal">
             <div><p class="eyebrow">03 / FISCAL YEAR LENS</p><h2>เห็นภาพตามปีงบประมาณ</h2></div>
-            <p class="section-intro">กดปีเพื่อดูว่าในปีนั้นมีผลจัดซื้อ/สัญญากี่รายการ และมีแผนหรือคำขออะไรบ้าง — ปี 2570 ถูกแยกเป็นปีปัจจุบันและยังไม่ใช่ผลจัดซื้อ</p>
+            <p class="section-intro">กดปีเพื่อแยก “ประกาศผลหรือสัญญา” ออกจาก “แผนหรือคำของบ” — ปี 2570 มีทั้งประกาศผู้ชนะงานบำรุงรักษาที่พบแล้ว และโครงการที่ยังอยู่ชั้นแผน</p>
           </div>
           <div class="year-layout">
             <div class="year-main reveal">
