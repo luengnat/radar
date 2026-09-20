@@ -512,22 +512,43 @@ function haversineKm(first, second) {
 }
 
 function overlapPairCount(rows, radiusOverride) {
-  const pairs = new Set();
-  rows.forEach((station, index) => {
-    rows.slice(index + 1).forEach((other) => {
-      const firstKey = coverageRowKey(station);
-      const secondKey = coverageRowKey(other);
-      if (firstKey === secondKey) return;
-      const firstRadius = radiusOverride ?? Number(station.radius_km);
-      const secondRadius = radiusOverride ?? Number(other.radius_km);
-      if ([firstRadius, secondRadius].every(Number.isFinite) && haversineKm(station, other) <= firstRadius + secondRadius) pairs.add([firstKey, secondKey].sort().join("||"));
-    });
-  });
-  return pairs.size;
+  return overlapGraph(rows, radiusOverride).edgeCount;
 }
 
 function coverageRowKey(row) {
   return `${row.agency}::${normalizedMapStationName(row.name)}`;
+}
+
+function coverageNodes(rows) {
+  const nodes = new Map();
+  rows.forEach((row) => {
+    const key = coverageRowKey(row);
+    const previous = nodes.get(key);
+    if (!previous || (previous.status !== "existing" && row.status === "existing")) nodes.set(key, row);
+  });
+  return [...nodes.values()];
+}
+
+function overlapGraph(rows, radiusOverride) {
+  const nodes = new Map(coverageNodes(rows).map((row) => [coverageRowKey(row), { row, degree: 0, neighbors: [] }]));
+  let edgeCount = 0;
+  const uniqueRows = [...nodes.values()].map((node) => node.row);
+  uniqueRows.forEach((row, index) => {
+    uniqueRows.slice(index + 1).forEach((other) => {
+      const firstRadius = radiusOverride ?? Number(row.radius_km);
+      const secondRadius = radiusOverride ?? Number(other.radius_km);
+      const distance = haversineKm(row, other);
+      if (![firstRadius, secondRadius, distance].every(Number.isFinite) || distance > firstRadius + secondRadius) return;
+      const first = nodes.get(coverageRowKey(row));
+      const second = nodes.get(coverageRowKey(other));
+      first.degree += 1;
+      second.degree += 1;
+      first.neighbors.push({ row: other, distance });
+      second.neighbors.push({ row, distance });
+      edgeCount += 1;
+    });
+  });
+  return { nodes, edgeCount };
 }
 
 function visibleCoverageRows() {
@@ -540,24 +561,10 @@ function visibleCoverageRows() {
 function stationOverlapSummary(station) {
   const rows = visibleCoverageRows();
   const selectedKey = `${agencyOf(station)}::${nameOf(station)}`;
-  const selectedRows = rows.filter((row) => coverageRowKey(row) === selectedKey);
-  if (!selectedRows.length) return { available: false, neighbors: [] };
-  const radiusOverride = coverageRangeOverride();
-  const neighbors = new Map();
-  rows.forEach((row) => {
-    const rowKey = coverageRowKey(row);
-    if (rowKey === selectedKey) return;
-    const rowRadius = radiusOverride ?? Number(row.radius_km);
-    const intersections = selectedRows.map((selectedRow) => {
-      const selectedRadius = radiusOverride ?? Number(selectedRow.radius_km);
-      return { distance: haversineKm(selectedRow, row), threshold: selectedRadius + rowRadius };
-    }).filter(({ distance, threshold }) => Number.isFinite(distance) && Number.isFinite(threshold) && distance <= threshold);
-    if (!intersections.length) return;
-    const distance = Math.min(...intersections.map((item) => item.distance));
-    const previous = neighbors.get(rowKey);
-    if (!previous || distance < previous.distance) neighbors.set(rowKey, { row, distance });
-  });
-  return { available: true, neighbors: [...neighbors.values()].sort((a, b) => a.distance - b.distance) };
+  const graph = overlapGraph(rows, coverageRangeOverride());
+  const selected = graph.nodes.get(selectedKey);
+  if (!selected) return { available: false, neighbors: [] };
+  return { available: true, neighbors: selected.neighbors.sort((a, b) => a.distance - b.distance) };
 }
 
 function renderCoverageBrief(visibleCoverage = coverageStations, radiusOverride = null) {
@@ -578,6 +585,33 @@ function renderCoverageBrief(visibleCoverage = coverageStations, radiusOverride 
   const rangeLabel = radiusOverride === null ? "ตามค่าที่บันทึกของแต่ละสถานี" : `${radiusOverride.toLocaleString("th-TH")} กม. เท่ากันทุกวง`;
   const baseline = filteredScenario ? "" : `<strong>${percentages["3plus"] ?? "—"}%</strong> ของ land grid อยู่ในรัศมี <b>3 สถานีขึ้นไป</b> จากสถานีเดิม ${existing} แห่ง<br /><b>${planned} รายการใหม่</b> เพิ่มพื้นที่ที่ยังไม่ถูกครอบคลุมรวมประมาณ <b>${newLand.toLocaleString("th-TH")} km²</b> ตามแบบจำลอง${udon ? `<br />จุดอุดรฯ ก่อนเพิ่มโครงการมี overlap อยู่แล้ว <b>${udon} ชั้น</b><br />` : ""}`;
   panel.innerHTML = `<p>${baseline}<strong>${visibleCoverage.length}</strong> วงที่กำลังแสดง · <b>${overlapPairs.toLocaleString("th-TH")} คู่สถานี</b> มีวงตัดกัน<br />ระยะที่ใช้: <b>${rangeLabel}</b><br /><span>${filteredScenario ? "ตัวกรอง/ระยะทดลองเปลี่ยนเฉพาะภาพและจำนวนคู่วงตัดกัน ไม่ได้คำนวณ land grid 3 ชั้นใหม่ · " : ""}วงกลมเชิงเรขาคณิตยังไม่หักภูเขา ความสูงลำคลื่น หรือ beam blockage</span></p>`;
+}
+
+function renderOverlapRanking(visibleCoverage, radiusOverride, focusMode) {
+  const panel = $("#overlap-ranking");
+  if (!panel) return;
+  if (!($("#coverage-toggle")?.checked ?? true)) {
+    panel.innerHTML = '<p class="overlap-ranking-muted">เปิดวงรัศมีเพื่อจัดอันดับ overlap</p>';
+    return;
+  }
+  const graph = overlapGraph(visibleCoverage, radiusOverride);
+  const ranked = [...graph.nodes.values()].filter((node) => node.degree > 0).sort((a, b) => b.degree - a.degree || nameOf(coverageMasterStation(a.row) || {}).localeCompare(nameOf(coverageMasterStation(b.row) || {}), "th")).slice(0, 5);
+  if (!ranked.length) {
+    panel.innerHTML = '<p class="overlap-ranking-muted">ยังไม่พบคู่สถานีที่วงตัดกันในตัวกรองและระยะนี้</p>';
+    return;
+  }
+  const focusLabel = focusMode ? "กำลังเน้นบนแผนที่" : "เปิดโหมดเน้นเพื่อขยายจุด";
+  panel.innerHTML = `<div class="overlap-ranking-head"><span>TOP OVERLAP</span><b>${graph.edgeCount.toLocaleString("th-TH")} คู่</b></div><p class="overlap-ranking-caption">${focusLabel} · อันดับตามจำนวนวงที่ตัดกัน</p><ol>${ranked.map((node, index) => {
+    const station = coverageMasterStation(node.row);
+    const stationId = station ? valueAt(station.station_id, "") : "";
+    const action = stationId ? ` data-map-rank-id="${stationId}" role="button" tabindex="0"` : "";
+    return `<li${action}><i>${String(index + 1).padStart(2, "0")}</i><span><b>${normalizedMapStationName(node.row.name)}</b><small>${agencyLabel(node.row.agency)} · ${mapBandLabel(coverageBandKey(node.row))}</small></span><strong>${node.degree}</strong></li>`;
+  }).join("")}</ol>`;
+  $$('[data-map-rank-id]', panel).forEach((item) => {
+    const select = () => selectMapStation(item.dataset.mapRankId);
+    item.addEventListener("click", select);
+    item.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); select(); } });
+  });
 }
 
 function normalizedMapStationName(name) {
@@ -622,7 +656,7 @@ function coverageRangeOverride() {
   return enabled && Number.isFinite(value) ? value : null;
 }
 
-function coverageEllipse(station, project, radiusOverride = null) {
+function coverageEllipse(station, project, radiusOverride = null, overlapDegree = null) {
   const lat = Number(station.lat);
   const lon = Number(station.lon);
   const radius = radiusOverride ?? Number(station.radius_km);
@@ -633,7 +667,8 @@ function coverageEllipse(station, project, radiusOverride = null) {
   const [x2] = project([lon + lonDelta, lat]);
   const [, y2] = project([lon, lat + latDelta]);
   const planned = station.status !== "existing";
-  return `<ellipse class="coverage-ring agency-${station.agency} ${planned ? "planned" : "existing"}" cx="${x.toFixed(3)}" cy="${y.toFixed(3)}" rx="${Math.abs(x2 - x).toFixed(3)}" ry="${Math.abs(y2 - y).toFixed(3)}"></ellipse>`;
+  const overlapClass = overlapDegree === null ? "" : overlapDegree ? "overlap-ring" : "overlap-none";
+  return `<ellipse class="coverage-ring agency-${station.agency} ${planned ? "planned" : "existing"} ${overlapClass}" cx="${x.toFixed(3)}" cy="${y.toFixed(3)}" rx="${Math.abs(x2 - x).toFixed(3)}" ry="${Math.abs(y2 - y).toFixed(3)}"></ellipse>`;
 }
 
 function mapPointShape(band, radius) {
@@ -650,9 +685,14 @@ function renderMap() {
   const project = mapProjector(mapGeo);
   const landPaths = (mapGeo.features || []).map((feature) => `<path class="map-land" d="${svgGeometryPath(feature.geometry, project)}"></path>`).join("");
   const showCoverage = $("#coverage-toggle")?.checked ?? true;
+  const overlapFocus = $("#overlap-focus-toggle")?.checked ?? false;
   const radiusOverride = coverageRangeOverride();
   const visibleCoverage = visibleCoverageRows();
-  const coverageLayer = showCoverage ? visibleCoverage.map((station) => coverageEllipse(station, project, radiusOverride)).join("") : "";
+  const graph = overlapGraph(visibleCoverage, radiusOverride);
+  const coverageLayer = showCoverage ? visibleCoverage.map((station) => {
+    const degree = graph.nodes.get(coverageRowKey(station))?.degree || 0;
+    return coverageEllipse(station, project, radiusOverride, overlapFocus ? degree : null);
+  }).join("") : "";
   const eligibleStations = stations.filter(mapStationMatches);
   const mappedStations = eligibleStations.filter((station) => stationCoordinates(station));
   const points = mappedStations.map((station) => {
@@ -663,10 +703,16 @@ function renderMap() {
     const halo = risk.status === "review" ? 2.35 : risk.status === "planned" ? 1.75 : 1.2;
     const id = valueAt(station.station_id, "");
     const band = bandKey(station);
-    return `<g class="map-point agency-${agencyOf(station)} band-${band} ${risk.status === "review" ? "risk-review" : risk.status === "planned" ? "risk-planned" : ""}" data-station-id="${id}" tabindex="0" role="button" aria-label="${nameOf(station)} · ${agencyLabel(agencyOf(station))} · ${mapBandLabel(band)} · ${RISK_META[risk.status].label}" transform="translate(${x.toFixed(3)} ${y.toFixed(3)})"><circle class="map-halo" r="${halo}"></circle>${mapPointShape(band, radius)}<text class="map-point-label" x="${radius + .8}" y="${-radius - .45}">${nameOf(station)}</text><title>${nameOf(station)} · ${agencyLabel(agencyOf(station))} · ${mapBandLabel(band)} · ${RISK_META[risk.status].label}</title></g>`;
+    const coverageKey = coverageRowKey(station);
+    const overlapDegree = graph.nodes.get(coverageKey)?.degree || 0;
+    const overlapLevel = overlapDegree >= 4 ? "4plus" : String(overlapDegree);
+    const pointRadius = overlapFocus && overlapDegree ? Math.min(2.1, radius + .22 + overlapDegree * .11) : radius;
+    const countLabel = overlapFocus && overlapDegree ? `<text class="map-overlap-count" x="${pointRadius + 1.1}" y="${-pointRadius - .35}">${overlapDegree}</text>` : "";
+    return `<g class="map-point agency-${agencyOf(station)} band-${band} overlap-${overlapLevel} ${risk.status === "review" ? "risk-review" : risk.status === "planned" ? "risk-planned" : ""}" data-station-id="${id}" tabindex="0" role="button" aria-label="${nameOf(station)} · ${agencyLabel(agencyOf(station))} · ${mapBandLabel(band)} · overlap ${overlapDegree} · ${RISK_META[risk.status].label}" transform="translate(${x.toFixed(3)} ${y.toFixed(3)})"><circle class="map-halo" r="${overlapFocus && overlapDegree ? Math.max(halo, pointRadius + .8) : halo}"></circle>${mapPointShape(band, pointRadius)}<text class="map-point-label" x="${pointRadius + .8}" y="${-pointRadius - .45}">${nameOf(station)}</text>${countLabel}<title>${nameOf(station)} · ${agencyLabel(agencyOf(station))} · ${mapBandLabel(band)} · overlap ${overlapDegree} · ${RISK_META[risk.status].label}</title></g>`;
   }).join("");
-  container.innerHTML = `<svg viewBox="0 0 100 140" role="img" aria-label="แผนที่ตำแหน่งสถานีเรดาร์ประเทศไทย"><g aria-hidden="true"><path class="map-water-grid" d="M5 24H95 M5 48H95 M5 72H95 M5 96H95 M5 120H95 M25 4V136 M50 4V136 M75 4V136"></path></g><g>${landPaths}</g><g aria-hidden="true">${coverageLayer}</g><g>${points}</g></svg>`;
+  container.innerHTML = `<svg class="${overlapFocus ? "overlap-mode" : ""}" viewBox="0 0 100 140" role="img" aria-label="แผนที่ตำแหน่งสถานีเรดาร์ประเทศไทย"><g aria-hidden="true"><path class="map-water-grid" d="M5 24H95 M5 48H95 M5 72H95 M5 96H95 M5 120H95 M25 4V136 M50 4V136 M75 4V136"></path></g><g>${landPaths}</g><g aria-hidden="true">${coverageLayer}</g><g>${points}</g></svg>`;
   renderCoverageBrief(showCoverage ? visibleCoverage : [], radiusOverride);
+  renderOverlapRanking(showCoverage ? visibleCoverage : [], radiusOverride, overlapFocus);
   setText("#map-count", `${mappedStations.length} จุดบนแผนที่ · ${mapAgencyLabel(mapAgencyFilter)} / ${mapBandLabel(mapBandFilter)}${eligibleStations.length - mappedStations.length ? ` · ${eligibleStations.length - mappedStations.length} รายการไม่มีพิกัด` : ""}`);
   $$(".map-point", container).forEach((point) => {
     point.addEventListener("click", () => selectMapStation(point.dataset.stationId));
@@ -911,6 +957,7 @@ function wireControls() {
   }));
   $("#coverage-toggle").addEventListener("change", renderMap);
   $("#planned-coverage-toggle").addEventListener("change", renderMap);
+  $("#overlap-focus-toggle").addEventListener("change", renderMap);
   $("#coverage-range-toggle").addEventListener("change", (event) => {
     $("#coverage-range").disabled = !event.target.checked;
     setText("#coverage-range-value", event.target.checked ? `${Number($("#coverage-range").value).toLocaleString("th-TH")} กม. · ค่าทดลอง` : "ตามข้อมูลสถานี");
@@ -935,6 +982,7 @@ function wireControls() {
     });
     $("#coverage-toggle").checked = true;
     $("#planned-coverage-toggle").checked = false;
+    $("#overlap-focus-toggle").checked = false;
     $("#coverage-range-toggle").checked = false;
     $("#coverage-range").value = "240";
     $("#coverage-range").disabled = true;

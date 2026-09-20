@@ -243,9 +243,18 @@ h2 { font: 600 clamp(2.8rem, 5vw, 5rem)/.95 var(--display); letter-spacing: -.06
 .map-point.selected .map-halo { stroke: var(--paper); stroke-width: .5; opacity: 1; }
 .map-point-label { opacity: 0; pointer-events: none; fill: var(--paper); stroke: #07151c; stroke-width: .42; paint-order: stroke; font: 600 2.1px var(--display); letter-spacing: .01em; transition: opacity .15s; }
 .map-point:hover .map-point-label, .map-point:focus .map-point-label, .map-point.selected .map-point-label { opacity: 1; }
+.map-overlap-count { opacity: 0; pointer-events: none; fill: var(--orange); stroke: #07151c; stroke-width: .48; paint-order: stroke; font: 700 2.35px var(--display); }
+.station-map svg.overlap-mode .map-overlap-count { opacity: 1; }
+.station-map svg.overlap-mode .coverage-ring { opacity: .035; }
+.station-map svg.overlap-mode .coverage-ring.overlap-ring { opacity: .24; stroke-width: .24; }
+.station-map svg.overlap-mode .coverage-ring.overlap-ring.planned { opacity: .34; }
+.station-map svg.overlap-mode .map-point.overlap-0 { opacity: .25; }
+.station-map svg.overlap-mode .map-point.overlap-1 .map-halo { stroke: var(--orange); opacity: .85; }
+.station-map svg.overlap-mode .map-point.overlap-2 .map-halo, .station-map svg.overlap-mode .map-point.overlap-3 .map-halo, .station-map svg.overlap-mode .map-point.overlap-4plus .map-halo { stroke: var(--red); stroke-width: .55; opacity: 1; }
 .map-aside { padding: 25px; color: var(--paper); background: var(--ink-2); position: relative; overflow: hidden; }.map-aside::after { content: "N"; position: absolute; right: -22px; bottom: -47px; color: rgba(113,225,202,.08); font: 220px var(--display); line-height: 1; }.map-aside-mark { color: #8ba4a5; font: 10px var(--display); letter-spacing: .14em; }.map-aside .eyebrow { margin-top: 58px; color: var(--teal); }.map-aside h3 { position: relative; z-index: 1; font: 600 31px/1 var(--display); letter-spacing: -.05em; }.map-aside h3 em { color: var(--teal); }
 .map-legend { position: relative; z-index: 1; display: grid; gap: 9px; margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--dark-line); }.map-legend p { margin: 5px 0 0; color: #6f898b; font: 600 8px var(--display); letter-spacing: .12em; text-transform: uppercase; }.map-legend div { display: flex; align-items: center; gap: 9px; color: #9bb1b2; font-size: 10px; }.legend-dot, .legend-ring, .legend-band { width: 10px; height: 10px; display: inline-block; flex: 0 0 10px; }.legend-dot, .legend-ring { border-radius: 50%; }.legend-tmd { background: var(--teal); }.legend-rrd { background: var(--orange); }.legend-bma { background: var(--acid); }.legend-ring { border: 2px solid var(--red); }.legend-band { background: #a7babb; }.legend-band-s { border-radius: 50%; }.legend-band-c { border-radius: 1px; }.legend-band-x { clip-path: polygon(50% 0, 100% 100%, 0 100%); }.legend-band-unknown { transform: rotate(45deg) scale(.78); }
 .legend-coverage { border: 1px solid var(--teal); background: rgba(113,225,202,.12); }.coverage-brief { position: relative; z-index: 1; margin-top: 22px; padding: 12px; background: rgba(246,163,92,.08); border: 1px solid rgba(246,163,92,.22); }.coverage-brief p { margin: 0; color: #9bb1b2; font-size: 10px; line-height: 1.6; }.coverage-brief strong { color: var(--orange); font: 600 18px var(--display); }.coverage-brief b { color: var(--paper); }
+.legend-overlap-count { width: 10px; height: 10px; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 10px; color: var(--orange); font: 700 8px/1 var(--display); font-style: normal; }
 .map-selected { position: relative; z-index: 1; min-height: 115px; margin-top: 28px; padding: 14px; background: rgba(255,255,255,.05); border-left: 2px solid var(--teal); }.map-selected p { margin: 0; color: #8da5a6; font-size: 10px; line-height: 1.65; }.map-selected h4 { margin: 0 0 4px; color: var(--paper); font: 600 22px/1 var(--display); }.map-selected .map-selected-meta { color: var(--teal); font-size: 10px; }.map-selected .map-selected-note { margin-top: 9px; color: #91a7a7; font-size: 10px; }
 .map-overlap { display: grid; gap: 8px; margin-top: 13px; padding-top: 11px; border-top: 1px solid var(--dark-line); }
 .map-overlap > div { display: flex; align-items: end; justify-content: space-between; gap: 12px; }
@@ -256,6 +265,20 @@ h2 { font: 600 clamp(2.8rem, 5vw, 5rem)/.95 var(--display); letter-spacing: -.06
 .map-overlap li b { color: var(--paper); font-size: 10px; }
 .map-overlap li span { color: #849c9d; font-size: 8px; text-align: right; }
 .map-overlap small { color: #6f898b; font-size: 8px; line-height: 1.45; }
+.overlap-ranking { position: relative; z-index: 1; margin-top: 12px; padding: 12px; border: 1px solid rgba(113,225,202,.2); background: rgba(113,225,202,.045); }
+.overlap-ranking-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.overlap-ranking-head span { color: #779294; font: 600 8px var(--display); letter-spacing: .12em; }
+.overlap-ranking-head b { color: var(--orange); font: 600 17px var(--display); }
+.overlap-ranking-caption, .overlap-ranking-muted { margin: 5px 0 0; color: #8da5a6; font-size: 9px; line-height: 1.5; }
+.overlap-ranking ol { display: grid; gap: 5px; margin: 9px 0 0; padding: 0; list-style: none; }
+.overlap-ranking li { display: grid; grid-template-columns: 20px 1fr auto; gap: 7px; align-items: center; padding-top: 6px; border-top: 1px solid rgba(113,225,202,.1); }
+.overlap-ranking li[role="button"] { cursor: pointer; }
+.overlap-ranking li[role="button"]:hover, .overlap-ranking li[role="button"]:focus { background: rgba(113,225,202,.08); outline: none; }
+.overlap-ranking li i { color: #718a8c; font: 600 9px var(--display); font-style: normal; }
+.overlap-ranking li span { display: grid; gap: 2px; }
+.overlap-ranking li b { color: var(--paper); font-size: 10px; }
+.overlap-ranking li small { color: #829a9c; font-size: 8px; }
+.overlap-ranking li strong { color: var(--orange); font: 600 18px/.8 var(--display); }
 .map-aside .button { position: relative; z-index: 1; width: 100%; justify-content: space-between; margin-top: 12px; }.map-aside .button:disabled { cursor: not-allowed; opacity: .42; }
 
 @media (max-width: 900px) {

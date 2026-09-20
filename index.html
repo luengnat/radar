@@ -139,6 +139,7 @@
               <div class="map-controls" role="group" aria-label="ชั้นข้อมูลแผนที่">
                 <label><input id="coverage-toggle" type="checkbox" checked /> วงรัศมีครอบคลุม</label>
                 <label><input id="planned-coverage-toggle" type="checkbox" /> วงของแผน/โครงการใหม่</label>
+                <label><input id="overlap-focus-toggle" type="checkbox" /> โหมดเน้น overlap</label>
               </div>
               <div id="station-map" class="station-map"><div class="empty-state">กำลังโหลดแผนที่…</div></div>
             </div>
@@ -158,8 +159,10 @@
                 <div><i class="legend-band legend-band-unknown"></i><span>ข้าวหลามตัด = ยังไม่ระบุ</span></div>
                 <div><i class="legend-ring legend-coverage"></i><span>วงโปร่งใส = รัศมีคุ้มครอง</span></div>
                 <div><i class="legend-ring legend-review"></i><span>จุดวงใหญ่ = ตรวจเพิ่ม</span></div>
+                <div><i class="legend-overlap-count">3</i><span>ตัวเลข = จำนวนวงที่ตัดกันในโหมดเน้น</span></div>
               </div>
               <div id="coverage-brief" class="coverage-brief"><p>กำลังอ่านผล overlap…</p></div>
+              <div id="overlap-ranking" class="overlap-ranking"><p>กำลังจัดอันดับสถานีที่วงตัดกัน…</p></div>
               <div id="map-selected" class="map-selected"><p>เลือกจุดบนแผนที่เพื่อดูสถานี ผู้ขาย และสถานะคัดกรอง</p></div>
               <button id="map-open-station" class="button button-dark" type="button" disabled>เปิดรายละเอียดสถานี ↗</button>
             </aside>
