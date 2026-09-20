@@ -516,7 +516,9 @@ function overlapPairCount(rows, radiusOverride) {
 }
 
 function coverageRowKey(row) {
-  return `${row.agency || agencyOf(row)}::${normalizedMapStationName(row.name || nameOf(row))}`;
+  const agency = typeof row.agency === "string" ? row.agency : agencyOf(row);
+  const name = row.name || nameOf(row);
+  return `${agency}::${normalizedMapStationName(name)}`;
 }
 
 function coverageNodes(rows) {
