@@ -3,6 +3,7 @@ const POLITICAL_DATA_URL = "data/political_context_2026-09-19.json";
 const MAP_DATA_URL = "data/tha_adm0_simplified.geojson";
 const COVERAGE_DATA_URL = "data/radar_coverage_summary.json";
 const COVERAGE_STATIONS_URL = "data/radar_stations_map.json";
+const CONSERVATIVE_RADIUS_KM = 120;
 const PUBLIC_REPO_BASE = "https://github.com/luengnat/radar/blob/main/";
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -583,10 +584,14 @@ function renderCoverageBrief(visibleCoverage = coverageStations, radiusOverride 
   const newLand = marginal.reduce((sum, item) => sum + Number(item.newly_covered_km2 || 0), 0);
   const udon = coverageSummary.udon_site_coverage_before;
   const filteredScenario = mapAgencyFilter !== "all" || mapBandFilter !== "all" || radiusOverride !== null || visibleCoverage.length !== existing;
-  const overlapPairs = overlapPairCount(visibleCoverage, radiusOverride);
+  const overlap = overlapGraph(visibleCoverage, radiusOverride);
+  const overlapPairs = overlap.edgeCount;
+  const overlapStationCount = [...overlap.nodes.values()].filter((node) => node.degree > 0).length;
   const rangeLabel = radiusOverride === null ? "ตามค่าที่บันทึกของแต่ละสถานี" : `${radiusOverride.toLocaleString("th-TH")} กม. เท่ากันทุกวง`;
+  const conservative = $("#conservative-overlap-toggle")?.checked ?? false;
   const baseline = filteredScenario ? "" : `<strong>${percentages["3plus"] ?? "—"}%</strong> ของ land grid อยู่ในรัศมี <b>3 สถานีขึ้นไป</b> จากสถานีเดิม ${existing} แห่ง<br /><b>${planned} รายการใหม่</b> เพิ่มพื้นที่ที่ยังไม่ถูกครอบคลุมรวมประมาณ <b>${newLand.toLocaleString("th-TH")} km²</b> ตามแบบจำลอง${udon ? `<br />จุดอุดรฯ ก่อนเพิ่มโครงการมี overlap อยู่แล้ว <b>${udon} ชั้น</b><br />` : ""}`;
-  panel.innerHTML = `<p>${baseline}<strong>${visibleCoverage.length}</strong> วงที่กำลังแสดง · <b>${overlapPairs.toLocaleString("th-TH")} คู่สถานี</b> มีวงตัดกัน<br />ระยะที่ใช้: <b>${rangeLabel}</b><br /><span>${filteredScenario ? "ตัวกรอง/ระยะทดลองเปลี่ยนเฉพาะภาพและจำนวนคู่วงตัดกัน ไม่ได้คำนวณ land grid 3 ชั้นใหม่ · " : ""}วงกลมเชิงเรขาคณิตยังไม่หักภูเขา ความสูงลำคลื่น หรือ beam blockage</span></p>`;
+  const conservativeNote = conservative ? `<strong>CONSERVATIVE CHECK</strong> ลดรัศมีลง 50% เหลือ <b>${CONSERVATIVE_RADIUS_KM} กม.</b> แต่ยังพบ <b>${overlapPairs.toLocaleString("th-TH")} คู่สถานี</b> วงตัดกัน และ <b>${overlapStationCount}/${overlap.nodes.size}</b> จุดยังมี overlap<br />` : "";
+  panel.innerHTML = `<p>${conservativeNote}${baseline}<strong>${visibleCoverage.length}</strong> วงที่กำลังแสดง · <b>${overlapPairs.toLocaleString("th-TH")} คู่สถานี</b> มีวงตัดกัน<br />ระยะที่ใช้: <b>${rangeLabel}</b><br /><span>${filteredScenario ? "ตัวกรอง/ระยะทดลองเปลี่ยนเฉพาะภาพและจำนวนคู่วงตัดกัน ไม่ได้คำนวณ land grid 3 ชั้นใหม่ · " : ""}วงกลมเชิงเรขาคณิตยังไม่หักภูเขา ความสูงลำคลื่น หรือ beam blockage</span></p>`;
 }
 
 function renderOverlapRanking(visibleCoverage, radiusOverride, focusMode) {
@@ -602,7 +607,8 @@ function renderOverlapRanking(visibleCoverage, radiusOverride, focusMode) {
     panel.innerHTML = '<p class="overlap-ranking-muted">ยังไม่พบคู่สถานีที่วงตัดกันในตัวกรองและระยะนี้</p>';
     return;
   }
-  const focusLabel = focusMode ? "กำลังเน้นบนแผนที่" : "เปิดโหมดเน้นเพื่อขยายจุด";
+  const conservative = $("#conservative-overlap-toggle")?.checked ?? false;
+  const focusLabel = conservative ? `CONSERVATIVE CHECK · ${CONSERVATIVE_RADIUS_KM} กม. · ยังเห็น overlap จำนวนมาก` : focusMode ? "กำลังเน้นบนแผนที่" : "เปิดโหมดเน้นเพื่อขยายจุด";
   panel.innerHTML = `<div class="overlap-ranking-head"><span>TOP OVERLAP</span><b>${graph.edgeCount.toLocaleString("th-TH")} คู่</b></div><p class="overlap-ranking-caption">${focusLabel} · อันดับตามจำนวนวงที่ตัดกัน</p><ol>${ranked.map((node, index) => {
     const station = coverageMasterStation(node.row);
     const stationId = station ? valueAt(station.station_id, "") : "";
@@ -960,12 +966,28 @@ function wireControls() {
   $("#coverage-toggle").addEventListener("change", renderMap);
   $("#planned-coverage-toggle").addEventListener("change", renderMap);
   $("#overlap-focus-toggle").addEventListener("change", renderMap);
+  $("#conservative-overlap-toggle").addEventListener("change", (event) => {
+    if (event.target.checked) {
+      $("#coverage-range-toggle").checked = true;
+      $("#coverage-range").value = String(CONSERVATIVE_RADIUS_KM);
+      $("#coverage-range").disabled = false;
+      setText("#coverage-range-value", `${CONSERVATIVE_RADIUS_KM.toLocaleString("th-TH")} กม. · conservative`);
+    } else {
+      $("#coverage-range-toggle").checked = false;
+      $("#coverage-range").value = "240";
+      $("#coverage-range").disabled = true;
+      setText("#coverage-range-value", "ตามข้อมูลสถานี");
+    }
+    renderMap();
+  });
   $("#coverage-range-toggle").addEventListener("change", (event) => {
+    $("#conservative-overlap-toggle").checked = false;
     $("#coverage-range").disabled = !event.target.checked;
     setText("#coverage-range-value", event.target.checked ? `${Number($("#coverage-range").value).toLocaleString("th-TH")} กม. · ค่าทดลอง` : "ตามข้อมูลสถานี");
     renderMap();
   });
   $("#coverage-range").addEventListener("input", (event) => {
+    $("#conservative-overlap-toggle").checked = false;
     setText("#coverage-range-value", `${Number(event.target.value).toLocaleString("th-TH")} กม. · ค่าทดลอง`);
     renderMap();
   });
@@ -985,6 +1007,7 @@ function wireControls() {
     $("#coverage-toggle").checked = true;
     $("#planned-coverage-toggle").checked = false;
     $("#overlap-focus-toggle").checked = false;
+    $("#conservative-overlap-toggle").checked = false;
     $("#coverage-range-toggle").checked = false;
     $("#coverage-range").value = "240";
     $("#coverage-range").disabled = true;
