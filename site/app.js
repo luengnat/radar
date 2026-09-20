@@ -484,7 +484,12 @@ function renderMapSelected(station) {
   const rangeOverride = coverageRangeOverride();
   const radius = coverageRow ? (rangeOverride ?? Number(coverageRow.radius_km)) : null;
   const radiusLabel = Number.isFinite(radius) ? ` · รัศมี ${radius.toLocaleString("th-TH")} กม.${rangeOverride ? " (ทดลอง)" : ""}` : "";
-  panel.innerHTML = `<h4>${nameOf(station)}</h4><div class="map-selected-meta">${agencyLabel(agencyOf(station))} · ${mapBandLabel(bandKey(station))}${radiusLabel} · ${RISK_META[risk.status].label}</div><p class="map-selected-note">${latestLabel}</p>`;
+  const overlap = stationOverlapSummary(station);
+  const overlapList = overlap.neighbors.slice(0, 5).map((neighbor) => `<li><b>${normalizedMapStationName(neighbor.row.name)}</b><span>${neighbor.distance.toLocaleString("th-TH", { maximumFractionDigits: 0 })} กม. · ${agencyLabel(neighbor.row.agency)} · ${mapBandLabel(coverageBandKey(neighbor.row))}</span></li>`).join("");
+  const overlapCopy = !overlap.available
+    ? ($("#coverage-toggle")?.checked ? "ไม่พบวงรัศมีของสถานีนี้ในชั้นข้อมูลที่เปิดอยู่" : "เปิด ‘วงรัศมีครอบคลุม’ เพื่อคำนวณสถานีที่วงตัดกัน")
+    : overlap.neighbors.length ? `วงของสถานีนี้ตัดกับ ${overlap.neighbors.length} สถานี ภายใต้ตัวกรองและระยะที่กำลังใช้` : "ไม่พบวงของสถานีอื่นตัดกับสถานีนี้ภายใต้ตัวกรองและระยะที่กำลังใช้";
+  panel.innerHTML = `<h4>${nameOf(station)}</h4><div class="map-selected-meta">${agencyLabel(agencyOf(station))} · ${mapBandLabel(bandKey(station))}${radiusLabel} · ${RISK_META[risk.status].label}</div><p class="map-selected-note">${latestLabel}</p><div class="map-overlap"><div><span>วงทับซ้อนกับ</span><strong>${overlap.available ? overlap.neighbors.length : "—"}</strong></div><p>${overlapCopy}</p>${overlapList ? `<ul>${overlapList}</ul>` : ""}<small>ระยะในรายการคือระยะระหว่างจุดศูนย์กลาง ไม่ใช่ระยะขอบวง</small></div>`;
   button.disabled = false;
 }
 
@@ -507,20 +512,61 @@ function haversineKm(first, second) {
 }
 
 function overlapPairCount(rows, radiusOverride) {
-  let count = 0;
+  const pairs = new Set();
   rows.forEach((station, index) => {
     rows.slice(index + 1).forEach((other) => {
+      const firstKey = coverageRowKey(station);
+      const secondKey = coverageRowKey(other);
+      if (firstKey === secondKey) return;
       const firstRadius = radiusOverride ?? Number(station.radius_km);
       const secondRadius = radiusOverride ?? Number(other.radius_km);
-      if ([firstRadius, secondRadius].every(Number.isFinite) && haversineKm(station, other) <= firstRadius + secondRadius) count += 1;
+      if ([firstRadius, secondRadius].every(Number.isFinite) && haversineKm(station, other) <= firstRadius + secondRadius) pairs.add([firstKey, secondKey].sort().join("||"));
     });
   });
-  return count;
+  return pairs.size;
+}
+
+function coverageRowKey(row) {
+  return `${row.agency}::${normalizedMapStationName(row.name)}`;
+}
+
+function visibleCoverageRows() {
+  const showCoverage = $("#coverage-toggle")?.checked ?? true;
+  if (!showCoverage) return [];
+  const includePlanned = $("#planned-coverage-toggle")?.checked ?? false;
+  return coverageStations.filter((station) => (includePlanned || station.status === "existing") && coverageStationMatches(station));
+}
+
+function stationOverlapSummary(station) {
+  const rows = visibleCoverageRows();
+  const selectedKey = `${agencyOf(station)}::${nameOf(station)}`;
+  const selectedRows = rows.filter((row) => coverageRowKey(row) === selectedKey);
+  if (!selectedRows.length) return { available: false, neighbors: [] };
+  const radiusOverride = coverageRangeOverride();
+  const neighbors = new Map();
+  rows.forEach((row) => {
+    const rowKey = coverageRowKey(row);
+    if (rowKey === selectedKey) return;
+    const rowRadius = radiusOverride ?? Number(row.radius_km);
+    const intersections = selectedRows.map((selectedRow) => {
+      const selectedRadius = radiusOverride ?? Number(selectedRow.radius_km);
+      return { distance: haversineKm(selectedRow, row), threshold: selectedRadius + rowRadius };
+    }).filter(({ distance, threshold }) => Number.isFinite(distance) && Number.isFinite(threshold) && distance <= threshold);
+    if (!intersections.length) return;
+    const distance = Math.min(...intersections.map((item) => item.distance));
+    const previous = neighbors.get(rowKey);
+    if (!previous || distance < previous.distance) neighbors.set(rowKey, { row, distance });
+  });
+  return { available: true, neighbors: [...neighbors.values()].sort((a, b) => a.distance - b.distance) };
 }
 
 function renderCoverageBrief(visibleCoverage = coverageStations, radiusOverride = null) {
   const panel = $("#coverage-brief");
   if (!panel || !coverageSummary) return;
+  if (!($("#coverage-toggle")?.checked ?? true)) {
+    panel.innerHTML = '<p><strong>ปิดวงรัศมีอยู่</strong><br />เปิด “วงรัศมีครอบคลุม” เพื่อดูจำนวนคู่สถานีที่วงตัดกันและรายละเอียดรายสถานี</p>';
+    return;
+  }
   const existing = coverageStations.filter((station) => station.status === "existing").length;
   const planned = coverageStations.filter((station) => station.status !== "existing").length;
   const percentages = coverageSummary.existing_coverage_pct || {};
@@ -604,9 +650,8 @@ function renderMap() {
   const project = mapProjector(mapGeo);
   const landPaths = (mapGeo.features || []).map((feature) => `<path class="map-land" d="${svgGeometryPath(feature.geometry, project)}"></path>`).join("");
   const showCoverage = $("#coverage-toggle")?.checked ?? true;
-  const includePlanned = $("#planned-coverage-toggle")?.checked ?? false;
   const radiusOverride = coverageRangeOverride();
-  const visibleCoverage = coverageStations.filter((station) => (includePlanned || station.status === "existing") && coverageStationMatches(station));
+  const visibleCoverage = visibleCoverageRows();
   const coverageLayer = showCoverage ? visibleCoverage.map((station) => coverageEllipse(station, project, radiusOverride)).join("") : "";
   const eligibleStations = stations.filter(mapStationMatches);
   const mappedStations = eligibleStations.filter((station) => stationCoordinates(station));
@@ -618,14 +663,14 @@ function renderMap() {
     const halo = risk.status === "review" ? 2.35 : risk.status === "planned" ? 1.75 : 1.2;
     const id = valueAt(station.station_id, "");
     const band = bandKey(station);
-    return `<g class="map-point agency-${agencyOf(station)} band-${band} ${risk.status === "review" ? "risk-review" : risk.status === "planned" ? "risk-planned" : ""}" data-station-id="${id}" tabindex="0" role="button" aria-label="${nameOf(station)} · ${agencyLabel(agencyOf(station))} · ${mapBandLabel(band)} · ${RISK_META[risk.status].label}" transform="translate(${x.toFixed(3)} ${y.toFixed(3)})"><circle class="map-halo" r="${halo}"></circle>${mapPointShape(band, radius)}<title>${nameOf(station)} · ${agencyLabel(agencyOf(station))} · ${mapBandLabel(band)} · ${RISK_META[risk.status].label}</title></g>`;
+    return `<g class="map-point agency-${agencyOf(station)} band-${band} ${risk.status === "review" ? "risk-review" : risk.status === "planned" ? "risk-planned" : ""}" data-station-id="${id}" tabindex="0" role="button" aria-label="${nameOf(station)} · ${agencyLabel(agencyOf(station))} · ${mapBandLabel(band)} · ${RISK_META[risk.status].label}" transform="translate(${x.toFixed(3)} ${y.toFixed(3)})"><circle class="map-halo" r="${halo}"></circle>${mapPointShape(band, radius)}<text class="map-point-label" x="${radius + .8}" y="${-radius - .45}">${nameOf(station)}</text><title>${nameOf(station)} · ${agencyLabel(agencyOf(station))} · ${mapBandLabel(band)} · ${RISK_META[risk.status].label}</title></g>`;
   }).join("");
   container.innerHTML = `<svg viewBox="0 0 100 140" role="img" aria-label="แผนที่ตำแหน่งสถานีเรดาร์ประเทศไทย"><g aria-hidden="true"><path class="map-water-grid" d="M5 24H95 M5 48H95 M5 72H95 M5 96H95 M5 120H95 M25 4V136 M50 4V136 M75 4V136"></path></g><g>${landPaths}</g><g aria-hidden="true">${coverageLayer}</g><g>${points}</g></svg>`;
   renderCoverageBrief(showCoverage ? visibleCoverage : [], radiusOverride);
   setText("#map-count", `${mappedStations.length} จุดบนแผนที่ · ${mapAgencyLabel(mapAgencyFilter)} / ${mapBandLabel(mapBandFilter)}${eligibleStations.length - mappedStations.length ? ` · ${eligibleStations.length - mappedStations.length} รายการไม่มีพิกัด` : ""}`);
   $$(".map-point", container).forEach((point) => {
     point.addEventListener("click", () => selectMapStation(point.dataset.stationId));
-    point.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") selectMapStation(point.dataset.stationId); });
+    point.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); selectMapStation(point.dataset.stationId); } });
   });
   if (selectedMapStationId && mappedStations.some((station) => valueAt(station.station_id) === selectedMapStationId)) selectMapStation(selectedMapStationId);
   else if (selectedMapStationId) {
@@ -873,6 +918,29 @@ function wireControls() {
   });
   $("#coverage-range").addEventListener("input", (event) => {
     setText("#coverage-range-value", `${Number(event.target.value).toLocaleString("th-TH")} กม. · ค่าทดลอง`);
+    renderMap();
+  });
+  $("#map-filter-reset").addEventListener("click", () => {
+    mapAgencyFilter = "all";
+    mapBandFilter = "all";
+    $$('[data-map-agency]').forEach((item) => {
+      const active = item.dataset.mapAgency === "all";
+      item.classList.toggle("active", active);
+      item.setAttribute("aria-pressed", String(active));
+    });
+    $$('[data-map-band]').forEach((item) => {
+      const active = item.dataset.mapBand === "all";
+      item.classList.toggle("active", active);
+      item.setAttribute("aria-pressed", String(active));
+    });
+    $("#coverage-toggle").checked = true;
+    $("#planned-coverage-toggle").checked = false;
+    $("#coverage-range-toggle").checked = false;
+    $("#coverage-range").value = "240";
+    $("#coverage-range").disabled = true;
+    setText("#coverage-range-value", "ตามข้อมูลสถานี");
+    selectedMapStationId = null;
+    renderMapSelected(null);
     renderMap();
   });
   $("#map-open-station").addEventListener("click", () => { if (selectedMapStationId) openStation(selectedMapStationId); });
