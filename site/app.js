@@ -516,7 +516,7 @@ function overlapPairCount(rows, radiusOverride) {
 }
 
 function coverageRowKey(row) {
-  return `${row.agency}::${normalizedMapStationName(row.name)}`;
+  return `${row.agency || agencyOf(row)}::${normalizedMapStationName(row.name || nameOf(row))}`;
 }
 
 function coverageNodes(rows) {
@@ -560,7 +560,7 @@ function visibleCoverageRows() {
 
 function stationOverlapSummary(station) {
   const rows = visibleCoverageRows();
-  const selectedKey = `${agencyOf(station)}::${nameOf(station)}`;
+  const selectedKey = coverageRowKey(station);
   const graph = overlapGraph(rows, coverageRangeOverride());
   const selected = graph.nodes.get(selectedKey);
   if (!selected) return { available: false, neighbors: [] };
