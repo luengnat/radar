@@ -199,6 +199,32 @@ h2 { font: 600 clamp(2.8rem, 5vw, 5rem)/.95 var(--display); letter-spacing: -.06
 .risk-panel ul { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }.risk-panel li { display: grid; gap: 2px; padding-top: 7px; border-top: 1px solid var(--dark-line); }.risk-panel li b { color: var(--paper); font-size: 11px; }.risk-panel li span { color: #90a5a5; font-size: 10px; line-height: 1.45; }.risk-panel > p { margin: 0; color: #90a5a5; font-size: 10px; }.risk-panel > small { color: #8ca2a3; font-size: 10px; line-height: 1.5; }.risk-panel.risk-review { border-color: rgba(246,163,92,.4); }.risk-panel.risk-gap { border-color: rgba(154,173,175,.35); }.risk-panel.risk-planned { border-color: rgba(113,225,202,.3); }
 .political-section .risk-chip { margin-left: 6px; }
 
+/* Price lens */
+.price-lens-section { color: var(--paper); background: var(--ink); }
+.price-lens-section .section-heading h2 { color: var(--paper); }
+.price-lens-section .section-intro { color: #9aadaf; }
+.price-lens-alert { display: grid; grid-template-columns: auto 1fr; gap: 8px 18px; align-items: baseline; margin-bottom: 13px; padding: 17px 19px; border: 1px solid rgba(246,163,92,.35); border-left: 3px solid var(--orange); background: rgba(246,163,92,.08); }
+.price-lens-alert span { color: var(--orange); font: 600 9px var(--display); letter-spacing: .11em; }
+.price-lens-alert strong { color: var(--paper); font: 600 18px var(--display); letter-spacing: -.02em; }
+.price-lens-alert p { grid-column: 2; margin: -2px 0 0; color: #a8babb; font-size: 11px; line-height: 1.65; }
+.price-lens-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.price-lens-card { min-height: 188px; padding: 21px; border: 1px solid rgba(224,241,235,.15); background: rgba(255,255,255,.035); }
+.price-lens-card::after { content: ""; display: block; width: 48px; margin-top: 21px; border-bottom: 2px solid var(--teal); }
+.price-lens-card.price-lens-reference::after { border-color: #9ba6a5; }.price-lens-card.price-lens-request::after { border-color: var(--orange); }
+.price-lens-kicker { color: #7fa3a3; font: 600 9px var(--display); letter-spacing: .11em; }
+.price-lens-reference .price-lens-kicker { color: #a6b2b3; }.price-lens-request .price-lens-kicker { color: var(--orange); }
+.price-lens-card strong { display: block; margin-top: 27px; color: var(--teal); font: 600 clamp(1.9rem, 3vw, 2.8rem)/.9 var(--display); letter-spacing: -.06em; white-space: nowrap; }
+.price-lens-reference strong { color: #d8e0dc; }.price-lens-request strong { color: var(--orange); }
+.price-lens-card p { margin: 9px 0 0; color: #a0b2b2; font-size: 11px; }
+.price-lens-card small { display: block; margin-top: 7px; color: #738b8d; font-size: 9px; line-height: 1.5; }
+.price-normalize-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 28px; margin-top: 13px; padding: 22px; border: 1px solid rgba(113,225,202,.22); background: rgba(113,225,202,.045); }
+.price-normalize-grid .eyebrow { color: var(--teal); }.price-normalize-grid h3 { margin: 8px 0 0; color: var(--paper); font: 600 28px/1 var(--display); letter-spacing: -.05em; }
+.text-link-dark { color: var(--orange); }.text-link-dark:hover { color: var(--teal); }
+.price-normalize-grid ol { display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px 21px; margin: 0; padding: 0; list-style: none; counter-reset: normalize; }
+.price-normalize-grid li { counter-increment: normalize; position: relative; padding: 3px 0 3px 33px; border-bottom: 1px solid rgba(224,241,235,.12); }
+.price-normalize-grid li::before { content: "0" counter(normalize); position: absolute; top: 5px; left: 0; color: var(--orange); font: 600 9px var(--display); }
+.price-normalize-grid li b { display: block; color: var(--paper); font-size: 11px; }.price-normalize-grid li span { display: block; margin-top: 3px; color: #90a5a5; font-size: 9px; line-height: 1.5; }
+
 /* Evidence board */
 .evidence-board-section { background: #f3eee5; }
 .evidence-board-key { display: flex; flex-wrap: wrap; gap: 16px 24px; margin: -7px 0 18px; color: #69777a; font: 600 10px var(--display); letter-spacing: .05em; }
@@ -233,6 +259,9 @@ h2 { font: 600 clamp(2.8rem, 5vw, 5rem)/.95 var(--display); letter-spacing: -.06
 
 @media (max-width: 900px) {
   .risk-summary-grid, .risk-signals { grid-template-columns: repeat(2, 1fr); }
+  .price-lens-grid { grid-template-columns: 1fr 1fr; }
+  .price-lens-card:last-child { grid-column: 1 / -1; }
+  .price-normalize-grid { grid-template-columns: 1fr; gap: 20px; }
   .evidence-board-grid { grid-template-columns: 1fr; }
   .station-toolbar { flex-wrap: wrap; }
   .station-toolbar .search-box { flex-basis: 100%; }
@@ -242,6 +271,10 @@ h2 { font: 600 clamp(2.8rem, 5vw, 5rem)/.95 var(--display); letter-spacing: -.06
   .risk-summary-grid, .risk-signals { grid-template-columns: 1fr 1fr; }
   .risk-summary-card { min-height: 128px; padding: 14px; }.risk-summary-card strong { font-size: 34px; }
   #risk-filter { grid-column: 1 / -1; width: 100%; }
+  .price-lens-alert { display: block; }.price-lens-alert strong { display: block; margin-top: 7px; }.price-lens-alert p { margin-top: 8px; }
+  .price-lens-grid { grid-template-columns: 1fr; }.price-lens-card:last-child { grid-column: auto; }
+  .price-lens-card { min-height: 160px; }.price-lens-card strong { margin-top: 20px; font-size: 2.35rem; }
+  .price-normalize-grid { padding: 17px; }.price-normalize-grid ol { grid-template-columns: 1fr; }
   .evidence-card { min-height: 0; padding: 16px; }
   .evidence-card-top { display: block; }
   .evidence-card-top .risk-chip { margin-top: 9px; }

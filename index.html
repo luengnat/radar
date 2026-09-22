@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="site/style.css?v=evidence-board-20260922-1" />
+    <link rel="stylesheet" href="site/style.css?v=price-lens-20260922-1" />
   </head>
   <body>
     <div class="ambient ambient-one" aria-hidden="true"></div>
@@ -28,6 +28,7 @@
         <a href="#years">ปีงบประมาณ</a>
         <a href="#triage">คัดกรองความเสี่ยง</a>
         <a href="#evidence-board">บอร์ดหลักฐาน</a>
+        <a href="#price-lens">มุมมองราคา</a>
         <a href="#stations">สถานี</a>
         <a href="#procurement">จัดซื้อ</a>
         <a href="#politics">รัฐบาล / พรรค</a>
@@ -351,10 +352,29 @@
         </div>
       </section>
 
+      <section id="price-lens" class="section price-lens-section">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <div><p class="eyebrow">06 / PRICE LENS</p><h2>ตัวเลขราคา<br /><em>ต้องอ่านอย่างไร</em></h2></div>
+            <p class="section-intro">วางราคาผู้ชนะ ราคากลาง วงเงิน และคำขอไว้ด้วยกัน เพื่อให้เห็นจุดที่ควรถามต่อ — ไม่ใช่สรุปว่าโครงการใดแพงเพียงเพราะยอดรวมต่างกัน</p>
+          </div>
+          <div class="price-lens-alert reveal"><span>READ BEFORE COMPARING</span><strong>ยอดรวมไม่ใช่ scope เดียวกันโดยอัตโนมัติ</strong><p>ก่อนเทียบกับต่างประเทศหรือโครงการเก่า ต้องแยก radar core, อาคาร/ฐานราก, tower, ระบบสื่อสาร, software, ติดตั้ง, warranty, AMC, training, ภาษี และอายุการใช้งานออกจากกันก่อน</p></div>
+          <div id="price-lens-grid" class="price-lens-grid reveal">
+            <article class="price-lens-card price-lens-award"><span class="price-lens-kicker">01 / TMD AWARD · FY2569</span><strong id="price-tmd-award-range">—</strong><p>ราคาที่ประกาศผลผู้ชนะของ 4 งาน S-band</p><small id="price-tmd-award-note">กำลังคำนวณจาก master…</small></article>
+            <article class="price-lens-card price-lens-reference"><span class="price-lens-kicker">02 / TMD REFERENCE</span><strong id="price-tmd-reference">—</strong><p>ราคากลางที่ปรากฏในชุดเอกสาร</p><small id="price-tmd-reference-note">กำลังคำนวณจาก master…</small></article>
+            <article class="price-lens-card price-lens-request"><span class="price-lens-kicker">03 / RRD REQUEST · FY2570</span><strong id="price-rrd-request">—</strong><p>ยอดคำขอ/ร่างโครงการต่อสถานี ยังไม่ใช่ award</p><small id="price-rrd-request-note">กำลังคำนวณจาก master…</small></article>
+          </div>
+          <div class="price-normalize-grid reveal">
+            <div><p class="eyebrow">NORMALIZE FIRST</p><h3>ก่อนบอกว่าแพง<br />ต้องเทียบอะไรบ้าง</h3><a class="text-link text-link-dark" href="price_reasonableness_2026-09-17.md">อ่าน price-reasonableness ledger <span>↗</span></a></div>
+            <ol><li><b>ตัวเรดาร์</b><span>band · dual polarization · transmitter · antenna/radome</span></li><li><b>งานประกอบ</b><span>อาคาร · tower · ไฟฟ้า · สื่อสาร · installation</span></li><li><b>ภาระระยะยาว</b><span>software · warranty · AMC · training · อะไหล่</span></li><li><b>ความจำเป็น</b><span>coverage เดิม · downtime · ใช้ข้อมูลร่วมกัน · ทางเลือกซ่อม</span></li></ol>
+          </div>
+        </div>
+      </section>
+
       <section id="stations" class="section section-dark">
         <div class="shell">
           <div class="section-heading reveal">
-            <div><p class="eyebrow">06 / STATION REGISTER</p><h2>สถานีทั้งหมด</h2></div>
+            <div><p class="eyebrow">07 / STATION REGISTER</p><h2>สถานีทั้งหมด</h2></div>
             <p class="section-intro">เลือกดูตามหน่วยงาน ย่านความถี่ หรือค้นหาชื่อสถานี แต่ละการ์ดเปิดรายละเอียด procurement และ source ได้</p>
           </div>
           <div class="station-toolbar reveal">
@@ -387,7 +407,7 @@
 
       <section id="procurement" class="section shell">
         <div class="section-heading reveal">
-          <div><p class="eyebrow">07 / PROCUREMENT LEDGER</p><h2>ใครขาย ใครชนะ ใครเสนอราคา</h2></div>
+          <div><p class="eyebrow">08 / PROCUREMENT LEDGER</p><h2>ใครขาย ใครชนะ ใครเสนอราคา</h2></div>
           <p class="section-intro">อ่าน event แบบแยกชั้น: seller/winner คือผู้ได้รับเลือก, bidders คือรายชื่อผู้ยื่นราคาที่เอกสารเปิดเผย, ส่วนเลขสัญญาที่ไม่พบจะไม่ถูกเติมขึ้นเอง</p>
         </div>
         <div class="procurement-layout">
@@ -413,7 +433,7 @@
       <section id="politics" class="section political-section">
         <div class="shell">
           <div class="section-heading reveal">
-            <div><p class="eyebrow">07 / POLITICAL CONTEXT</p><h2>โครงการนี้เกิดในช่วงรัฐบาลไหน</h2></div>
+            <div><p class="eyebrow">09 / POLITICAL CONTEXT</p><h2>โครงการนี้เกิดในช่วงรัฐบาลไหน</h2></div>
             <p class="section-intro">ผูกปีสัญญา/ปีงบประมาณกับรัฐบาล พรรคแกนนำ และรัฐมนตรีของหน่วยงาน เพื่ออ่านบริบทเวลาให้ครบ — ไม่ใช่การกล่าวหาว่าผู้ดำรงตำแหน่งมีส่วนในสัญญา</p>
           </div>
           <div id="government-timeline" class="government-timeline"><div class="loading-line"></div></div>
@@ -423,7 +443,7 @@
 
       <section id="method" class="section section-paper">
         <div class="shell method-grid">
-          <div class="method-copy reveal"><p class="eyebrow">08 / HOW TO READ</p><h2>หลักฐานมีชั้นของมัน</h2><p>เว็บไซต์นี้ไม่ได้รวมทุกอย่างเป็น “ข้อเท็จจริงระดับเดียวกัน” แต่ติดตาม provenance ในทุก field เพื่อให้แยกสิ่งที่ประกาศทางการ สิ่งที่มาจาก dossier และสิ่งที่ยังไม่พบเอกสารได้</p><a class="button button-dark" href="README.md">อ่านวิธีทำงานของชุดข้อมูล <span>↗</span></a></div>
+          <div class="method-copy reveal"><p class="eyebrow">10 / HOW TO READ</p><h2>หลักฐานมีชั้นของมัน</h2><p>เว็บไซต์นี้ไม่ได้รวมทุกอย่างเป็น “ข้อเท็จจริงระดับเดียวกัน” แต่ติดตาม provenance ในทุก field เพื่อให้แยกสิ่งที่ประกาศทางการ สิ่งที่มาจาก dossier และสิ่งที่ยังไม่พบเอกสารได้</p><a class="button button-dark" href="README.md">อ่านวิธีทำงานของชุดข้อมูล <span>↗</span></a></div>
           <div class="method-stack reveal">
             <div class="method-step"><span>01</span><div><b>Verified</b><p>เอกสาร/portal ของหน่วยงานรองรับโดยตรง</p></div><i>●</i></div>
             <div class="method-step"><span>02</span><div><b>Reported</b><p>รายงานหรือ dossier ระบุไว้ แต่ยังต้องหา as-built</p></div><i>◐</i></div>
@@ -433,7 +453,7 @@
       </section>
 
       <section id="sources" class="section shell sources-section">
-        <div class="section-heading reveal"><div><p class="eyebrow">09 / SOURCE ROOM</p><h2>ประตูไปยังหลักฐาน</h2></div><p class="section-intro">ไฟล์ต้นทางทั้งหมดอยู่ใน repository เดียวกัน พร้อมลิงก์ไปยัง portal ที่ใช้ตรวจสอบ</p></div>
+        <div class="section-heading reveal"><div><p class="eyebrow">11 / SOURCE ROOM</p><h2>ประตูไปยังหลักฐาน</h2></div><p class="section-intro">ไฟล์ต้นทางทั้งหมดอยู่ใน repository เดียวกัน พร้อมลิงก์ไปยัง portal ที่ใช้ตรวจสอบ</p></div>
         <div class="source-grid reveal">
           <a class="source-card" href="station_master.md"><span class="source-number">01</span><div><b>Station master</b><p>ตารางสถานี 43 records พร้อม band, OEM, status และ event</p></div><span class="source-arrow">↗</span></a>
           <a class="source-card" href="data/radar_station_master.json"><span class="source-number">02</span><div><b>Machine-readable JSON</b><p>field-level provenance และ contract/bidder ledger</p></div><span class="source-arrow">↗</span></a>
@@ -455,6 +475,6 @@
       <div id="dialog-content"></div>
     </dialog>
 
-    <script src="site/app.js?v=evidence-board-20260922-1" type="module"></script>
+    <script src="site/app.js?v=price-lens-20260922-1" type="module"></script>
   </body>
 </html>

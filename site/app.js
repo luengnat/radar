@@ -539,6 +539,51 @@ function renderEvidenceBoard() {
   $$("[data-evidence-station]", container).forEach((button) => button.addEventListener("click", () => openStation(button.dataset.evidenceStation)));
 }
 
+function preciseCompactMoney(value) {
+  if (value === null || value === undefined || value === "") return "—";
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "—";
+  if (number >= 1_000_000_000) return `${(number / 1_000_000_000).toFixed(3)}B`;
+  if (number >= 1_000_000) return `${(number / 1_000_000).toFixed(3)}M`;
+  return money(value);
+}
+
+function priceRange(values) {
+  const numbers = values.map(Number).filter(Number.isFinite);
+  if (!numbers.length) return "—";
+  const low = Math.min(...numbers);
+  const high = Math.max(...numbers);
+  return low === high ? preciseCompactMoney(low) : `${preciseCompactMoney(low)}–${preciseCompactMoney(high)}`;
+}
+
+function renderPriceLens() {
+  const awards = fy2569Awards();
+  const awardValues = awards.map(({ event }) => eventAmount(event)).filter((value) => value !== null).map(Number);
+  const referenceValues = awards.map(({ event }) => valueAt(event.reference_price_baht, null)).filter((value) => value !== null).map(Number);
+  const budgetValues = awards.map(({ event }) => valueAt(event.budget_baht, null)).filter((value) => value !== null).map(Number);
+  const discounts = awards.map(({ event }) => {
+    const award = Number(eventAmount(event));
+    const reference = Number(valueAt(event.reference_price_baht, NaN));
+    return Number.isFinite(award) && Number.isFinite(reference) && reference > 0 ? ((reference - award) / reference) * 100 : NaN;
+  }).filter(Number.isFinite);
+  const rrdPlans = stations.flatMap((station) => plannedOf(station)
+    .filter((plan) => agencyOf(station) === "RRD" && plannedYear(plan) === 2570 && ["new_radar_request", "replacement_request"].includes(valueAt(plan.activity_class)))
+    .map((plan) => plan));
+  const requestValues = rrdPlans.map((plan) => valueAt(plan.planned_amount_baht, null)).filter((value) => value !== null).map(Number);
+  const quoteValues = rrdPlans.flatMap((plan) => {
+    const quotes = valueAt(plan.quotation_set_baht, {});
+    return quotes && typeof quotes === "object" ? Object.values(quotes).map(Number) : [];
+  }).filter(Number.isFinite);
+
+  setText("#price-tmd-award-range", priceRange(awardValues));
+  setText("#price-tmd-award-note", discounts.length ? `ต่ำกว่าราคากลางประมาณ ${Math.min(...discounts).toFixed(1)}–${Math.max(...discounts).toFixed(1)}% · ${awards.length} โครงการ` : `${awards.length} โครงการที่มีผลประกาศ`);
+  setText("#price-tmd-reference", priceRange(referenceValues));
+  const refBudgetGap = referenceValues.length && budgetValues.length ? referenceValues[0] - budgetValues[0] : NaN;
+  setText("#price-tmd-reference-note", Number.isFinite(refBudgetGap) && refBudgetGap > 0 ? `สูงกว่าวงเงินใน master ${preciseCompactMoney(refBudgetGap)} · ควรตรวจแบบฟอร์ม/รายการต้นทุน` : "ตรวจแหล่งที่มาและ scope ของราคากลางต่อ");
+  setText("#price-rrd-request", priceRange(requestValues));
+  setText("#price-rrd-request-note", quoteValues.length ? `ใบเสนอราคา ${priceRange(quoteValues)} · ยังเป็น request / draft ไม่ใช่ award` : "ยังเป็น request / draft ไม่ใช่ award");
+}
+
 function coordinatePairs(node, output = []) {
   if (!Array.isArray(node)) return output;
   if (typeof node[0] === "number" && typeof node[1] === "number") {
@@ -1146,6 +1191,7 @@ async function init() {
     renderAwards();
     renderRiskOverview();
     renderEvidenceBoard();
+    renderPriceLens();
     renderMap();
     renderYearView();
     renderStations();
