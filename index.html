@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="site/style.css?v=why-budget-20260920-3" />
+    <link rel="stylesheet" href="site/style.css?v=evidence-board-20260922-1" />
   </head>
   <body>
     <div class="ambient ambient-one" aria-hidden="true"></div>
@@ -27,6 +27,7 @@
         <a href="#map">แผนที่</a>
         <a href="#years">ปีงบประมาณ</a>
         <a href="#triage">คัดกรองความเสี่ยง</a>
+        <a href="#evidence-board">บอร์ดหลักฐาน</a>
         <a href="#stations">สถานี</a>
         <a href="#procurement">จัดซื้อ</a>
         <a href="#politics">รัฐบาล / พรรค</a>
@@ -334,10 +335,26 @@
         </div>
       </section>
 
+      <section id="evidence-board" class="section evidence-board-section">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <div><p class="eyebrow">05 / EVIDENCE BOARD</p><h2>แต่ละโครงการ<br /><em>หลักฐานไปถึงไหนแล้ว</em></h2></div>
+            <p class="section-intro">การ์ดชุดนี้แยกสิ่งที่เอกสารยืนยันแล้วออกจากช่องว่างและคำถามถัดไป เพื่อไม่ให้ “สัญญาณที่ควรตรวจ” ถูกอ่านเป็นข้อสรุปว่ามีความผิด</p>
+          </div>
+          <div class="evidence-board-key reveal" aria-label="คำอธิบายสถานะหลักฐาน">
+            <span><i class="evidence-key-dot evidence-key-verified"></i>ยืนยันแล้ว</span>
+            <span><i class="evidence-key-dot evidence-key-gap"></i>ยังขาดเอกสาร</span>
+            <span><i class="evidence-key-dot evidence-key-next"></i>คำถามถัดไป</span>
+          </div>
+          <div id="evidence-board-grid" class="evidence-board-grid" aria-live="polite"><div class="empty-state">กำลังจัดเรียงหลักฐาน…</div></div>
+          <p class="evidence-board-footnote">ขอบเขตของบอร์ด: งาน TMD S-band FY2569 ที่มีผลผู้ยื่นราคา และคำขอ/ร่าง TOR ของ RRD FY2570 ที่ถูกจัดเป็นประเด็นสำคัญในชุดข้อมูลปัจจุบัน</p>
+        </div>
+      </section>
+
       <section id="stations" class="section section-dark">
         <div class="shell">
           <div class="section-heading reveal">
-            <div><p class="eyebrow">05 / STATION REGISTER</p><h2>สถานีทั้งหมด</h2></div>
+            <div><p class="eyebrow">06 / STATION REGISTER</p><h2>สถานีทั้งหมด</h2></div>
             <p class="section-intro">เลือกดูตามหน่วยงาน ย่านความถี่ หรือค้นหาชื่อสถานี แต่ละการ์ดเปิดรายละเอียด procurement และ source ได้</p>
           </div>
           <div class="station-toolbar reveal">
@@ -370,7 +387,7 @@
 
       <section id="procurement" class="section shell">
         <div class="section-heading reveal">
-          <div><p class="eyebrow">06 / PROCUREMENT LEDGER</p><h2>ใครขาย ใครชนะ ใครเสนอราคา</h2></div>
+          <div><p class="eyebrow">07 / PROCUREMENT LEDGER</p><h2>ใครขาย ใครชนะ ใครเสนอราคา</h2></div>
           <p class="section-intro">อ่าน event แบบแยกชั้น: seller/winner คือผู้ได้รับเลือก, bidders คือรายชื่อผู้ยื่นราคาที่เอกสารเปิดเผย, ส่วนเลขสัญญาที่ไม่พบจะไม่ถูกเติมขึ้นเอง</p>
         </div>
         <div class="procurement-layout">
@@ -438,6 +455,6 @@
       <div id="dialog-content"></div>
     </dialog>
 
-    <script src="site/app.js?v=conservative-20260920-1" type="module"></script>
+    <script src="site/app.js?v=evidence-board-20260922-1" type="module"></script>
   </body>
 </html>

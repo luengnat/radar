@@ -428,6 +428,117 @@ function renderRiskOverview() {
   $("#risk-signals").innerHTML = signals.map((signal) => `<article class="risk-signal ${signal.className}"><strong>${signal.number}</strong><div><b>${signal.title}</b><p>${signal.detail}</p></div></article>`).join("");
 }
 
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, (character) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;",
+  }[character]));
+}
+
+function evidenceBoardItems() {
+  const items = [];
+  stations.forEach((station) => {
+    if (agencyOf(station) === "TMD") {
+      eventsOf(station)
+        .filter((event) => eventYear(event) === 2569 && valueAt(event.activity_class) === "new_radar_purchase")
+        .forEach((record) => items.push({ kind: "event", station, record }));
+    }
+    if (agencyOf(station) === "RRD") {
+      plannedOf(station)
+        .filter((plan) => plannedYear(plan) === 2570 && ["new_radar_request", "replacement_request"].includes(valueAt(plan.activity_class)))
+        .forEach((record) => items.push({ kind: "plan", station, record }));
+    }
+  });
+  return items.sort((a, b) => {
+    if (a.kind !== b.kind) return a.kind === "event" ? -1 : 1;
+    return nameOf(a.station).localeCompare(nameOf(b.station), "th");
+  });
+}
+
+function evidenceCardList(items) {
+  return `<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
+}
+
+function evidenceCardModel(item) {
+  const { station, record, kind } = item;
+  const assessment = kind === "event" ? eventRiskAssessment(station, record) : plannedRiskAssessment(record);
+  const verified = [];
+  const gaps = [];
+  const next = [];
+  let summary = valueAt(record.radar_band, bandOf(station)) || "ย่านความถี่ยังไม่ระบุ";
+  let stage = kind === "event" ? eventStage(record) : "แผน / ร่าง TOR";
+
+  if (kind === "event") {
+    const bidders = displayBidders(record);
+    verified.push(`ผลผู้ชนะ: ${eventWinner(record)}`);
+    if (bidders.length) verified.push(`เปิดเผยผู้ยื่นราคา ${bidders.length} ราย`);
+    if (eventAmount(record) !== null) {
+      verified.push(`มูลค่าที่ประกาศผล: ${compactMoney(eventAmount(record))}`);
+      summary += ` · ${compactMoney(eventAmount(record))}`;
+    }
+    if (valueAt(record.project_id, "")) verified.push(`Project ID ${valueAt(record.project_id)}`);
+    if (String(valueAt(record.lowest_result_flag, "")).toUpperCase() === "N") gaps.push(`เหตุผลที่ ${valueAt(record.lowest_bidder, "ผู้เสนอราคาต่ำสุด")} ไม่ผ่าน ยังไม่ปรากฏใน portal`);
+    if (!valueAt(record.contract_number, "") || !valueAt(record.contract_date_be, "")) gaps.push("ยังไม่พบเลขที่หรือวันที่สัญญาที่ลงนามแล้วใน master");
+    gaps.push("ยังไม่ยืนยันผลตรวจรับ การจ่ายเงิน และการใช้งานจริง");
+    next.push("ขอรายงานคุณสมบัติ/เทคนิคและรายการข้อที่ไม่ผ่าน");
+    next.push("ขอสัญญา BOQ warranty/AMC และหลักฐานตรวจรับ");
+    next.push("เทียบราคากับ scope ของงานและทางเลือกซ่อม/อัปเกรด");
+  } else {
+    const evidenceStatus = valueAt(record.evidence_status, "พบในเอกสารแผน");
+    const quoteSet = valueAt(record.quotation_set_baht, null);
+    const quoteValues = quoteSet && typeof quoteSet === "object" ? Object.values(quoteSet).map(Number).filter(Number.isFinite) : [];
+    verified.push(evidenceStatus);
+    if (summary) verified.push(`โครงการ ${summary}`);
+    if (valueAt(record.brand_or_platform_in_draft_tor, "")) verified.push(`ร่าง TOR ระบุ platform: ${valueAt(record.brand_or_platform_in_draft_tor)}`);
+    if (quoteValues.length) {
+      const low = Math.min(...quoteValues);
+      const high = Math.max(...quoteValues);
+      verified.push(`พบใบเสนอราคา ${quoteValues.length} ราย: ${compactMoney(low)}–${compactMoney(high)}`);
+      summary += ` · ใบเสนอราคา ${compactMoney(low)}–${compactMoney(high)}`;
+    }
+    gaps.push("ยังไม่ใช่ประกาศผู้ชนะหรือสัญญาจัดซื้อ");
+    gaps.push("ยังต้องยืนยัน TOR ฉบับสุดท้าย BOQ และราคากลางที่ใช้จริง");
+    gaps.push("ยังไม่มีหลักฐานผลตรวจรับหรือการใช้งาน เพราะยังอยู่ชั้นแผน");
+    next.push("ติดตามการอนุมัติงบ ประกาศ e-GP และผลผู้ชนะ");
+    next.push("ขอ market survey/ใบเสนอราคาต้นทาง และแยกต้นทุนเป็นรายรายการ");
+    next.push("ตรวจ coverage เดิม เหตุผลความจำเป็น และทางเลือกซ่อมหรือใช้ข้อมูลร่วมกัน");
+  }
+
+  return { assessment, verified, gaps, next, summary, stage };
+}
+
+function renderEvidenceBoard() {
+  const container = $("#evidence-board-grid");
+  if (!container) return;
+  const items = evidenceBoardItems();
+  if (!items.length) {
+    container.innerHTML = '<div class="empty-state">ยังไม่มีโครงการที่เข้าเกณฑ์บอร์ดหลักฐาน</div>';
+    return;
+  }
+  container.innerHTML = items.map((item, index) => {
+    const model = evidenceCardModel(item);
+    const { station, record, kind } = item;
+    const meta = RISK_META[model.assessment.status] || RISK_META.clear;
+    const source = firstSourceLink(record);
+    const stationId = valueAt(station.station_id, "");
+    const year = kind === "event" ? eventYear(record) : plannedYear(record);
+    return `<article class="evidence-card evidence-card-${kind} evidence-card-state-${model.assessment.status} reveal">
+      <div class="evidence-card-top"><span>${escapeHtml(agencyLabel(agencyOf(station)))} · FY${escapeHtml(year)}</span>${riskBadge(model.assessment.status)}</div>
+      <div class="evidence-card-title"><h3>${escapeHtml(nameOf(station))}</h3><p>${escapeHtml(model.stage)} · ${escapeHtml(model.summary)}</p></div>
+      <div class="evidence-card-columns">
+        <section class="evidence-column evidence-column-verified"><h4><i>✓</i> ยืนยันแล้ว</h4>${evidenceCardList(model.verified)}</section>
+        <section class="evidence-column evidence-column-gap"><h4><i>?</i> ยังขาด</h4>${evidenceCardList(model.gaps)}</section>
+        <section class="evidence-column evidence-column-next"><h4><i>→</i> ถามต่อ</h4>${evidenceCardList(model.next)}</section>
+      </div>
+      <div class="evidence-card-footer">${source ? `<a href="${escapeHtml(source)}" target="_blank" rel="noreferrer">เปิด source หลัก ↗</a>` : "<span>ยังไม่มี source link เดียว</span>"}<button type="button" data-evidence-station="${escapeHtml(stationId)}">เปิดรายละเอียดสถานี ↗</button></div>
+    </article>`;
+  }).join("");
+  $$("[data-evidence-station]", container).forEach((button) => button.addEventListener("click", () => openStation(button.dataset.evidenceStation)));
+}
+
 function coordinatePairs(node, output = []) {
   if (!Array.isArray(node)) return output;
   if (typeof node[0] === "number" && typeof node[1] === "number") {
@@ -1034,6 +1145,7 @@ async function init() {
     calculateStats();
     renderAwards();
     renderRiskOverview();
+    renderEvidenceBoard();
     renderMap();
     renderYearView();
     renderStations();
