@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "generated_on": "2026-09-23",
+  "fiscal_year_be": 2570,
+  "status": "Draft budget / pending promulgation",
+  "description": "Structured snapshot of radar-related FY2570 budget lines found in the draft national and Bangkok budget documents. These values are budget evidence, not proof of award, contract execution, or payment.",
+  "rows": [
+    {
+      "id": "TMD-BB-04",
+      "agency": "TMD",
+      "title_th": "โครงการร่มก่อสร้างหอเรดาร์และติดตั้งเครื่องเรดาร์ตรวจอากาศ",
+      "current_year_baht": 1448300000,
+      "multi_year_total_baht": 2841020900,
+      "note": "รวมต่อ FY2570: S-band 4 สถานี 1,392.8M, Ang Thong C-band 31.5M และ mobile X-band 2 คัน 24M",
+      "source": [
+        {
+          "id": "BB-04",
+          "locator": "data/sources_tmd/act70_draft_full_digital_volume.pdf",
+          "note": "printed pages 604–608"
+        }
+      ]
+    },
+    {
+      "id": "RRD-BB-03-UDON",
+      "agency": "RRD",
+      "title_th": "เรดาร์ S-band dual-polarization อุดรธานี / หมูม่น",
+      "current_year_baht": 72000000,
+      "multi_year_total_baht": 480000000,
+      "note": "งวด 72M / 192M / 216M; ยังเป็นรายการร่างงบและคำขอ ไม่ใช่ award",
+      "source": [
+        {
+          "id": "BB-03",
+          "locator": "data/sources_rrd/act70_draft_full_agriculture_volume.pdf",
+          "note": "printed pages 450–451"
+        }
+      ]
+    },
+    {
+      "id": "RRD-BB-03-PHIMAI",
+      "agency": "RRD",
+      "title_th": "เรดาร์ S-band dual-polarization พิมาย / รังกาใหญ่",
+      "current_year_baht": 72000000,
+      "multi_year_total_baht": 480000000,
+      "note": "งวด 72M / 192M / 216M; เป็นคำขอทดแทน METEOR 600S ในร่างงบ",
+      "source": [
+        {
+          "id": "BB-03",
+          "locator": "data/sources_rrd/act70_draft_full_agriculture_volume.pdf",
+          "note": "printed pages 450–451"
+        }
+      ]
+    },
+    {
+      "id": "RRD-BB-03-HATYAI",
+      "agency": "RRD",
+      "title_th": "โครงการเรดาร์หาดใหญ่",
+      "current_year_baht": 251068400,
+      "multi_year_total_baht": 455171000,
+      "note": "FY2570 ประกอบด้วย 724,400 บาทชดเชยงบพับไป และ 250,344,000 บาทผูกพันโครงการ",
+      "source": [
+        {
+          "id": "BB-03",
+          "locator": "data/sources_rrd/act70_draft_full_agriculture_volume.pdf",
+          "note": "printed pages 450–451"
+        }
+      ]
+    },
+    {
+      "id": "BMA-B01-68-02",
+      "agency": "BMA",
+      "title_th": "บำรุงรักษาเครื่องเรดาร์ตรวจอากาศ กทม. รอบ 2568–2570",
+      "current_year_baht": 13449000,
+      "multi_year_total_baht": 59790000,
+      "note": "รายการในร่างข้อบัญญัติงบประมาณ กทม.; ยังไม่ใช่หลักฐานสัญญาหรือการจ่ายเงินจริง",
+      "source": [
+        {
+          "id": "BMA-01",
+          "locator": "data/sources_bma/bma_act70_70015_drainage.pdf"
+        }
+      ]
+    },
+    {
+      "id": "BMA-B01-70-03",
+      "agency": "BMA",
+      "title_th": "บำรุงรักษาเครื่องเรดาร์ตรวจอากาศ กทม. รอบ 2570–2572",
+      "current_year_baht": 21528000,
+      "multi_year_total_baht": 59800000,
+      "note": "รอบบำรุงรักษาถัดไปในร่างข้อบัญญัติฯ",
+      "source": [
+        {
+          "id": "BMA-01",
+          "locator": "data/sources_bma/bma_act70_70015_drainage.pdf"
+        }
+      ]
+    },
+    {
+      "id": "BMA-B02-XBAND",
+      "agency": "BMA",
+      "title_th": "ค่าบำรุงรักษาเครื่องเรดาร์ตรวจอากาศชนิด X-band",
+      "current_year_baht": 4326000,
+      "multi_year_total_baht": null,
+      "note": "รายการปี FY2570 จากเอกสารประกอบการพิจารณา; ไม่ระบุผู้ขายในเอกสารนี้",
+      "source": [
+        {
+          "id": "BMA-02",
+          "locator": "data/sources_bma/bma_consideration70_drainage_ocr.txt",
+          "note": "item 03299-5"
+        }
+      ]
+    }
+  ]
+}

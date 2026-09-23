@@ -3,6 +3,7 @@ const POLITICAL_DATA_URL = "data/political_context_2026-09-19.json";
 const MAP_DATA_URL = "data/tha_adm0_simplified.geojson";
 const COVERAGE_DATA_URL = "data/radar_coverage_summary.json";
 const COVERAGE_STATIONS_URL = "data/radar_stations_map.json";
+const BUDGET_DATA_URL = "data/fy2570_budget_snapshot_2026-09-20.json";
 const CONSERVATIVE_RADIUS_KM = 120;
 const PUBLIC_REPO_BASE = "https://github.com/luengnat/radar/blob/main/";
 const $ = (selector, root = document) => root.querySelector(selector);
@@ -15,6 +16,7 @@ let political = null;
 let mapGeo = null;
 let coverageSummary = null;
 let coverageStations = [];
+let budgetSnapshot = null;
 let stations = [];
 let activeAgency = "all";
 let activeYear = "all";
@@ -582,6 +584,41 @@ function renderPriceLens() {
   setText("#price-tmd-reference-note", Number.isFinite(refBudgetGap) && refBudgetGap > 0 ? `สูงกว่าวงเงินใน master ${preciseCompactMoney(refBudgetGap)} · ควรตรวจแบบฟอร์ม/รายการต้นทุน` : "ตรวจแหล่งที่มาและ scope ของราคากลางต่อ");
   setText("#price-rrd-request", priceRange(requestValues));
   setText("#price-rrd-request-note", quoteValues.length ? `ใบเสนอราคา ${priceRange(quoteValues)} · ยังเป็น request / draft ไม่ใช่ award` : "ยังเป็น request / draft ไม่ใช่ award");
+}
+
+function budgetSourceHref(source) {
+  const locator = source?.locator || source?.url || "";
+  if (!locator) return "";
+  if (/^https?:\/\//i.test(locator)) return locator;
+  if (locator.startsWith("data/")) return `${PUBLIC_REPO_BASE}${locator}`;
+  return locator;
+}
+
+function renderBudgetTrail() {
+  const container = $("#budget-trail-grid");
+  if (!container) return;
+  const rows = budgetSnapshot?.rows || [];
+  if (!rows.length) {
+    container.innerHTML = '<div class="empty-state">ยังไม่พบ snapshot งบ FY2570</div>';
+    return;
+  }
+  const grouped = ["TMD", "RRD", "BMA"].map((agency) => ({
+    agency,
+    rows: rows.filter((row) => row.agency === agency),
+  })).filter((group) => group.rows.length);
+  container.innerHTML = grouped.map((group) => {
+    const currentTotal = group.rows.reduce((sum, row) => sum + Number(row.current_year_baht || 0), 0);
+    const sources = [...new Map(group.rows.flatMap((row) => (row.source || []).map((source) => [budgetSourceHref(source), source]))).values()]
+      .filter((source) => budgetSourceHref(source));
+    const rowList = group.rows.map((row) => `<li><span>${escapeHtml(row.title_th)}</span><strong>${preciseCompactMoney(row.current_year_baht)}</strong><small>${escapeHtml(row.note || "")}</small></li>`).join("");
+    return `<article class="budget-trail-card budget-trail-${group.agency.toLowerCase()}">
+      <div class="budget-trail-card-top"><span>${escapeHtml(agencyLabel(group.agency))}</span><i>FY2570 · ร่างงบ</i></div>
+      <strong class="budget-trail-total">${preciseCompactMoney(currentTotal)}</strong>
+      <p>รายการวงเงินปีงบประมาณ 2570 ที่พบในเอกสารชุดนี้</p>
+      <ul>${rowList}</ul>
+      <div class="budget-trail-sources">${sources.map((source) => `<a href="${escapeHtml(budgetSourceHref(source))}" target="_blank" rel="noreferrer">เปิดเอกสารต้นทาง ↗</a>`).join("")}</div>
+    </article>`;
+  }).join("");
 }
 
 function coordinatePairs(node, output = []) {
@@ -1179,19 +1216,21 @@ function wireControls() {
 
 async function init() {
   try {
-    const [response, politicalResponse, mapResponse, coverageResponse, coverageStationsResponse] = await Promise.all([fetch(DATA_URL), fetch(POLITICAL_DATA_URL), fetch(MAP_DATA_URL), fetch(COVERAGE_DATA_URL), fetch(COVERAGE_STATIONS_URL)]);
+    const [response, politicalResponse, mapResponse, coverageResponse, coverageStationsResponse, budgetResponse] = await Promise.all([fetch(DATA_URL), fetch(POLITICAL_DATA_URL), fetch(MAP_DATA_URL), fetch(COVERAGE_DATA_URL), fetch(COVERAGE_STATIONS_URL), fetch(BUDGET_DATA_URL)]);
     if (!response.ok) throw new Error(`โหลดข้อมูลไม่สำเร็จ (${response.status})`);
     master = await response.json();
     political = politicalResponse.ok ? await politicalResponse.json() : null;
     mapGeo = mapResponse.ok ? await mapResponse.json() : null;
     coverageSummary = coverageResponse.ok ? await coverageResponse.json() : null;
     coverageStations = coverageStationsResponse.ok ? await coverageStationsResponse.json() : [];
+    budgetSnapshot = budgetResponse.ok ? await budgetResponse.json() : null;
     stations = master.stations || [];
     calculateStats();
     renderAwards();
     renderRiskOverview();
     renderEvidenceBoard();
     renderPriceLens();
+    renderBudgetTrail();
     renderMap();
     renderYearView();
     renderStations();

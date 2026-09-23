@@ -225,6 +225,18 @@ h2 { font: 600 clamp(2.8rem, 5vw, 5rem)/.95 var(--display); letter-spacing: -.06
 .price-normalize-grid li::before { content: "0" counter(normalize); position: absolute; top: 5px; left: 0; color: var(--orange); font: 600 9px var(--display); }
 .price-normalize-grid li b { display: block; color: var(--paper); font-size: 11px; }.price-normalize-grid li span { display: block; margin-top: 3px; color: #90a5a5; font-size: 9px; line-height: 1.5; }
 
+/* FY2570 budget trail */
+.budget-trail-section { background: #e7e0d4; }
+.budget-trail-status { display: grid; grid-template-columns: auto 1fr; gap: 7px 17px; align-items: baseline; margin-bottom: 13px; padding: 16px 19px; border: 1px solid rgba(13,91,88,.2); border-left: 3px solid var(--teal-dark); background: rgba(255,253,248,.58); }
+.budget-trail-status span { color: var(--teal-dark); font: 600 9px var(--display); letter-spacing: .11em; }.budget-trail-status strong { color: var(--ink); font: 600 17px var(--display); }.budget-trail-status p { grid-column: 2; margin: -2px 0 0; color: #6f7f82; font-size: 10px; line-height: 1.6; }
+.budget-trail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.budget-trail-card { min-height: 390px; padding: 19px; border: 1px solid rgba(13,91,88,.16); background: rgba(255,253,248,.78); box-shadow: 0 7px 0 rgba(13,91,88,.05); }
+.budget-trail-card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 9px; color: var(--teal-dark); font: 600 10px var(--display); }.budget-trail-card-top i { color: #879395; font: 500 8px var(--display); font-style: normal; }
+.budget-trail-total { display: block; margin-top: 32px; color: var(--teal-dark); font: 600 clamp(2rem, 3vw, 2.8rem)/.9 var(--display); letter-spacing: -.06em; }.budget-trail-rrd .budget-trail-total { color: #b35d27; }.budget-trail-bma .budget-trail-total { color: #6c7e80; }
+.budget-trail-card > p { margin: 9px 0 17px; color: #68787a; font-size: 10px; line-height: 1.5; }
+.budget-trail-card ul { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }.budget-trail-card li { display: grid; grid-template-columns: 1fr auto; gap: 3px 9px; padding-top: 9px; border-top: 1px solid rgba(13,91,88,.13); }.budget-trail-card li span { color: #495b61; font-size: 10px; line-height: 1.45; }.budget-trail-card li strong { color: var(--teal-dark); font: 600 12px var(--display); white-space: nowrap; }.budget-trail-rrd li strong { color: #a85f2c; }.budget-trail-card li small { grid-column: 1 / -1; color: #7d8b8d; font-size: 8px; line-height: 1.45; }
+.budget-trail-sources { display: flex; flex-wrap: wrap; gap: 5px 15px; margin-top: 18px; padding-top: 12px; border-top: 1px solid rgba(13,91,88,.13); }.budget-trail-sources a { color: var(--teal-dark); font: 600 9px var(--display); text-decoration: underline; text-underline-offset: 3px; }.budget-trail-sources a:hover { color: var(--orange); }
+
 /* Evidence board */
 .evidence-board-section { background: #f3eee5; }
 .evidence-board-key { display: flex; flex-wrap: wrap; gap: 16px 24px; margin: -7px 0 18px; color: #69777a; font: 600 10px var(--display); letter-spacing: .05em; }
@@ -262,6 +274,8 @@ h2 { font: 600 clamp(2.8rem, 5vw, 5rem)/.95 var(--display); letter-spacing: -.06
   .price-lens-grid { grid-template-columns: 1fr 1fr; }
   .price-lens-card:last-child { grid-column: 1 / -1; }
   .price-normalize-grid { grid-template-columns: 1fr; gap: 20px; }
+  .budget-trail-grid { grid-template-columns: 1fr 1fr; }
+  .budget-trail-card:last-child { grid-column: 1 / -1; }
   .evidence-board-grid { grid-template-columns: 1fr; }
   .station-toolbar { flex-wrap: wrap; }
   .station-toolbar .search-box { flex-basis: 100%; }
@@ -275,6 +289,8 @@ h2 { font: 600 clamp(2.8rem, 5vw, 5rem)/.95 var(--display); letter-spacing: -.06
   .price-lens-grid { grid-template-columns: 1fr; }.price-lens-card:last-child { grid-column: auto; }
   .price-lens-card { min-height: 160px; }.price-lens-card strong { margin-top: 20px; font-size: 2.35rem; }
   .price-normalize-grid { padding: 17px; }.price-normalize-grid ol { grid-template-columns: 1fr; }
+  .budget-trail-status { display: block; }.budget-trail-status strong { display: block; margin-top: 7px; }.budget-trail-status p { margin-top: 8px; }
+  .budget-trail-grid { grid-template-columns: 1fr; }.budget-trail-card:last-child { grid-column: auto; }.budget-trail-card { min-height: 0; }
   .evidence-card { min-height: 0; padding: 16px; }
   .evidence-card-top { display: block; }
   .evidence-card-top .risk-chip { margin-top: 9px; }
