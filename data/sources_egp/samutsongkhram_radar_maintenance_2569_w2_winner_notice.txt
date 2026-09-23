@@ -1,0 +1,74 @@
+ประกาศรายชื่อผู้ชนะการเสนอราคา
+	function setOnload(){
+		var f1 = document.form1;
+		var templateName = 'announcewin_1100400000_68099489544.html';
+		var configPdf = parseInt('0');
+		if(templateName.lastIndexOf("pdf") != -1){
+			// 26012558 by Natorn : fix bug in ie9 not display pdf when use control.egp2
+			//f1.servlet.value = "FileViewerServlet";
+			//f1.action = "control.egp2";
+			if(configPdf > 0){
+				f1.action = "/egp2procmainWeb/FileViewerServlet";
+				f1.submit();
+			}else{
+				if(f1.pass.value == 'T'){
+					f1.pass.value = 'F';
+					f1.servlet.value = "gojsp";
+					f1.action = "control.egp2";
+					f1.submit();
+				}
+			}
+		}else{
+			if(f1.pass.value == 'T'){
+				f1.pass.value = 'F';
+				f1.servlet.value = "gojsp";
+				f1.action = "control.egp2";
+				f1.submit();
+			}
+		}
+	}
+( สำเนา )
+ประกาศ
+กรมอุตุนิยมวิทยา
+เรื่อง ประกาศผู้ชนะการเสนอราคา 
+จ้างเหมาบำรุงรักษาพร้อมซ่อมแซมเครื่องเรดาร์ตรวจอากาศ ที่สถานีอุตุนิยมวิทยาสมุทรสงคราม จังหวัดสมุทรสงคราม ประจำปีงบประมาณ พ.ศ.๒๕๖๙ โดยวิธีคัดเลือก
+			-------------------------------------------------------------------- 
+               ตามที่ 
+กรมอุตุนิยมวิทยา
+ ได้มีหนังสือเชิญชวนสำหรับ 
+จ้างเหมาบำรุงรักษาพร้อมซ่อมแซมเครื่องเรดาร์ตรวจอากาศ ที่สถานีอุตุนิยมวิทยาสมุทรสงคราม จังหวัดสมุทรสงคราม ประจำปีงบประมาณ พ.ศ.๒๕๖๙ โดยวิธีคัดเลือก
+  นั้น
+จ้างเหมาบำรุงรักษาพร้อมซ่อมแซมเครื่องเรดาร์ตรวจอากาศ ที่สถานีอุตุนิยมวิทยาสมุทรสงคราม จังหวัดสมุทรสงคราม ประจำปีงบประมาณ พ.ศ.๒๕๖๙ จำนวน ๙ เดือน (ตั้งแต่วันที่ ๑ พฤศจิกายน ๒๕๖๘ ถึงวันที่ ๓๑ กรกฎาคม ๒๕๖๙)
+ ผู้ได้รับการคัดเลือก ได้แก่ 
+ห้างหุ้นส่วนจำกัด ไซแอนติฟิค รีเสิร์ช (ขายส่ง,ขายปลีก,ให้บริการ)
+ โดยเสนอราคา เป็นเงินทั้งสิ้น 
+๑๙,๘๐๐,๐๐๐.๐๐
+ บาท (
+สิบเก้าล้านแปดแสนบาทถ้วน
+) รวมภาษีมูลค่าเพิ่มและภาษีอื่น ค่าขนส่ง ค่าจดทะเบียน และค่าใช้จ่ายอื่นๆ ทั้งปวงไว้ด้วยแล้ว
+ประกาศ ณ วันที่ 
+&nbsp;๑ ตุลาคม พ.ศ. ๒๕๖๘
+สราวุธ สมทรัพย์
+(นายสราวุธ สมทรัพย์)
+รองอธิบดีกรมอุตุนิยมวิทยา
+ปฏิบัติราชการแทนอธิบดีกรมอุตุนิยมวิทยา
+สำเนาถูกต้อง
+&nbsp;
+จิตสุดา กระจ่างมล
+(นางสาวจิตสุดา กระจ่างมล)
+&nbsp;
+นักวิชาการพัสดุชำนาญการพิเศษ
+&nbsp;
+ประกาศขึ้นเว็บวันที่ ๑ ตุลาคม ๒๕๖๘
+&nbsp;
+โดย นางสาวจิตสุดา กระจ่างมล นักวิชาการพัสดุชำนาญการพิเศษ
+&nbsp;
+		<input type="hidden" id="e" name="e" value="x3zB90N1/6+pMNliDMqufAIXtPwTKfyXLz+zbqrqY0ofYCPExzaRtuS/kwOyb72G6ee5RYK0X6/K
+4yOqtzEl7WVlV/jG9iV+pBnfVQIQKTMUxehK1QZ4cQ8VwYfYyix9vfyqBFxP5HPDL1pAtYUm7Q==">
+(function(){var f5_cspm={f5_p:'CCMOEIHBOAFENLBHKPAMKFJAAFJAHDLLJDBFBMPEHDKDEGEJBCHKKLAIAFLMBAFMMACBINODAAHFPIMBOGKALCHCAACGPNBBNCIKKPNLIDCNJHLFPIFONPFMBOKCOPDM',setCharAt:function(str,index,chr){if(index>str.length-1)return str;return str.substr(0,index)+chr+str.substr(index+1);},get_byte:function(str,i){var s=(i/16)|0;i=(i&15);s=s*32;return((str.charCodeAt(i+16+s)-65)
+>4)+65));str=f5_cspm.setCharAt(str,(i+s),String.fromCharCode((b&15)+65));return str;},set_latency:function(str,latency){latency=latency&0xffff;str=f5_cspm.set_byte(str,40,(latency>>8));str=f5_cspm.set_byte(str,41,(latency&0xff));str=f5_cspm.set_byte(str,35,2);return str;},wait_perf_data:function(){try{var wp=window.performance.timing;if(wp.loadEventEnd>0){var res=wp.loadEventEnd-wp.navigationStart;if(res<60001){var cookie_val=f5_cspm.set_latency(f5_cspm.f5_p,res);window.document.cookie='f5avr2040934104aaaaaaaaaaaaaaaa_cspm_='+encodeURIComponent(cookie_val)+';path=/';}
+return;}}
+catch(err){return;}
+setTimeout(f5_cspm.wait_perf_data,100);return;},go:function(){var chunk=window.document.cookie.split(/\s*;\s*/);for(var i=0;i<chunk.length;++i){var pair=chunk[i].split(/\s*=\s*/);if(pair[0]=='f5_cspm'&&pair[1]=='1234')
+{var d=new Date();d.setTime(d.getTime()-1000);window.document.cookie='f5_cspm=;expires='+d.toUTCString()+';path=/;';setTimeout(f5_cspm.wait_perf_data,100);}}}}
+f5_cspm.go();}());

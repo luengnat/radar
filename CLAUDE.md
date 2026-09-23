@@ -29,9 +29,9 @@ is the ledger itself.
 - Suppliers: Marwin Technologies (→ EEC), Genomatch (→ Leonardo/Gematronik
   METEOR), Scientific Research (→ EEC in RR Dept work). OEM relationships
   are multi-channel, not one-to-one.
-- Anchor verified facts live in `evidence-ledger.md` (TMD-01..TMD-36,
+- Anchor verified facts live in `evidence-ledger.md` (TMD-01..TMD-36, BMA-01,
   RRD-01..16, GFMIS-01..04, MAP-01..03, OP-01, PARL-01, INTL-01..02,
-  THAITH-01..04, BB-01..02).
+  THAITH-01..04, BB-01..04).
 - Strongest open leads: identical three-firm quotation sets at Phimai and
   Udon Thani (480.0 / 486.3 / 492.0M, all dated 19 June 2569); Rong Khwang
   395M specific-method justification (มาตรา 56 equivalent); the residual

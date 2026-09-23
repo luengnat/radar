@@ -1,131 +1,246 @@
 {
- "metadata": {
-  "source": "PBO Budget MCP (pbo-mcp.thaith.ai) — GFMIS line-item disbursements, queried 2026-09-17",
-  "note": "All figures in million THB as returned. Rong Kwang trail resolves the 79M record: FY2564 budget line = 79.0 = exactly 20% of the 395M multi-year commitment. | RRD S-band timeline derived from filtered queries (fiscal_year+agency+LIKE)."
- },
- "rong_kwang_payment_trail": [
-  {
-   "fiscal_year": 2564,
-   "act_budget_mb": 79.0,
-   "disbursed_mb": 59.1443
+  "metadata": {
+    "source": "PBO Budget MCP (pbo-mcp.thaith.ai) — GFMIS line-item disbursements, queried 2026-09-17",
+    "note": "All figures in million THB as returned. Rong Kwang trail resolves the 79M record: FY2564 budget line = 79.0 = exactly 20% of the 395M multi-year commitment. | RRD S-band timeline derived from filtered queries (fiscal_year+agency+LIKE)."
   },
-  {
-   "fiscal_year": 2565,
-   "act_budget_mb": 158.0,
-   "disbursed_mb": 157.577
-  },
-  {
-   "fiscal_year": 2566,
-   "act_budget_mb": 157.295,
-   "disbursed_mb": 157.295,
-   "adjustments_mb": [
-    0.784,
-    0.3492
-   ]
-  },
-  {
-   "fiscal_year": 2567,
-   "act_budget_mb": 5.21,
-   "disbursed_mb": 5.2
+  "rong_kwang_payment_trail": [
+    {
+      "fiscal_year": 2564,
+      "act_budget_mb": 79.0,
+      "disbursed_mb": 59.1443
+    },
+    {
+      "fiscal_year": 2565,
+      "act_budget_mb": 158.0,
+      "disbursed_mb": 157.577
+    },
+    {
+      "fiscal_year": 2566,
+      "act_budget_mb": 157.295,
+      "disbursed_mb": 157.295,
+      "adjustments_mb": [
+        0.784,
+        0.3492
+      ]
+    },
+    {
+      "fiscal_year": 2567,
+      "act_budget_mb": 5.21,
+      "disbursed_mb": 5.2
+    }
+  ],
+  "tmd_fy2567_radar_tranches": [
+    {
+      "item": "Sathing Phra C-band dual-pol + tower",
+      "fy2567_budget_mb": 27.5,
+      "disbursed_mb": null
+    },
+    {
+      "item": "Narathiwat C-band",
+      "fy2567_budget_mb": 22.5,
+      "disbursed_mb": 21.2663,
+      "matches": "TMD-10 advance 21,266,250 exactly"
+    },
+    {
+      "item": "Surin C-band",
+      "fy2567_budget_mb": 22.5,
+      "disbursed_mb": 20.7848,
+      "matches": "TMD-10 advance 20,784,750 exactly"
+    }
+  ],
+  "rrd_fy2564_other": [
+    {
+      "item": "Omkoi fixed S-band radar (Chiang Mai)",
+      "act_budget_mb": 147.9137,
+      "disbursed_mb": 147.9137
+    }
+  ],
+  "reconciliation_notes": [
+    "79M mystery RESOLVED: the 79M record is the FY2564 single-year budget line of the 395M multi-year Rong Kwang commitment (395 x 20% = 79.0 exactly); not a separate contract.",
+    "GFMIS multi-year budget lines for Rong Kwang sum to 399.505M (79+158+157.295+5.21) vs the 394.295M contract — small in-year adjustments.",
+    "Total GFMIS-disbursed across FY2564-67: ~380.35M of the 394.295M contract.",
+    "RRD-08's report figure '177,432,750 first installment FY2565' does not match GFMIS FY2565 (157.577M) or cumulative-through-2565 (216.72M) — the report figure needs its own reconciliation; recorded, not overridden."
+  ],
+  "rrd_sband_procurement_timeline": [
+    {
+      "station": "Omkoi",
+      "fy": 2564,
+      "budget_mb": 147.9137,
+      "disbursed_mb": 147.9137
+    },
+    {
+      "station": "Rong Kwang",
+      "fy": 2564,
+      "budget_mb": 79.0,
+      "disbursed_mb": 59.1443,
+      "note": "tranche 1/395M"
+    },
+    {
+      "station": "Rong Kwang",
+      "fy": 2565,
+      "budget_mb": 158.0,
+      "disbursed_mb": 157.577
+    },
+    {
+      "station": "Rong Kwang",
+      "fy": 2566,
+      "budget_mb": 157.295,
+      "disbursed_mb": 157.295
+    },
+    {
+      "station": "Rong Kwang",
+      "fy": 2567,
+      "budget_mb": 5.21,
+      "disbursed_mb": 5.2,
+      "note": "final tranche"
+    },
+    {
+      "station": "Hat Yai",
+      "fy": 2567,
+      "budget_mb": 69.0,
+      "disbursed_mb": 68.2757,
+      "note": "tranche 1/460M plan; FY2568 row NULL"
+    },
+    {
+      "station": "Sattahip (upgrade)",
+      "fy": 2568,
+      "budget_mb": 46.0,
+      "disbursed_mb": 46.0
+    },
+    {
+      "station": "Phimai replacement 480M",
+      "fy": null,
+      "budget_mb": 0,
+      "note": "NO budget line through FY2568 — consistent with FY2570 request; the plan's 235M upgrade never materialised as a budget line"
+    }
+  ],
+  "tmd_sathing_phra_trail": [
+    {
+      "fy": 2567,
+      "budget_mb": 27.5,
+      "disbursed_mb": null,
+      "note": "year-1 line; TMD-09 records 20.865M advance against the 139.1M contract signed 17 Jul 2567"
+    },
+    {
+      "fy": 2568,
+      "budget_mb": 21.6672,
+      "disbursed_mb": 21.6672,
+      "note": "tranche 2 fully disbursed"
+    }
+  ],
+  "tmd_fy2563_cband_trio_trail": {
+    "note": "FY2563 C-band trio (TMD-32) multi-year disbursement lines; PBO-MCP query 20 Sep 2026; duplicate item-name spellings collapsed to one row per station-year (non-null rows)",
+    "stations": {
+      "tak_doi_muser": {
+        "contract_value_mb": 147.553,
+        "years": [
+          {
+            "fy": 2563,
+            "act_budget_mb": 29.546,
+            "post_transfer_mb": 22.1595,
+            "disbursed_mb": 22.133
+          },
+          {
+            "fy": 2564,
+            "act_budget_mb": 27.4945,
+            "post_transfer_mb": 27.4945,
+            "disbursed_mb": 7.3511
+          },
+          {
+            "fy": 2565,
+            "act_budget_mb": 55.8096,
+            "post_transfer_mb": 55.8096,
+            "disbursed_mb": 55.8096
+          },
+          {
+            "fy": 2566,
+            "act_budget_mb": 42.0894,
+            "post_transfer_mb": 42.0894,
+            "disbursed_mb": 42.0894
+          },
+          {
+            "fy": 2567,
+            "act_budget_mb": 0,
+            "post_transfer_mb": 0,
+            "disbursed_mb": null
+          }
+        ]
+      },
+      "ranong": {
+        "contract_value_mb": 146.9859,
+        "years": [
+          {
+            "fy": 2563,
+            "act_budget_mb": 29.546,
+            "post_transfer_mb": 22.1595,
+            "disbursed_mb": 22.0479
+          },
+          {
+            "fy": 2564,
+            "act_budget_mb": 26.7504,
+            "post_transfer_mb": 26.7504,
+            "disbursed_mb": 26.7504
+          },
+          {
+            "fy": 2565,
+            "act_budget_mb": 55.8096,
+            "post_transfer_mb": 72.3376,
+            "disbursed_mb": 72.3376
+          },
+          {
+            "fy": 2566,
+            "act_budget_mb": 42.2664,
+            "post_transfer_mb": 25.7384,
+            "disbursed_mb": 25.7384
+          },
+          {
+            "fy": 2567,
+            "act_budget_mb": 0,
+            "post_transfer_mb": 0,
+            "disbursed_mb": null
+          }
+        ]
+      },
+      "trang": {
+        "years": [
+          {
+            "fy": 2563,
+            "act_budget_mb": 29.546,
+            "post_transfer_mb": 22.1595,
+            "disbursed_mb": 22.0479
+          },
+          {
+            "fy": 2564,
+            "act_budget_mb": 26.7504,
+            "post_transfer_mb": 26.7504,
+            "disbursed_mb": 26.7504
+          },
+          {
+            "fy": 2565,
+            "act_budget_mb": 55.8096,
+            "post_transfer_mb": 39.2816,
+            "disbursed_mb": 39.2816
+          },
+          {
+            "fy": 2566,
+            "act_budget_mb": 42.2664,
+            "post_transfer_mb": 58.7944,
+            "disbursed_mb": 58.7944
+          },
+          {
+            "fy": 2567,
+            "act_budget_mb": 0,
+            "post_transfer_mb": 0,
+            "disbursed_mb": null
+          }
+        ],
+        "contract_value_mb": 146.9859
+      }
+    },
+    "observations": [
+      "FY2563 first disbursements equal 15.00% of the respective contract values to the satang-adjacent digit: Tak 22.1330 vs 147.553x0.15=22.1330; Ranong/Trang 22.0479 vs 146.9859x0.15=22.0478 — consistent with a 15% advance-payment term",
+      "Cumulative disbursed through FY2566: Tak 127.3831M (86.3% of contract); Ranong 146.8743M (99.92%); Trang 146.8743M (99.92%)",
+      "In-year adjustments visible: Ranong FY2565 post-transfer 72.3376 above the 55.8096 enacted line; Trang FY2566 58.7944 above 42.2664; Ranong FY2566 reduced 42.2664->25.7384"
+    ]
   }
- ],
- "tmd_fy2567_radar_tranches": [
-  {
-   "item": "Sathing Phra C-band dual-pol + tower",
-   "fy2567_budget_mb": 27.5,
-   "disbursed_mb": null
-  },
-  {
-   "item": "Narathiwat C-band",
-   "fy2567_budget_mb": 22.5,
-   "disbursed_mb": 21.2663,
-   "matches": "TMD-10 advance 21,266,250 exactly"
-  },
-  {
-   "item": "Surin C-band",
-   "fy2567_budget_mb": 22.5,
-   "disbursed_mb": 20.7848,
-   "matches": "TMD-10 advance 20,784,750 exactly"
-  }
- ],
- "rrd_fy2564_other": [
-  {
-   "item": "Omkoi fixed S-band radar (Chiang Mai)",
-   "act_budget_mb": 147.9137,
-   "disbursed_mb": 147.9137
-  }
- ],
- "reconciliation_notes": [
-  "79M mystery RESOLVED: the 79M record is the FY2564 single-year budget line of the 395M multi-year Rong Kwang commitment (395 x 20% = 79.0 exactly); not a separate contract.",
-  "GFMIS multi-year budget lines for Rong Kwang sum to 399.505M (79+158+157.295+5.21) vs the 394.295M contract — small in-year adjustments.",
-  "Total GFMIS-disbursed across FY2564-67: ~380.35M of the 394.295M contract.",
-  "RRD-08's report figure '177,432,750 first installment FY2565' does not match GFMIS FY2565 (157.577M) or cumulative-through-2565 (216.72M) — the report figure needs its own reconciliation; recorded, not overridden."
- ],
- "rrd_sband_procurement_timeline": [
-  {
-   "station": "Omkoi",
-   "fy": 2564,
-   "budget_mb": 147.9137,
-   "disbursed_mb": 147.9137
-  },
-  {
-   "station": "Rong Kwang",
-   "fy": 2564,
-   "budget_mb": 79.0,
-   "disbursed_mb": 59.1443,
-   "note": "tranche 1/395M"
-  },
-  {
-   "station": "Rong Kwang",
-   "fy": 2565,
-   "budget_mb": 158.0,
-   "disbursed_mb": 157.577
-  },
-  {
-   "station": "Rong Kwang",
-   "fy": 2566,
-   "budget_mb": 157.295,
-   "disbursed_mb": 157.295
-  },
-  {
-   "station": "Rong Kwang",
-   "fy": 2567,
-   "budget_mb": 5.21,
-   "disbursed_mb": 5.2,
-   "note": "final tranche"
-  },
-  {
-   "station": "Hat Yai",
-   "fy": 2567,
-   "budget_mb": 69.0,
-   "disbursed_mb": 68.2757,
-   "note": "tranche 1/460M plan; FY2568 row NULL"
-  },
-  {
-   "station": "Sattahip (upgrade)",
-   "fy": 2568,
-   "budget_mb": 46.0,
-   "disbursed_mb": 46.0
-  },
-  {
-   "station": "Phimai replacement 480M",
-   "fy": null,
-   "budget_mb": 0,
-   "note": "NO budget line through FY2568 — consistent with FY2570 request; the plan's 235M upgrade never materialised as a budget line"
-  }
- ],
- "tmd_sathing_phra_trail": [
-  {
-   "fy": 2567,
-   "budget_mb": 27.5,
-   "disbursed_mb": null,
-   "note": "year-1 line; TMD-09 records 20.865M advance against the 139.1M contract signed 17 Jul 2567"
-  },
-  {
-   "fy": 2568,
-   "budget_mb": 21.6672,
-   "disbursed_mb": 21.6672,
-   "note": "tranche 2 fully disbursed"
-  }
- ]
 }

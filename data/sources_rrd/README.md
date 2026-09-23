@@ -45,3 +45,10 @@ API returned no data for the equivalent 2569 dates checked.
 PBO-MCP budget-query results are stored separately in
 `../sources_pbo_rrd_budget_queries_2026-09-17.json`; they are GFMIS
 disbursement queries, not RRD source documents.
+
+`act70_draft_full_agriculture_volume.pdf` (+ `.txt`) is the Agriculture &
+Cooperatives volume of the full draft FY2570 Budget Act (ร่าง พ.ร.บ.), from
+the Drive budget workspace, 20 Sep 2026. Printed pp.450–451 carry the RRD
+radar lines (BB-03): Udon/Phimai 480M each with 72/192/216 tranches, Hat Yai
+total 455,171,000 with FY2570 tranche 251,068,400, and the 980M aviation
+data-link project numbers. Draft text pending promulgation.

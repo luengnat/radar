@@ -1,6 +1,6 @@
 # Radar station master — มองรวดเดียว
 
-> สร้างจาก `data/radar_stations_map.json` และ corpora ที่ระบุใน JSON เมื่อ 2026-09-20 ด้วย `scripts/build_station_master.py`; unknown = ยังไม่พบเอกสารยืนยัน
+> สร้างจาก `data/radar_stations_map.json` และ corpora ที่ระบุใน JSON เมื่อ 2026-09-23 ด้วย `scripts/build_station_master.py`; unknown = ยังไม่พบเอกสารยืนยัน
 
 **43 station records (mapped + official-list-only)** — TMD 29, RRD 12, BMA 2
 
@@ -85,6 +85,8 @@
 | สุวรรณภูมิ | TMD | 2559 | support_or_maintenance / S-band | Marwin Technologies Co., Ltd. | Marwin Technologies Co., Ltd. | สจ.116/2559 / 29 July 2559 | — | 2,889,000 บาท | — |
 | สุวรรณภูมิ | TMD | 2560 | support_or_maintenance / S-band | Marwin Technologies Co., Ltd. | Marwin Technologies Co., Ltd. | สจ.14/2560 / 17 October 2559 | Marwin Technologies Co., Ltd. 17,333,000 บาท | 17,333,000 บาท | — |
 | สุวรรณภูมิ | TMD | 2561 | core_purchase / S-band | Marwin Technologies Co., Ltd. | Marwin Technologies Co., Ltd. | สข.70/2561 / 12 January 2561 | Marwin Technologies Co., Ltd. 304,950,000 บาท; Scientific Research Limited Partnership 308,748,500 บาท; Genomatch Co., Ltd. 310,621,000 บาท | 304,950,000 บาท | — |
+| สุวรรณภูมิ | TMD | 2563 | maintenance / S-band Doppler | Marwin Technologies Co., Ltd. | Marwin Technologies Co., Ltd. | — | — | 8,667,000 บาท | 62097300070 |
+| สุวรรณภูมิ | TMD | 2565 | maintenance / S-band Doppler | Marwin Technologies Co., Ltd. | Marwin Technologies Co., Ltd. | — | — | 5,243,000 บาท | 65027031796 |
 | สุวรรณภูมิ | TMD | 2567 | upgrade_or_repair / S-band | Marwin Technologies Co., Ltd. | Marwin Technologies Co., Ltd. | สข.147/2567 / 16 August 2567 | — | 62,589,500 บาท | 67049456830 |
 | สุวรรณภูมิ | TMD | 2570 | maintenance / S-band Doppler | Marwin Technologies Co., Ltd. | Marwin Technologies Co., Ltd. | — | — | 31,200,000 บาท | — |
 | ระนอง | TMD | 2563 | core_purchase / C-band dual-polarization | Genomatch Co., Ltd. | Genomatch Co., Ltd. | — | — | 146,985,900 บาท | 63017153824 |
