@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "title": "Fresh e-GP public recheck: FY 2569 TMD S-band technical-evaluation disclosure",
+    "retrieved_date": "2026-09-23",
+    "portal_display_date": "23 กันยายน 2569",
+    "portal_url": "https://process5.gprocurement.go.th/egp-agpc01-web/announcement",
+    "service_base": "https://process5.gprocurement.go.th/egp-oann10-service/pb/a-egp-allt-project/announcement",
+    "endpoint_templates": {
+      "project_detail": "{service_base}/getProjectDetail?projectId={project_id}",
+      "procurement_detail": "{service_base}/getProcurementDetail?projectId={project_id}",
+      "submitted_bidders": "{service_base}/greenBook?mode=LINK&methodId=16&tempProjectId={project_id}&pageAnnounceType=S0",
+      "technical_passers": "{service_base}/greenBook?mode=LINK&methodId=16&tempProjectId={project_id}&pageAnnounceType=E0",
+      "related_documents": "{service_base}/greenBook?mode=LINK&methodId=16&tempProjectId={project_id}&pageAnnounceType=W0"
+    },
+    "method": "Search each project ID in the public e-GP All Web UI, then re-query the project-detail and related-document endpoints exposed by that page.",
+    "finding": "The public portal still exposes three submitters and two technical passers for each project, but no written failure reason, score sheet, TOR compliance matrix, or committee evaluation report.",
+    "evidence_rule": "This is a disclosure recheck. It does not infer why any bidder failed and does not treat the repeated outcome as proof of wrongdoing."
+  },
+  "projects": [
+    {
+      "station": "Chumphon",
+      "project_id": "68099138543",
+      "project_status": "จัดทำสัญญา/บริหารสัญญา",
+      "budget_baht": 425000000,
+      "reference_price_baht": 446166666.66,
+      "agreed_price_baht": 410987000,
+      "announce_date": "2025-12-29T17:00:00.000Z",
+      "submitted_bidders": ["บริษัท เอเซียเมท จำกัด", "บริษัท จีโนแมทช์ จำกัด", "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด"],
+      "technical_passers": ["บริษัท จีโนแมทช์ จำกัด", "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด"],
+      "technical_failure_reasons_visible": false,
+      "technical_evaluation_report_visible": false
+    },
+    {
+      "station": "Bueng Kan",
+      "project_id": "68099138641",
+      "project_status": "จัดทำสัญญา/บริหารสัญญา",
+      "budget_baht": 425000000,
+      "reference_price_baht": 446166666.66,
+      "agreed_price_baht": 415160000,
+      "announce_date": "2025-12-23T17:00:00.000Z",
+      "submitted_bidders": ["ห้างหุ้นส่วนจำกัด ไซแอนติฟิค รีเสิร์ช", "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด", "บริษัท จีโนแมทช์ จำกัด"],
+      "technical_passers": ["บริษัท จีโนแมทช์ จำกัด", "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด"],
+      "technical_failure_reasons_visible": false,
+      "technical_evaluation_report_visible": false
+    },
+    {
+      "station": "Phitsanulok",
+      "project_id": "68099138724",
+      "project_status": "จัดทำสัญญา/บริหารสัญญา",
+      "budget_baht": 425000000,
+      "reference_price_baht": 446166666.66,
+      "agreed_price_baht": 408954000,
+      "announce_date": "2025-12-29T17:00:00.000Z",
+      "submitted_bidders": ["บริษัท มาร์วิน เทคโนโลยีส์ จำกัด", "บริษัท เอเซียเมท จำกัด", "บริษัท จีโนแมทช์ จำกัด"],
+      "technical_passers": ["บริษัท จีโนแมทช์ จำกัด", "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด"],
+      "technical_failure_reasons_visible": false,
+      "technical_evaluation_report_visible": false
+    },
+    {
+      "station": "Krabi",
+      "project_id": "68099247067",
+      "project_status": "จัดทำสัญญา/บริหารสัญญา",
+      "budget_baht": 425000000,
+      "reference_price_baht": 446166666.66,
+      "agreed_price_baht": 412699000,
+      "announce_date": "2025-12-23T17:00:00.000Z",
+      "submitted_bidders": ["ห้างหุ้นส่วนจำกัด ไซแอนติฟิค รีเสิร์ช", "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด", "บริษัท จีโนแมทช์ จำกัด"],
+      "technical_passers": ["บริษัท จีโนแมทช์ จำกัด", "บริษัท มาร์วิน เทคโนโลยีส์ จำกัด"],
+      "technical_failure_reasons_visible": false,
+      "technical_evaluation_report_visible": false
+    }
+  ],
+  "missing_primary_documents": [
+    "คณะกรรมการรายงานผลการตรวจคุณสมบัติ/เทคนิคของแต่ละโครงการ",
+    "ตารางเทียบ TOR และรายการที่ผู้ไม่ผ่านถูกตัดสินว่าไม่เป็นไปตามเงื่อนไข",
+    "checklist เอกสารข้อเสนอและเอกสารขอคำชี้แจง",
+    "คะแนนหรือแบบประเมิน และรายงานการประชุมที่เชื่อมผลเทคนิคกับผลผู้ชนะ"
+  ],
+  "related_snapshot": "data/egp_sband_procure_results_api_2026-09-17.json"
+}
